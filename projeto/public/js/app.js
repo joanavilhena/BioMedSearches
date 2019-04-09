@@ -37583,7 +37583,15 @@ var staticRenderFns = [
         { staticClass: "navbar navbar-expand-xl navbar-dark navbar-custom" },
         [
           _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-            _vm._v("BioMed Searches")
+            _c("img", {
+              attrs: {
+                src:
+                  "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png",
+                height: "42",
+                width: "42",
+                alt: ""
+              }
+            })
           ]),
           _vm._v(" "),
           _c(
@@ -50077,8 +50085,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Joana\Web\projetoInformatico\projetoInformatico201819\projeto\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Joana\Web\projetoInformatico\projetoInformatico201819\projeto\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Joana\Web\BioMedSearches\BioMedSearches\projeto\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Joana\Web\BioMedSearches\BioMedSearches\projeto\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

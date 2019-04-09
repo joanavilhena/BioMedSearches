@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>BioMed Searches</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -13,6 +14,13 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
+    <style>
+        body{
+            
+            background-image:url("https://previews.123rf.com/images/pro100vector/pro100vector1710/pro100vector171000020/87348563-abstract-hexagonal-molecule-background-genetic-and-chemical-compounds-scientific-or-technological-co.jpg");
+            background-size: cover;        
+        }
+    </style>
     <body>
         <div id="app">
         

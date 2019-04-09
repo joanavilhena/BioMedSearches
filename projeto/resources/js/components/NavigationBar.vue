@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav class="navbar navbar-expand-xl navbar-dark navbar-custom">
-  <a class="navbar-brand" href="#">BioMed Searches</a>
+  <a class="navbar-brand" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" height="42" width="42" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
