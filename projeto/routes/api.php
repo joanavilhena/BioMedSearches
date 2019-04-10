@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('drugs', 'DrugControllerAPI@index');
+Route::get('chemicals', 'ChemicalControllerAPI@index');

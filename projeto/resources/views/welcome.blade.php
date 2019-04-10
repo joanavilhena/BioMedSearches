@@ -25,7 +25,7 @@
     <style>
         body{
             
-            background-image:url('storage/assets/background.gif');
+          
             background-size: cover;        
         }
     </style>
@@ -33,10 +33,14 @@
         <div id="app">
         
             <navigation></navigation>
+            <router-view></router-view>
+            
         
 
             
         </div>
+
+       
 
         <script src="js/app.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

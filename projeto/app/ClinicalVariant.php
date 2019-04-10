@@ -1,11 +1,10 @@
 <?php
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Drug extends Model
+class ClinicalVariant extends Model
 {
-    protected $table = 'drugs';
-
-
+    //
 }

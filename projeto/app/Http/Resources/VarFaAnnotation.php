@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Drug extends JsonResource
+class VarFaAnnotation extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -12,8 +12,8 @@ class Drug extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-     public function toArray($request)
-     {
-      return parent::toArray($request);
-     }
+    public function toArray($request)
+    {
+        return parent::toArray($request);
+    }
 }
