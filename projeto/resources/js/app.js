@@ -9,6 +9,22 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+
+import VueRouter from 'vue-router';
+
+
+Vue.use(VueRouter);
+
+const routes = [
+    {path:'/', redirect:'/ementa'},
+];
+const router = new VueRouter({
+    routes: routes //ou apenas routes, pois a propriedade tem o mesmo nome da variavel. case a const routes fosse routes2 entao seria routes: routes2
+  });
+
+
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -30,5 +46,6 @@ Vue.component('navigation', require('./components/NavigationBar.vue').default);
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router: router,
 });
