@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\VarDrugAnnotation;
 use Illuminate\Http\Request;
+use App\Http\Resources\VarDrugAnnotation as VarDrugAnnotationResource;
 
-class VarDrugAnnotationController extends Controller
+
+
+
+class VarDrugAnnotationControllerAPI extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +18,8 @@ class VarDrugAnnotationController extends Controller
      */
     public function index()
     {
-        //
+        return VarDrugAnnotationResource::collection(VarDrugAnnotation::paginate(10));
+
     }
 
     /**

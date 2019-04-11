@@ -27,3 +27,7 @@ Route::get('genes','GeneControllerAPI@index');
 Route::get('occurences','OccurrenceControllerAPI@index');
 Route::get('phenotypes','PhenotypeControllerAPI@index');
 Route::get('relationships','RelationshipControllerAPI@index');
+Route::get('studyparameters','StudyParameterControllerAPI@index');
+Route::get('drugannotations','VarDrugAnnotationControllerAPI@index');
+Route::get('pharmannotations','VarFaAnnotationControllerAPI@index');
+Route::get('phenoannotations','VarPhenoAnnotationControllerAPI@index');

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\StudyParameter;
 use Illuminate\Http\Request;
+use App\Http\Resources\StudyParameter as StudyParameterResource;
 
-class StudyParameterController extends Controller
+
+class StudyParameterControllerAPI extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,8 @@ class StudyParameterController extends Controller
      */
     public function index()
     {
-        //
+        return StudyParameterResource::collection(StudyParameter::paginate(10));
+
     }
 
     /**

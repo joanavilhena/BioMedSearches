@@ -18,9 +18,12 @@ Vue.use(VueRouter);
 const example = Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('navigation', require('./components/NavigationBar.vue').default);
 
+//Drugs
+const listdrugs=Vue.component('list-drugs', require('./components/Drugs/ListDrugs.vue').default);
+
 const routes = [
     {path:'/', redirect:'/example'},
-    {path:'/example', component:example},
+    {path:'/example', component:listdrugs},
 ];
 const router = new VueRouter({
     routes: routes //ou apenas routes, pois a propriedade tem o mesmo nome da variavel. case a const routes fosse routes2 entao seria routes: routes2

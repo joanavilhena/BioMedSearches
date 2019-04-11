@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\VarPhenoAnnotation;
 use Illuminate\Http\Request;
+use App\Http\Resources\VarPhenoAnnotation as VarPhenoAnnotationResource;
 
-class VarPhenoAnnotationController extends Controller
+class VarPhenoAnnotationControllerAPI extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class VarPhenoAnnotationController extends Controller
      */
     public function index()
     {
-        //
+        return VarPhenoAnnotationResource::collection(VarPhenoAnnotation::paginate(10));
+
     }
 
     /**

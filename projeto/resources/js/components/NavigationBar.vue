@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav class="navbar navbar-expand-xl navbar-dark navbar-custom">
-  <a class="navbar-brand" href="#"><img src="storage/assets/logo.png" height="50%" width="50%" alt=""></a>
+  <a class="navbar-brand" opacity="1" href="#"><img src="storage/assets/logo.png" height="50%" width="50%" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -40,10 +40,12 @@ export default {
 }
 </script>
 <style>
-    .navbar-custom {
-    color: #FFFFFF;
-    background-color: #0088cc;
-;
+
+
+.navbar-custom {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+
 }
 </style>
 

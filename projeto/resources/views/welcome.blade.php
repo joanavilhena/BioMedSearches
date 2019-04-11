@@ -24,8 +24,7 @@
     </head>
     <style>
         body{
-            
-          
+            background-image: url("/storage/assets/background.gif");
             background-size: cover;        
         }
     </style>

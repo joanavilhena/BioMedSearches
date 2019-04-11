@@ -1,52 +1,89 @@
 <template>
+<div class = "container">
+    <h1>Hello</h1>
+<div>
+
+</div>
   <table class="table table-striped">
     <thead>
         <tr>
+            <th>PharmaGKBID</th>
             <th>Name</th>
-            <th>Username</th>
-            <th>Email</th>
+            <th>Generic Names</th>
+            <th>Trade Names</th>
+            <th>Brand Mixtures</th>
             <th>Type</th>
-            <th>Photo</th>
-            <th>Actions</th>
+            <th>Cross-References</th>
+            <th>SMILES</th>
+            <th>InChi</th>
+            
         </tr>
     </thead>
+    <p>
 
     <tbody>
-        <tr v-for="(drug,index) in drugs" v-bind:key="drug.gene_id"> <!-- o users é o que esta no app.js -->
-            <td>{{drug.gene_id}}</td>
-            <td>{{drug.gene_symbol}}</td>
-            <td>{{drug.label_ids}}</td>
-            <td>{{drug.label_name}}</td>
+       <tr v-for="(drug,index) in drugs" :key="drug.idp">
+           <td>{{drug.idp}}</td>
+           <td>{{drug.name}}</td>
+           <td>{{drug.genericNames}}</td>
+           <td>{{drug.name}}</td>
+           <td>{{drug.name}}</td>
+           <td>{{drug.name}}</td>
+           <td>{{drug.name}}</td>
+
+
+       </tr>
          
          
-        </tr>
+        
     </tbody>
   </table>
+  </div>
 </template>
 <script>
     module.exports = {
         
-        data:function () {
-           return
-           {
-               drugs:[],
-           }
+        data: function () {
+        return {
+            drugs: []
+        }
         },
         methods: {
             getDrugs()
             {
                 axios.get('api/drugs')
-                .then(response)
-                {
-                    this.drugs = response.data;
-                    console.log(drugs);
-                };
+                .then((response) => {
+
+               // this.$set(this,'drugs',response['data']['data']);
+                    console.log(response.data.data);
+                    
+                this.drugs= response.data.data;
+                 
+
+                    console.log(this.drugs);
+              
+                
+        
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
             }
         },
         created()
         {
-            this.getDrugs();
+            
 
+        },
+        mounted()
+        {
+            this.getDrugs();
+            console.log("Criado");
         }
     };
 </script>
+<style>
+
+</style>
+

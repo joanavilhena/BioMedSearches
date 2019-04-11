@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\VarFaAnnotation;
 use Illuminate\Http\Request;
+use App\Http\Resources\VarFaAnnotation as VarFaAnnotationResource;
 
-class VarFaAnnotationController extends Controller
+
+class VarFaAnnotationControllerAPI extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,8 @@ class VarFaAnnotationController extends Controller
      */
     public function index()
     {
-        //
+        return VarFaAnnotationResource::collection(VarFaAnnotation::paginate(10));
+
     }
 
     /**

@@ -14,6 +14,11 @@ class Chemical extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'idp' => $this->idp,
+            'name' => $this->name,
+            
+          ];
+        //return parent::toArray($request);
     }
 }
