@@ -1,14 +1,14 @@
 BD:
 
 Chemicals-Done
-ClinicalVariants
-ClinicalAnnotations
-DrugLabels
+ClinicalVariants-Done
+ClinicalAnnotations-Done
+DrugLabels-done
 Drugs-Done
-Genes
-Ocurrences
-Phenotypes
-Relationships
+Genes-Done
+Ocurrences-Done
+Phenotypes-Done
+Relationships-Done
 StudyParameters
 VarDrugAnnotations
 VarFaAnnotations

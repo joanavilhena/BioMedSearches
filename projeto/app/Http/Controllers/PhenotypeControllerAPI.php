@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Phenotype;
 use Illuminate\Http\Request;
+use App\Http\Resources\Phenotype as PhenotypeResource;
 
-class PhenotypeController extends Controller
+
+class PhenotypeControllerAPI extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,7 @@ class PhenotypeController extends Controller
      */
     public function index()
     {
-        //
+        return PhenotypeResource::collection(Phenotype::paginate(10));
     }
 
     /**

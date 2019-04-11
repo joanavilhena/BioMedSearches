@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\ClinicalAnnotations;
+use App\Occurrence;
 use Illuminate\Http\Request;
+use App\Http\Resources\Occurrence as OccurenceResource;
 
-class ClinicalAnnotationsController extends Controller
+class OccurrenceControllerAPI extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class ClinicalAnnotationsController extends Controller
      */
     public function index()
     {
-        //
+        return OccurenceResource::collection(Occurrence::paginate(10));
     }
 
     /**
@@ -41,10 +42,10 @@ class ClinicalAnnotationsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ClinicalAnnotations  $clinicalAnnotations
+     * @param  \App\Ocurrence  $ocurrence
      * @return \Illuminate\Http\Response
      */
-    public function show(ClinicalAnnotations $clinicalAnnotations)
+    public function show(Ocurrence $ocurrence)
     {
         //
     }
@@ -52,10 +53,10 @@ class ClinicalAnnotationsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ClinicalAnnotations  $clinicalAnnotations
+     * @param  \App\Ocurrence  $ocurrence
      * @return \Illuminate\Http\Response
      */
-    public function edit(ClinicalAnnotations $clinicalAnnotations)
+    public function edit(Ocurrence $ocurrence)
     {
         //
     }
@@ -64,10 +65,10 @@ class ClinicalAnnotationsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ClinicalAnnotations  $clinicalAnnotations
+     * @param  \App\Ocurrence  $ocurrence
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ClinicalAnnotations $clinicalAnnotations)
+    public function update(Request $request, Ocurrence $ocurrence)
     {
         //
     }
@@ -75,10 +76,10 @@ class ClinicalAnnotationsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ClinicalAnnotations  $clinicalAnnotations
+     * @param  \App\Ocurrence  $ocurrence
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ClinicalAnnotations $clinicalAnnotations)
+    public function destroy(Ocurrence $ocurrence)
     {
         //
     }

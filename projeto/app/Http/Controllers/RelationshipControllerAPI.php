@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Relation;
+use App\Relationship;
 use Illuminate\Http\Request;
+use App\Http\Resources\Relationship as RelationshipResource;
 
-class RelationController extends Controller
+class RelationshipControllerAPI extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class RelationController extends Controller
      */
     public function index()
     {
-        //
+        return RelationshipResource::collection(Relationship::paginate(10));
     }
 
     /**

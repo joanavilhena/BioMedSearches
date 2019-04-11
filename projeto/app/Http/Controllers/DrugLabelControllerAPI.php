@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\DrugLabel;
 use Illuminate\Http\Request;
+use App\Http\Resources\DrugLabel as DrugLabelResource;
 
-class DrugLabelController extends Controller
+class DrugLabelControllerAPI extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +16,7 @@ class DrugLabelController extends Controller
     public function index()
     {
         //
+        return DrugLabelResource::collection(DrugLabel::paginate(10));
     }
 
     /**

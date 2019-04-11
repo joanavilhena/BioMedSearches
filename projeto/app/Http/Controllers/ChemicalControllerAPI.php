@@ -9,11 +9,6 @@ use App\Http\Resources\Chemical as ChemicalResource;
 class ChemicalControllerAPI extends Controller
 {
     
-
-
-
-
-
     /**
      * Display a listing of the resource.
      *

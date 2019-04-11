@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Relation extends JsonResource
+class Occurrence extends JsonResource
 {
     /**
      * Transform the resource into an array.

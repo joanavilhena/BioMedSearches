@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\ClinicalVariant;
 use Illuminate\Http\Request;
+use App\Http\Resources\ClinicalVariant as ClinicalVariantResource;
 
-class ClinicalVariantController extends Controller
+class ClinicalVariantControllerAPI extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +16,7 @@ class ClinicalVariantController extends Controller
     public function index()
     {
         //
+        return ClinicalVariantResource::collection(ClinicalVariant::paginate(10));
     }
 
     /**
