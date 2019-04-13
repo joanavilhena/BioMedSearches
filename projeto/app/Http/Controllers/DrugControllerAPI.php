@@ -16,4 +16,10 @@ class DrugControllerAPI extends Controller
     {
         return DrugResource::collection(Drug::paginate(5));
     }
+
+    public function showDrug($id)
+    {
+        return new DrugResource(Drug::where('idp',$id)->first());
+       
+    }
 }

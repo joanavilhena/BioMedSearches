@@ -33,6 +33,8 @@ const mainPage = Vue.component('example-component', require('./components/MainPa
 
 //Drugs
 const listdrugs=Vue.component('list-drugs', require('./components/Drugs/ListDrugs.vue').default);
+const showDrug=Vue.component('show-drug', require('./components/Drugs/ShowDrug.vue').default);
+
 
 const routes = [
     {path:'/', redirect:'/home'},

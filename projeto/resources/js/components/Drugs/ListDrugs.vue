@@ -7,15 +7,16 @@
     <h1>Drugs</h1>
     <br>
 </div>
+<div  v-if="!showDrug">
 <form class="form-inline md-form form-sm mt-0">
   <i class="fas fa-search" aria-hidden="true"></i>
-  <input class="form-control form-control-sm ml-3 w-75" @keyup.enter="myFunction" type="text" placeholder="Search" aria-label="Search for drugs">
+  <input class="form-control form-control-sm ml-3 w-75" @keyup.enter="myFunction" type="text" placeholder="Search" aria-label="Search for drugs...">
 </form>
   <table class="table table-hover table-dark">
     <thead>
         <tr table-light>
            
-            <th>Name</th>
+            <th >Name</th>
             <th>Generic Names</th>
            
             <th>Type</th>
@@ -25,7 +26,6 @@
             
         </tr>
     </thead>
-    <p>
 
     <tbody>
        <tr v-for="(drug,index) in drugs" :key="drug.idp">
@@ -34,7 +34,7 @@
            
            <td>{{drug.brandMixtures}}</td>
            <td>{{drug.type}}</td>
-           <td><button v-on:click.prevent="showItem(item)" class="btn btn-xs btn-light"><i class="fas fa-eye"></i></button></td>
+           <td><button v-on:click.prevent="showItem(drug)" class="btn btn-xs btn-light"><i class="fas fa-eye"></i></button></td>
   
 
 
@@ -48,7 +48,10 @@
    <b-pagination  align="center" size="md-c"  v-model="page" :limit="5" :total-rows="this.total"  :per-page="5" @input="getDrugs(page)"></b-pagination>
   </div>
 
-   
+</div>
+
+    <show-drug v-bind:currentDrug="currentDrug" v-if="showDrug"></show-drug>
+
 
 
   </div>
@@ -58,12 +61,14 @@
         
         data: function () {
         return {
+            showDrug:false,
             drugs: [],
             page:1,
             last:1,
             total:1,
             i:0,
         }
+
         },
         methods: {
             getDrugs(page)
@@ -71,15 +76,15 @@
                 axios.get('api/drugs?page='+this.page)
                 .then((response) => {
 
-               // this.$set(this,'drugs',response['data']['data']);
-                    console.log(response.data);
+               
+                //console.log(response.data);
                     
                 this.drugs= response.data.data;
                 this.last = response.data.meta.last_page;
                 this.total = response.data.meta.total;
                  
 
-                    console.log(this.drugs);
+                //console.log(this.drugs);
               
                 
         
@@ -90,9 +95,10 @@
                 })
             },
 
-            showItem(item)
+            showItem(drug)
             {
-
+                this.showDrug=true;
+                this.currentDrug = Object.assign({},drug);
             },
 
             myFunction()

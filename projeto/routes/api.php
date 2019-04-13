@@ -17,8 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+//Drugs
 Route::get('drugs', 'DrugControllerAPI@index');
+Route::get('drug/{id}','DrugControllerAPI@showDrug');
+
+
+
 Route::get('chemicals', 'ChemicalControllerAPI@index');
 Route::get('clinicalvariants', 'ClinicalVariantControllerAPI@index');
 Route::get('clinicalannotations','ClinicalAnnotationControllerAPI@index');
