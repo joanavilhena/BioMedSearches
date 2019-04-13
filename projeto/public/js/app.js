@@ -1814,13 +1814,16 @@ module.exports = {
 //
 //
 //
+//
+//
 module.exports = {
   data: function data() {
     return {
       drugs: [],
       page: 1,
       last: 1,
-      total: 1
+      total: 1,
+      i: 0
     };
   },
   methods: {
@@ -1839,7 +1842,12 @@ module.exports = {
         console.log(error);
       });
     },
-    showItem: function showItem(item) {}
+    showItem: function showItem(item) {},
+    myFunction: function myFunction() {
+      console.log("Keyup");
+      this.i++;
+      console.log(this.i); //axios get search on drugs
+    }
   },
   created: function created() {},
   mounted: function mounted() {
@@ -64434,6 +64442,33 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _vm._m(0),
     _vm._v(" "),
+    _c("form", { staticClass: "form-inline md-form form-sm mt-0" }, [
+      _c("i", {
+        staticClass: "fas fa-search",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control form-control-sm ml-3 w-75",
+        attrs: {
+          type: "text",
+          placeholder: "Search",
+          "aria-label": "Search for drugs"
+        },
+        on: {
+          keyup: function($event) {
+            if (
+              !$event.type.indexOf("key") &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
+            }
+            return _vm.myFunction($event)
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
     _c("table", { staticClass: "table table-hover table-dark" }, [
       _vm._m(1),
       _vm._v(" "),
@@ -64442,13 +64477,7 @@ var render = function() {
         "tbody",
         _vm._l(_vm.drugs, function(drug, index) {
           return _c("tr", { key: drug.idp }, [
-            _c("td", [_vm._v(_vm._s(drug.idp))]),
-            _vm._v(" "),
             _c("td", [_vm._v(_vm._s(drug.name))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(drug.genericNames))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(drug.tradeNames))]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(drug.brandMixtures))]),
             _vm._v(" "),
@@ -64526,15 +64555,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", { attrs: { "table-light": "" } }, [
-        _c("th", [_vm._v("PharmaGKBID")]),
-        _vm._v(" "),
         _c("th", [_vm._v("Name")]),
         _vm._v(" "),
         _c("th", [_vm._v("Generic Names")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Trade Names")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Brand Mixtures")]),
         _vm._v(" "),
         _c("th", [_vm._v("Type")]),
         _vm._v(" "),

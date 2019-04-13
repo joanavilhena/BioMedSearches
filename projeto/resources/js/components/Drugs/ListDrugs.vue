@@ -7,14 +7,17 @@
     <h1>Drugs</h1>
     <br>
 </div>
+<form class="form-inline md-form form-sm mt-0">
+  <i class="fas fa-search" aria-hidden="true"></i>
+  <input class="form-control form-control-sm ml-3 w-75"@keyup.enter="myFunction" type="text" placeholder="Search" aria-label="Search for drugs">
+</form>
   <table class="table table-hover table-dark">
     <thead>
         <tr table-light>
-            <th>PharmaGKBID</th>
+           
             <th>Name</th>
             <th>Generic Names</th>
-            <th>Trade Names</th>
-            <th>Brand Mixtures</th>
+           
             <th>Type</th>
             <th>Actions</th>
       
@@ -26,10 +29,9 @@
 
     <tbody>
        <tr v-for="(drug,index) in drugs" :key="drug.idp">
-           <td>{{drug.idp}}</td>
+          
            <td>{{drug.name}}</td>
-           <td>{{drug.genericNames}}</td>
-           <td>{{drug.tradeNames}}</td>
+           
            <td>{{drug.brandMixtures}}</td>
            <td>{{drug.type}}</td>
            <td><button v-on:click.prevent="showItem(item)" class="btn btn-xs btn-light"><i class="fas fa-eye"></i></button></td>
@@ -60,6 +62,7 @@
             page:1,
             last:1,
             total:1,
+            i:0,
         }
         },
         methods: {
@@ -90,6 +93,15 @@
             showItem(item)
             {
 
+            },
+
+            myFunction()
+            {
+                console.log("Keyup");
+                this.i++;
+                console.log(this.i);
+
+                //axios get search on drugs
             },
 
            
