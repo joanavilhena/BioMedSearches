@@ -22,9 +22,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 
-const example = Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+
+//Home
 Vue.component('navigation', require('./components/NavigationBar.vue').default);
+Vue.component('feed', require('./components/MainPage/FeedNews.vue').default);
 const mainPage = Vue.component('example-component', require('./components/MainPage/Main.vue').default);
+
 
 
 //Drugs

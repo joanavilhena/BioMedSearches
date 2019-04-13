@@ -9,7 +9,7 @@
 </div>
 <form class="form-inline md-form form-sm mt-0">
   <i class="fas fa-search" aria-hidden="true"></i>
-  <input class="form-control form-control-sm ml-3 w-75"@keyup.enter="myFunction" type="text" placeholder="Search" aria-label="Search for drugs">
+  <input class="form-control form-control-sm ml-3 w-75" @keyup.enter="myFunction" type="text" placeholder="Search" aria-label="Search for drugs">
 </form>
   <table class="table table-hover table-dark">
     <thead>
