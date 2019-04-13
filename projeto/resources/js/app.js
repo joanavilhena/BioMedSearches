@@ -11,12 +11,20 @@ window.Vue = require('vue');
 
 
 import VueRouter from 'vue-router';
-
-
 Vue.use(VueRouter);
+
+
+import Vue from 'vue';
+import BootstrapVue from 'bootstrap-vue';
+
+Vue.use(BootstrapVue);
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+
 
 const example = Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('navigation', require('./components/NavigationBar.vue').default);
+
 
 //Drugs
 const listdrugs=Vue.component('list-drugs', require('./components/Drugs/ListDrugs.vue').default);

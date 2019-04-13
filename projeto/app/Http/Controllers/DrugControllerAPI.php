@@ -14,6 +14,6 @@ class DrugControllerAPI extends Controller
 {
     public function index()
     {
-        return DrugResource::collection(Drug::paginate(10));
+        return DrugResource::collection(Drug::paginate(5));
     }
 }
