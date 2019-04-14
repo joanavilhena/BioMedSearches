@@ -1,6 +1,6 @@
 <template>
   <div>
-      <nav class="navbar navbar-expand-xl navbar-dark " style="color=black">
+      <nav id="na" class="navbar navbar-expand-xl navbar-dark " style="color=black">
         <a class="navbar-brand" href="#"><img src="storage/assets/logo.png" height="50%" width="50%" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -9,24 +9,19 @@
         <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Option1 <span class="sr-only">(current)</span></a>
+             <router-link style="color:black; font-size: 16px;" class="nav-link" to="/drugs">Drugs</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Option2</a>
-            </li>
-    
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown05">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-    
+             <router-link style="color:black; font-size: 16px;" class="nav-link" to="/chemicals">Chemicals</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About us</a>
+             <router-link style="color:black; font-size: 16px;" class="nav-link" to="/genes">Genes</router-link>
             </li>
+            <li class="nav-item">
+             <router-link style="color:black; font-size: 16px;" class="nav-link" to="/users">About us</router-link>
+            </li>
+    
+          
       
             </ul>
           </div>
@@ -48,7 +43,6 @@ export default {
  border-radius: 0px;
  border-color:violet;
 }
-
 
 
 

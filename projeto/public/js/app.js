@@ -1882,6 +1882,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['currentDrug'],
   data: function data() {
@@ -1982,11 +1986,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
 //
 //
 //
@@ -33275,7 +33274,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.navbar-custom {\r\n  opacity: 0.8;\r\n  filter: alpha(opacity=80); /* For IE8 and earlier */\r\n border-radius: 0px;\r\n border-color:violet;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n.navbar-custom {\r\n  opacity: 0.8;\r\n  filter: alpha(opacity=80); /* For IE8 and earlier */\r\n border-radius: 0px;\r\n border-color:violet;\n}\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -64687,7 +64686,7 @@ var render = function() {
       _vm._v(" "),
       _c("h3", [_vm._v("Details")])
     ]),
-    _vm._v("\n    " + _vm._s(_vm.currentDrug) + "\n\n")
+    _vm._v("\n\n\n    \n\n    " + _vm._s(_vm.currentDrug) + "\n\n")
   ])
 }
 var staticRenderFns = []
@@ -64881,126 +64880,136 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "nav",
+      {
+        staticClass: "navbar navbar-expand-xl navbar-dark ",
+        staticStyle: {},
+        attrs: { id: "na" }
+      },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse navbar-collapse justify-content-md-center",
+            attrs: { id: "navbarsExample08" }
+          },
+          [
+            _c("ul", { staticClass: "navbar-nav" }, [
+              _c(
+                "li",
+                { staticClass: "nav-item" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link",
+                      staticStyle: { color: "black", "font-size": "16px" },
+                      attrs: { to: "/drugs" }
+                    },
+                    [_vm._v("Drugs")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "nav-item" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link",
+                      staticStyle: { color: "black", "font-size": "16px" },
+                      attrs: { to: "/chemicals" }
+                    },
+                    [_vm._v("Chemicals")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "nav-item" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link",
+                      staticStyle: { color: "black", "font-size": "16px" },
+                      attrs: { to: "/genes" }
+                    },
+                    [_vm._v("Genes")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "nav-item" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link",
+                      staticStyle: { color: "black", "font-size": "16px" },
+                      attrs: { to: "/users" }
+                    },
+                    [_vm._v("About us")]
+                  )
+                ],
+                1
+              )
+            ])
+          ]
+        )
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c(
-        "nav",
-        {
-          staticClass: "navbar navbar-expand-xl navbar-dark ",
-          staticStyle: {}
-        },
-        [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-            _c("img", {
-              attrs: {
-                src: "storage/assets/logo.png",
-                height: "50%",
-                width: "50%",
-                alt: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "navbar-toggler",
-              attrs: {
-                type: "button",
-                "data-toggle": "collapse",
-                "data-target": "#navbarsExample06",
-                "aria-controls": "navbarsExample06",
-                "aria-expanded": "false",
-                "aria-label": "Toggle navigation"
-              }
-            },
-            [_c("span", { staticClass: "navbar-toggler-icon" })]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "collapse navbar-collapse justify-content-md-center",
-              attrs: { id: "navbarsExample08" }
-            },
-            [
-              _c("ul", { staticClass: "navbar-nav" }, [
-                _c("li", { staticClass: "nav-item" }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Option1 "),
-                    _c("span", { staticClass: "sr-only" }, [
-                      _vm._v("(current)")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item" }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Option2")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item dropdown" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "nav-link dropdown-toggle",
-                      attrs: {
-                        href: "#",
-                        id: "dropdown05",
-                        "data-toggle": "dropdown",
-                        "aria-haspopup": "true",
-                        "aria-expanded": "false"
-                      }
-                    },
-                    [_vm._v("Dropdown")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "dropdown-menu",
-                      attrs: { "aria-labelledby": "dropdown05" }
-                    },
-                    [
-                      _c(
-                        "a",
-                        { staticClass: "dropdown-item", attrs: { href: "#" } },
-                        [_vm._v("Action")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        { staticClass: "dropdown-item", attrs: { href: "#" } },
-                        [_vm._v("Another action")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        { staticClass: "dropdown-item", attrs: { href: "#" } },
-                        [_vm._v("Something else here")]
-                      )
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item" }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("About us")
-                  ])
-                ])
-              ])
-            ]
-          )
-        ]
-      )
+    return _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+      _c("img", {
+        attrs: {
+          src: "storage/assets/logo.png",
+          height: "50%",
+          width: "50%",
+          alt: ""
+        }
+      })
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarsExample06",
+          "aria-controls": "navbarsExample06",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation"
+        }
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
   }
 ]
 render._withStripped = true
@@ -79838,8 +79847,8 @@ var routes = [{
   component: mainPage
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  routes: routes //ou apenas routes, pois a propriedade tem o mesmo nome da variavel. case a const routes fosse routes2 entao seria routes: routes2
-
+  mode: 'history',
+  routes: routes
 });
 /**
  * The following block of code may be used to automatically register your

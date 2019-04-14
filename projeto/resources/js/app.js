@@ -42,7 +42,8 @@ const routes = [
     {path:'/home', component:mainPage},
 ];
 const router = new VueRouter({
-    routes: routes //ou apenas routes, pois a propriedade tem o mesmo nome da variavel. case a const routes fosse routes2 entao seria routes: routes2
+    mode: 'history',
+    routes: routes 
   });
 
 
