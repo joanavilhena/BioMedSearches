@@ -5,8 +5,10 @@
             <h3>Details</h3>
         </div>
 
+        <button @click="atum()" >Voltar atras</button>
 
-        
+
+
 
         {{currentDrug}}
 
@@ -19,7 +21,17 @@ export default {
     data: function () {
         return {
         }
+    },
+    methods:
+    {
+        atum()
+        {
+            console.log("atum");
+            this.$router.push('/drugs');
+            this.$emit('show-drug',false);
+        }
     }
+    
 
 }
 </script>

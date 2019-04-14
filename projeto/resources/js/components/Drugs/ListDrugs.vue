@@ -50,7 +50,7 @@
 
 </div>
 
-    <show-drug v-bind:currentDrug="currentDrug" v-if="showDrug"></show-drug>
+    <show-drug v-on:show-drug="closeShowDrug" v-bind:currentDrug="currentDrug" v-if="showDrug"></show-drug>
 
 
 
@@ -71,6 +71,10 @@
 
         },
         methods: {
+            closeShowDrug()
+            {
+                this.showDrug=false;
+            },
             getDrugs(page)
             {
                 axios.get('api/drugs?page='+this.page)

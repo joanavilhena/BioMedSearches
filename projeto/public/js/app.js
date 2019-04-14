@@ -1831,6 +1831,9 @@ module.exports = {
     };
   },
   methods: {
+    closeShowDrug: function closeShowDrug() {
+      this.showDrug = false;
+    },
     getDrugs: function getDrugs(page) {
       var _this = this;
 
@@ -1886,10 +1889,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['currentDrug'],
   data: function data() {
     return {};
+  },
+  methods: {
+    atum: function atum() {
+      console.log("atum");
+      this.$router.push('/drugs');
+      this.$emit('show-drug', false);
+    }
   }
 });
 
@@ -64621,7 +64633,10 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _vm.showDrug
-        ? _c("show-drug", { attrs: { currentDrug: _vm.currentDrug } })
+        ? _c("show-drug", {
+            attrs: { currentDrug: _vm.currentDrug },
+            on: { "show-drug": _vm.closeShowDrug }
+          })
         : _vm._e()
     ],
     1
@@ -64686,7 +64701,19 @@ var render = function() {
       _vm._v(" "),
       _c("h3", [_vm._v("Details")])
     ]),
-    _vm._v("\n\n\n    \n\n    " + _vm._s(_vm.currentDrug) + "\n\n")
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        on: {
+          click: function($event) {
+            return _vm.atum()
+          }
+        }
+      },
+      [_vm._v("Voltar atras")]
+    ),
+    _vm._v("\n\n\n\n\n    " + _vm._s(_vm.currentDrug) + "\n\n")
   ])
 }
 var staticRenderFns = []
@@ -64884,7 +64911,7 @@ var render = function() {
     _c(
       "nav",
       {
-        staticClass: "navbar navbar-expand-xl navbar-dark ",
+        staticClass: "  navbar navbar-expand-xl navbar-dark ",
         staticStyle: {},
         attrs: { id: "na" }
       },
