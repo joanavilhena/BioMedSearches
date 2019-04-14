@@ -32,7 +32,7 @@
           
            <td>{{drug.name}}</td>
            
-           <td>{{drug.brandMixtures}}</td>
+           <td>{{drug.genericNames}}</td>
            <td>{{drug.type}}</td>
            <td><button v-on:click.prevent="showItem(drug)" class="btn btn-xs btn-light"><i class="fas fa-eye"></i></button></td>
   

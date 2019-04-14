@@ -42,7 +42,7 @@ const routes = [
     {path:'/home', component:mainPage},
 ];
 const router = new VueRouter({
-    mode:'history',
+    //mode:'history',
     routes: routes 
   });
 
