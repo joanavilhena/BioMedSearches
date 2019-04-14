@@ -1945,7 +1945,10 @@ __webpack_require__.r(__webpack_exports__);
   props: ['currentDrug'],
   data: function data() {
     return {
-      genericNames: this.currentDrug.genericNames
+      genericNames: this.currentDrug.genericNames,
+      showingDetails: true,
+      showingDosingInfo: false,
+      showingPub: false
     };
   },
   methods: {
@@ -33345,7 +33348,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.navbar-custom {\r\nbackground-color: black;\n}\n.list-group{\r\n    width:50%;\r\n    height:50%;\n}\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n.navbar-custom {\r\nbackground-color: black;\n}\n.list-group{\r\n    width:25%;\r\n    height:50%;\n}\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -64803,16 +64806,75 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", {}, [
-      _c("h1", [_vm._v(_vm._s(_vm.currentDrug.name))]),
+  return _c(
+    "div",
+    [
+      _c("div", {}, [
+        _c("h1", [_vm._v(_vm._s(_vm.currentDrug.name))]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("h3", [_vm._v("Details")])
+      ]),
       _vm._v(" "),
-      _c("br"),
+      _vm._m(0),
       _vm._v(" "),
-      _c("h3", [_vm._v("Details")])
-    ]),
-    _vm._v(" "),
-    _c(
+      _vm.showingDetails
+        ? _c(
+            "div",
+            { attrs: { id: "content" } },
+            [
+              _c("span", [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("td", [
+                  _c("h6", [_vm._v(" " + _vm._s(_vm.currentDrug.idp))])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._l(_vm.genericNames, function(name, index) {
+                return _c("ul", { key: index, staticClass: "list-group" }, [
+                  _c("li", { staticClass: "list-group-item" }, [
+                    _vm._v(_vm._s(name))
+                  ])
+                ])
+              }),
+              _vm._v(" "),
+              _vm._m(3)
+            ],
+            2
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.showingDosingInfo ? _c("show-drug-dose") : _vm._e(),
+      _vm._v(" "),
+      _vm.showingPub ? _c("show-drug-pubs") : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          on: {
+            click: function($event) {
+              return _vm.atum()
+            }
+          }
+        },
+        [_vm._v("Voltar atras")]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
       "nav",
       {
         staticClass: " navbar-custom navbar navbar-expand-xl navbar-dark ",
@@ -64828,118 +64890,44 @@ var render = function() {
           },
           [
             _c("ul", { staticClass: "navbar-nav" }, [
-              _c(
-                "li",
-                { staticClass: "nav-item" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "nav-link",
-                      staticStyle: { color: "white", "font-size": "16px" },
-                      attrs: { to: "/drugs" }
-                    },
-                    [_vm._v("Detailss")]
-                  )
-                ],
-                1
-              ),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-xs",
+                    staticStyle: { color: "white", "font-size": "16px" }
+                  },
+                  [_vm._v("Details")]
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "li",
-                { staticClass: "nav-item" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "nav-link",
-                      staticStyle: { color: "white", "font-size": "16px" },
-                      attrs: { to: "/chemicals" }
-                    },
-                    [_vm._v("Chemicals")]
-                  )
-                ],
-                1
-              ),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-xs",
+                    staticStyle: { color: "white", "font-size": "16px" }
+                  },
+                  [_vm._v("Dosing Info")]
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "li",
-                { staticClass: "nav-item" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "nav-link",
-                      staticStyle: { color: "white", "font-size": "16px" },
-                      attrs: { to: "/genes" }
-                    },
-                    [_vm._v("Genes")]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { staticClass: "nav-item" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "nav-link",
-                      staticStyle: { color: "white", "font-size": "16px" },
-                      attrs: { to: "/users" }
-                    },
-                    [_vm._v("About us")]
-                  )
-                ],
-                1
-              )
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-xs",
+                    staticStyle: { color: "white", "font-size": "16px" }
+                  },
+                  [_vm._v("Pubs")]
+                )
+              ])
             ])
           ]
         )
       ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { attrs: { id: "content" } },
-      [
-        _c("span", [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("td", [_c("h6", [_vm._v(" " + _vm._s(_vm.currentDrug.idp))])])
-        ]),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _vm._m(1),
-        _vm._v(" "),
-        _vm._l(_vm.genericNames, function(name, index) {
-          return _c("ul", { key: index, staticClass: "list-group" }, [
-            _c("li", { staticClass: "list-group-item" }, [_vm._v(_vm._s(name))])
-          ])
-        }),
-        _vm._v(" "),
-        _vm._m(2)
-      ],
-      2
-    ),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        on: {
-          click: function($event) {
-            return _vm.atum()
-          }
-        }
-      },
-      [_vm._v("Voltar atras")]
     )
-  ])
-}
-var staticRenderFns = [
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -80105,6 +80093,8 @@ var mainPage = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('example-com
 
 var listdrugs = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('list-drugs', __webpack_require__(/*! ./components/Drugs/ListDrugs.vue */ "./resources/js/components/Drugs/ListDrugs.vue")["default"]);
 var showDrug = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug', __webpack_require__(/*! ./components/Drugs/ShowDrug.vue */ "./resources/js/components/Drugs/ShowDrug.vue")["default"]);
+var showDrugRefs = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug-dose', __webpack_require__(/*! ./components/Drugs/DrugDose.vue */ "./resources/js/components/Drugs/DrugDose.vue")["default"]);
+var showDrugPubs = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug-pubs', __webpack_require__(/*! ./components/Drugs/DrugPubs.vue */ "./resources/js/components/Drugs/DrugPubs.vue")["default"]);
 var routes = [{
   path: '/',
   redirect: '/home'
@@ -80197,6 +80187,70 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/Drugs/DrugDose.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/Drugs/DrugDose.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "resources/js/components/Drugs/DrugDose.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Drugs/DrugPubs.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/Drugs/DrugPubs.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "resources/js/components/Drugs/DrugPubs.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 

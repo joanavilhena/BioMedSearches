@@ -13,18 +13,15 @@
         <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
           <ul class="navbar-nav">
             <li class="nav-item">
-             <router-link style="color:white; font-size: 16px;" class="nav-link" to="/drugs">Detailss</router-link>
+             <button class="btn btn-xs" style="color:white; font-size: 16px;" >Details</button>
             </li>
             <li class="nav-item">
-             <router-link style="color:white; font-size: 16px;" class="nav-link" to="/chemicals">Chemicals</router-link>
+              <button class="btn btn-xs" style="color:white; font-size: 16px;" >Dosing Info</button>
             </li>
             <li class="nav-item">
-             <router-link style="color:white; font-size: 16px;" class="nav-link" to="/genes">Genes</router-link>
+              <button class="btn btn-xs" style="color:white; font-size: 16px;" >Pubs</button>
             </li>
-            <li class="nav-item">
-             <router-link style="color:white; font-size: 16px;" class="nav-link" to="/users">About us</router-link>
-            </li>
-    
+       
           
       
             </ul>
@@ -33,7 +30,7 @@
 
 
 
-        <div id="content">
+        <div v-if="showingDetails" id="content">
             <span>
                     <th><h5>PharmGKB ID:</h5></th>
                     <td> <h6> {{currentDrug.idp}}</h6></td>
@@ -56,6 +53,9 @@
 
         </div>
 
+
+        <show-drug-dose v-if="showingDosingInfo"></show-drug-dose>
+        <show-drug-pubs v-if="showingPub"></show-drug-pubs>
         <button @click="atum()" >Voltar atras</button>
 
 
@@ -71,6 +71,9 @@ export default {
     data: function () {
         return {
             genericNames: this.currentDrug.genericNames,
+            showingDetails:true,
+            showingDosingInfo:false,
+            showingPub:false,
         }
     },
     methods:
@@ -107,7 +110,7 @@ background-color: black;
 }
 
 .list-group{
-    width:50%;
+    width:25%;
     height:50%;
   
 }
