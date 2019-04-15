@@ -1865,6 +1865,55 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Drugs/AssociatedChemicals.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Drugs/AssociatedChemicals.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['currentDrug'],
+  data: function data() {
+    return {
+      chemicals: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    //http://projeto.pi/api/drug/PA166178554/chemicals
+    console.log(this.currentDrug);
+    axios.get('api/drug/' + this.currentDrug.idp + '/chemicals').then(function (response) {
+      console.log(response.data);
+      _this.chemicals = response.data.data; //  this.last = response.data.meta.last_page;
+      // this.total = response.data.meta.total;
+    })["catch"](function (error) {
+      console.log(error);
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Drugs/DrugPubs.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Drugs/DrugPubs.vue?vue&type=script&lang=js& ***!
@@ -2099,6 +2148,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['currentDrug'],
   data: function data() {
@@ -2107,7 +2164,8 @@ __webpack_require__.r(__webpack_exports__);
       references: this.currentDrug.crossreferences,
       showingDetails: true,
       showingDosingInfo: false,
-      showingPub: false
+      showingPub: false,
+      showingChemicals: false
     };
   },
   methods: {
@@ -2120,11 +2178,19 @@ __webpack_require__.r(__webpack_exports__);
       this.showingDetails = false;
       this.showingDosingInfo = false;
       this.showingPub = true;
+      this.showingChemicals = false;
     },
     showDetails: function showDetails() {
       this.showingDetails = true;
       this.showingDosingInfo = false;
       this.showingPub = false;
+      this.showingChemicals = false;
+    },
+    showChemicals: function showChemicals() {
+      this.showingDetails = false;
+      this.showingDosingInfo = false;
+      this.showingPub = false;
+      this.showingChemicals = true;
     }
   },
   created: function created() {
@@ -65054,6 +65120,62 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Drugs/AssociatedChemicals.vue?vue&type=template&id=e161c4f8&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Drugs/AssociatedChemicals.vue?vue&type=template&id=e161c4f8& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { attrs: { sytle: "float:left;" } },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._l(_vm.chemicals, function(chemical, index) {
+          return _c(
+            "ul",
+            { key: index, staticStyle: { "list-style-type": "none" } },
+            [
+              _c("li", [_vm._v("PharmGKB ID: " + _vm._s(chemical.idp))]),
+              _vm._v(" "),
+              _c("li", [_vm._v("Name: " + _vm._s(chemical.name))]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v("Generic Names: " + _vm._s(chemical.genericnames))
+              ])
+            ]
+          )
+        })
+      ],
+      2
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("th", [_c("h5", [_vm._v("Associated Chemicals:")])])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Drugs/DrugPubs.vue?vue&type=template&id=525300dd&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Drugs/DrugPubs.vue?vue&type=template&id=525300dd& ***!
@@ -65318,6 +65440,18 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
+                _c("li", { staticClass: "nav-item" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-xs",
+                      staticStyle: { color: "white", "font-size": "16px" },
+                      on: { click: _vm.showChemicals }
+                    },
+                    [_vm._v("Associated Chemicals")]
+                  )
+                ]),
+                _vm._v(" "),
                 _vm._m(0),
                 _vm._v(" "),
                 _c("li", { staticClass: "nav-item" }, [
@@ -65368,7 +65502,11 @@ var render = function() {
                 })
               ],
               2
-            )
+            ),
+            _vm._v(" "),
+            _vm.genericNames == null
+              ? _c("div", [_c("p", [_vm._v(" No generic names")])])
+              : _vm._e()
           ])
         : _vm._e(),
       _vm._v(" "),
@@ -65376,6 +65514,10 @@ var render = function() {
       _vm._v(" "),
       _vm.showingPub
         ? _c("show-drug-pubs", { attrs: { currentDrug: _vm.currentDrug } })
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.showingChemicals
+        ? _c("show-drug-chemicals", { attrs: { currentDrug: _vm.currentDrug } })
         : _vm._e(),
       _vm._v(" "),
       _c(
@@ -80754,7 +80896,8 @@ var mainPage = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('example-com
 var listdrugs = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('list-drugs', __webpack_require__(/*! ./components/Drugs/ListDrugs.vue */ "./resources/js/components/Drugs/ListDrugs.vue")["default"]);
 var showDrug = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug', __webpack_require__(/*! ./components/Drugs/ShowDrug.vue */ "./resources/js/components/Drugs/ShowDrug.vue")["default"]);
 var showDrugRefs = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug-dose', __webpack_require__(/*! ./components/Drugs/DrugDose.vue */ "./resources/js/components/Drugs/DrugDose.vue")["default"]);
-var showDrugPubs = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug-pubs', __webpack_require__(/*! ./components/Drugs/DrugPubs.vue */ "./resources/js/components/Drugs/DrugPubs.vue")["default"]); //Chemicals
+var showDrugPubs = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug-pubs', __webpack_require__(/*! ./components/Drugs/DrugPubs.vue */ "./resources/js/components/Drugs/DrugPubs.vue")["default"]);
+var showAssociatedChemicals = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug-chemicals', __webpack_require__(/*! ./components/Drugs/AssociatedChemicals.vue */ "./resources/js/components/Drugs/AssociatedChemicals.vue")["default"]); //Chemicals
 
 var listchemicals = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('list-chemicals', __webpack_require__(/*! ./components/Chemicals/ListChemicals.vue */ "./resources/js/components/Chemicals/ListChemicals.vue")["default"]); //Genes
 
@@ -80927,6 +81070,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListChemicals_vue_vue_type_template_id_277bad0c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListChemicals_vue_vue_type_template_id_277bad0c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Drugs/AssociatedChemicals.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/Drugs/AssociatedChemicals.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AssociatedChemicals_vue_vue_type_template_id_e161c4f8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AssociatedChemicals.vue?vue&type=template&id=e161c4f8& */ "./resources/js/components/Drugs/AssociatedChemicals.vue?vue&type=template&id=e161c4f8&");
+/* harmony import */ var _AssociatedChemicals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AssociatedChemicals.vue?vue&type=script&lang=js& */ "./resources/js/components/Drugs/AssociatedChemicals.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AssociatedChemicals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AssociatedChemicals_vue_vue_type_template_id_e161c4f8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AssociatedChemicals_vue_vue_type_template_id_e161c4f8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Drugs/AssociatedChemicals.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Drugs/AssociatedChemicals.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/Drugs/AssociatedChemicals.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AssociatedChemicals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./AssociatedChemicals.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Drugs/AssociatedChemicals.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AssociatedChemicals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Drugs/AssociatedChemicals.vue?vue&type=template&id=e161c4f8&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/Drugs/AssociatedChemicals.vue?vue&type=template&id=e161c4f8& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AssociatedChemicals_vue_vue_type_template_id_e161c4f8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./AssociatedChemicals.vue?vue&type=template&id=e161c4f8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Drugs/AssociatedChemicals.vue?vue&type=template&id=e161c4f8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AssociatedChemicals_vue_vue_type_template_id_e161c4f8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AssociatedChemicals_vue_vue_type_template_id_e161c4f8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

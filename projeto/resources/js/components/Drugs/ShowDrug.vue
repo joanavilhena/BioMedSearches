@@ -13,6 +13,9 @@
                     <li class="nav-item">
                         <button @click="showDetails" class="btn btn-xs" style="color:white; font-size: 16px;" >Details</button>
                     </li>
+                     <li class="nav-item">
+                        <button   @click="showChemicals" class="btn btn-xs" style="color:white; font-size: 16px;" >Associated Chemicals</button>
+                    </li>
                     <li class="nav-item">
                         <button class="btn btn-xs" style="color:white; font-size: 16px;" >Dosing Info</button>
                     </li>
@@ -51,12 +54,17 @@
         
                 </ul>
             </div>
+
+            <div v-if="genericNames==null">
+                <p> No generic names</p>
+            </div>
             
 
     </div>
 
         <show-drug-dose v-if="showingDosingInfo"></show-drug-dose>
         <show-drug-pubs v-bind:currentDrug="currentDrug" v-if="showingPub"></show-drug-pubs>
+        <show-drug-chemicals v-bind:currentDrug="currentDrug" v-if="showingChemicals"></show-drug-chemicals>
         <button class="btn btn-warning" @click="atum()" >Back</button>
 
         
@@ -78,6 +86,7 @@ export default {
             showingDetails:true,
             showingDosingInfo:false,
             showingPub:false,
+            showingChemicals:false,
         }
     },
     methods:
@@ -94,12 +103,21 @@ export default {
             this.showingDetails=false;
             this.showingDosingInfo=false;
             this.showingPub=true;
+            this.showingChemicals=false;
         },
         showDetails()
         {
             this.showingDetails=true;
             this.showingDosingInfo=false;
             this.showingPub=false;
+            this.showingChemicals=false;
+        },
+        showChemicals()
+        {
+            this.showingDetails=false;
+            this.showingDosingInfo=false;
+            this.showingPub=false;
+            this.showingChemicals=true;
         }
     },
     created()

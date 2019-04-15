@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Drugs
 Route::get('drugs', 'DrugControllerAPI@index');
 Route::get('drug/{id}','DrugControllerAPI@showDrug');
+Route::get('drug/{id}/chemicals','DrugControllerAPI@getAssociatedChemicals');
 
 //DrugLabels
 Route::get('druglabels','DrugLabelControllerAPI@index');
@@ -31,6 +32,7 @@ Route::get('chemical/{id}','ChemicalControllerAPI@showChemical');
 //Genes
 Route::get('genes','GeneControllerAPI@index');
 Route::get('gene/{id}','GeneControllerAPI@showGene');
+
 
 //Clinical Variants
 Route::get('clinicalvariants', 'ClinicalVariantControllerAPI@index');
