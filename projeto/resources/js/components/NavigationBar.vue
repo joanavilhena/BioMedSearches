@@ -14,7 +14,7 @@
              <router-link style="color:black; font-size: 16px;" class="nav-link" to="/genes">Genes</router-link>
             </li>
             <li class="nav-item">
-             <router-link style="color:black; font-size: 16px;" class="nav-link" to="/users">About us</router-link>
+             <router-link style="color:black; font-size: 16px;" class="nav-link" to="/about">About us</router-link>
             </li>
     
           

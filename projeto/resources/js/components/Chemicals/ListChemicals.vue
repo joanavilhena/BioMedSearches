@@ -4,20 +4,20 @@
 <div  opcity="0.8">
     <br>
     <br>
-    <h1>Drugs</h1>
+    <h1>Chemicals</h1>
     <br>
 </div>
 
-<div  v-if="!showDrug">
+<div  v-if="!showChemical">
 <form class="form-inline md-form form-sm mt-0">
   <i class="fas fa-search" aria-hidden="true"></i>
-  <input class="form-control form-control-sm ml-3 w-75" @keyup.enter="myFunction" type="text" placeholder="Search" aria-label="Search for drugs...">
+  <input class="form-control form-control-sm ml-3 w-75" @keyup.enter="myFunction" type="text" placeholder="Search" aria-label="Search for chemicals...">
 </form>
   <table class="table table-hover table-dark">
     <thead>
         <tr table-light>
            
-            <th >Name</th>
+            <th>Name</th>
             <th>Generic Names</th>
            
             <th>Type</th>
@@ -29,13 +29,13 @@
     </thead>
 
     <tbody>
-       <tr v-for="(drug,index) in drugs" :key="drug.idp">
+       <tr v-for="(chemical,index) in chemicals" :key="index">
           
-           <td>{{drug.name}}</td>
+           <td>{{chemical.name}}</td>
            
-           <td>{{drug.genericNames}}</td>
-           <td>{{drug.type}}</td>
-           <td><button v-on:click.prevent="showItem(drug)" class="btn btn-xs btn-light"><i class="fas fa-eye"></i></button></td>
+           <td>{{chemical.genericNames}}</td>
+           <td>{{chemical.type}}</td>
+           <td><button v-on:click.prevent="showItem(chemical)" class="btn btn-xs btn-light"><i class="fas fa-eye"></i></button></td>
 
 
 
@@ -46,13 +46,12 @@
   </table>
 
   <div class="overflow-auto">
-   <b-pagination  align="center" size="md-c"  v-model="page" :limit="5" :total-rows="this.total"  :per-page="5" @input="getDrugs(page)"></b-pagination>
+   <b-pagination  align="center" size="md-c"  v-model="page" :limit="5" :total-rows="this.total"  :per-page="5" @input="getChemicals(page)"></b-pagination>
   </div>
 
 </div>
 
-    <show-drug v-on:show-drug="closeShowDrug" v-bind:currentDrug="currentDrug" v-if="showDrug"></show-drug>
-
+  
 
 
   </div>
@@ -62,8 +61,8 @@
         
         data: function () {
         return {
-            showDrug:false,
-            drugs: [],
+            showChemical:false,
+            chemicals: [],
             page:1,
             last:1,
             total:1,
@@ -72,19 +71,19 @@
 
         },
         methods: {
-            closeShowDrug()
+            closeShowChemical()
             {
-                this.showDrug=false;
+                this.showChemical=false;
             },
-            getDrugs(page)
+            getChemicals(page)
             {
-                axios.get('api/drugs?page='+this.page)
+                axios.get('api/chemicals?page='+this.page)
                 .then((response) => {
 
                
                 //console.log(response.data);
                     
-                this.drugs= response.data.data;
+                this.chemicals= response.data.data;
                 this.last = response.data.meta.last_page;
                 this.total = response.data.meta.total;
                  
@@ -100,10 +99,10 @@
                 })
             },
 
-            showItem(drug)
+            showItem(chemical)
             {
-                this.showDrug=true;
-                this.currentDrug = Object.assign({},drug);
+                this.showChemical=true;
+              //  this.currentDrug = Object.assign({},drug);
             },
 
             myFunction()
@@ -124,7 +123,7 @@
         },
         mounted()
         {
-            this.getDrugs();
+            this.getChemicals();
             console.log("Criado");
         }
     };

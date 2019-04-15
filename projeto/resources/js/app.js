@@ -37,9 +37,13 @@ const showDrug=Vue.component('show-drug', require('./components/Drugs/ShowDrug.v
 const showDrugRefs=Vue.component('show-drug-dose', require('./components/Drugs/DrugDose.vue').default);
 const showDrugPubs=Vue.component('show-drug-pubs', require('./components/Drugs/DrugPubs.vue').default);
 
+//Chemicals
+const listchemicals=Vue.component('list-chemicals', require('./components/Chemicals/ListChemicals.vue').default);
+
 const routes = [
     {path:'/', redirect:'/home'},
     {path:'/drugs', component:listdrugs},
+    {path:'/chemicals', component:listchemicals},
     {path:'/home', component:mainPage},
 ];
 const router = new VueRouter({
