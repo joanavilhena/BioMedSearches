@@ -21,18 +21,31 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('drugs', 'DrugControllerAPI@index');
 Route::get('drug/{id}','DrugControllerAPI@showDrug');
 
+//DrugLabels
+Route::get('druglabels','DrugLabelControllerAPI@index');
 
-
+//Chemicals
 Route::get('chemicals', 'ChemicalControllerAPI@index');
 Route::get('chemical/{id}','ChemicalControllerAPI@showChemical');
 
-
-Route::get('clinicalvariants', 'ClinicalVariantControllerAPI@index');
-Route::get('clinicalannotations','ClinicalAnnotationControllerAPI@index');
-Route::get('druglabels','DrugLabelControllerAPI@index');
+//Genes
 Route::get('genes','GeneControllerAPI@index');
+Route::get('gene/{id}','GeneControllerAPI@showGene');
+
+//Clinical Variants
+Route::get('clinicalvariants', 'ClinicalVariantControllerAPI@index');
+
+
+//Clinical Annotations
+Route::get('clinicalannotations','ClinicalAnnotationControllerAPI@index');
+
+//Occurences
 Route::get('occurences','OccurrenceControllerAPI@index');
+
+//Phenotypes
 Route::get('phenotypes','PhenotypeControllerAPI@index');
+
+
 Route::get('relationships','RelationshipControllerAPI@index');
 Route::get('studyparameters','StudyParameterControllerAPI@index');
 Route::get('drugannotations','VarDrugAnnotationControllerAPI@index');

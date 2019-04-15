@@ -40,10 +40,14 @@ const showDrugPubs=Vue.component('show-drug-pubs', require('./components/Drugs/D
 //Chemicals
 const listchemicals=Vue.component('list-chemicals', require('./components/Chemicals/ListChemicals.vue').default);
 
+//Genes
+const listgenes=Vue.component('list-genes', require('./components/Genes/ListGenes.vue').default);
+
 const routes = [
     {path:'/', redirect:'/home'},
     {path:'/drugs', component:listdrugs},
     {path:'/chemicals', component:listchemicals},
+    {path:'/genes', component:listgenes},
     {path:'/home', component:mainPage},
 ];
 const router = new VueRouter({

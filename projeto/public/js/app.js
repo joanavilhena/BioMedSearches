@@ -2138,6 +2138,116 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Genes/ListGenes.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Genes/ListGenes.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+module.exports = {
+  data: function data() {
+    return {
+      showGene: false,
+      genes: [],
+      page: 1,
+      last: 1,
+      total: 1,
+      i: 0
+    };
+  },
+  methods: {
+    closeShowGene: function closeShowGene() {
+      this.showGene = false;
+    },
+    getGenes: function getGenes(page) {
+      var _this = this;
+
+      axios.get('api/genes?page=' + this.page).then(function (response) {
+        //console.log(response.data);
+        _this.genes = response.data.data;
+        _this.last = response.data.meta.last_page;
+        _this.total = response.data.meta.total; //console.log(this.drugs);
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
+    },
+    showItem: function showItem(gene) {
+      this.showGene = true; //this.currentGene = Object.assign({},gene);
+    },
+    myFunction: function myFunction() {
+      console.log("Keyup");
+      this.i++;
+      console.log(this.i); //axios get search on drugs
+    }
+  },
+  created: function created() {},
+  mounted: function mounted() {
+    this.getGenes();
+    console.log("Criado");
+  }
+};
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPage/FeedNews.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainPage/FeedNews.vue?vue&type=script&lang=js& ***!
@@ -65376,6 +65486,157 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Genes/ListGenes.vue?vue&type=template&id=e684e418&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Genes/ListGenes.vue?vue&type=template&id=e684e418& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    !_vm.showGene
+      ? _c("div", [
+          _c("form", { staticClass: "form-inline md-form form-sm mt-0" }, [
+            _c("i", {
+              staticClass: "fas fa-search",
+              attrs: { "aria-hidden": "true" }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control form-control-sm ml-3 w-75",
+              attrs: {
+                type: "text",
+                placeholder: "Search",
+                "aria-label": "Search for drugs..."
+              },
+              on: {
+                keyup: function($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.myFunction($event)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("table", { staticClass: "table table-hover table-dark" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.genes, function(gene, index) {
+                return _c("tr", { key: index }, [
+                  _c("td", [_vm._v(_vm._s(gene.name))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(gene.symbol))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(gene.chromosome))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-xs btn-light",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.showItem(gene)
+                          }
+                        }
+                      },
+                      [_c("i", { staticClass: "fas fa-eye" })]
+                    )
+                  ])
+                ])
+              }),
+              0
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "overflow-auto" },
+            [
+              _c("b-pagination", {
+                attrs: {
+                  align: "center",
+                  size: "md-c",
+                  limit: 5,
+                  "total-rows": this.total,
+                  "per-page": 5
+                },
+                on: {
+                  input: function($event) {
+                    return _vm.getGenes(_vm.page)
+                  }
+                },
+                model: {
+                  value: _vm.page,
+                  callback: function($$v) {
+                    _vm.page = $$v
+                  },
+                  expression: "page"
+                }
+              })
+            ],
+            1
+          )
+        ])
+      : _vm._e()
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { opcity: "0.8" } }, [
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("h1", [_vm._v("Genes")]),
+      _vm._v(" "),
+      _c("br")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", { attrs: { "table-light": "" } }, [
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Symbol")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Chromosome")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Actions")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPage/FeedNews.vue?vue&type=template&id=0d3ac91d&":
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainPage/FeedNews.vue?vue&type=template&id=0d3ac91d& ***!
@@ -80495,7 +80756,9 @@ var showDrug = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug',
 var showDrugRefs = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug-dose', __webpack_require__(/*! ./components/Drugs/DrugDose.vue */ "./resources/js/components/Drugs/DrugDose.vue")["default"]);
 var showDrugPubs = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug-pubs', __webpack_require__(/*! ./components/Drugs/DrugPubs.vue */ "./resources/js/components/Drugs/DrugPubs.vue")["default"]); //Chemicals
 
-var listchemicals = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('list-chemicals', __webpack_require__(/*! ./components/Chemicals/ListChemicals.vue */ "./resources/js/components/Chemicals/ListChemicals.vue")["default"]);
+var listchemicals = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('list-chemicals', __webpack_require__(/*! ./components/Chemicals/ListChemicals.vue */ "./resources/js/components/Chemicals/ListChemicals.vue")["default"]); //Genes
+
+var listgenes = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('list-genes', __webpack_require__(/*! ./components/Genes/ListGenes.vue */ "./resources/js/components/Genes/ListGenes.vue")["default"]);
 var routes = [{
   path: '/',
   redirect: '/home'
@@ -80505,6 +80768,9 @@ var routes = [{
 }, {
   path: '/chemicals',
   component: listchemicals
+}, {
+  path: '/genes',
+  component: listgenes
 }, {
   path: '/home',
   component: mainPage
@@ -80921,6 +81187,78 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowDrug_vue_vue_type_template_id_21dd2cc4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowDrug_vue_vue_type_template_id_21dd2cc4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Genes/ListGenes.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Genes/ListGenes.vue ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ListGenes_vue_vue_type_template_id_e684e418___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListGenes.vue?vue&type=template&id=e684e418& */ "./resources/js/components/Genes/ListGenes.vue?vue&type=template&id=e684e418&");
+/* harmony import */ var _ListGenes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListGenes.vue?vue&type=script&lang=js& */ "./resources/js/components/Genes/ListGenes.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ListGenes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ListGenes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ListGenes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ListGenes_vue_vue_type_template_id_e684e418___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ListGenes_vue_vue_type_template_id_e684e418___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Genes/ListGenes.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Genes/ListGenes.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Genes/ListGenes.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListGenes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ListGenes.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Genes/ListGenes.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListGenes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListGenes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListGenes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListGenes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListGenes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Genes/ListGenes.vue?vue&type=template&id=e684e418&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/Genes/ListGenes.vue?vue&type=template&id=e684e418& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListGenes_vue_vue_type_template_id_e684e418___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ListGenes.vue?vue&type=template&id=e684e418& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Genes/ListGenes.vue?vue&type=template&id=e684e418&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListGenes_vue_vue_type_template_id_e684e418___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListGenes_vue_vue_type_template_id_e684e418___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
