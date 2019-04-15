@@ -24,6 +24,9 @@ Route::get('drug/{id}','DrugControllerAPI@showDrug');
 
 
 Route::get('chemicals', 'ChemicalControllerAPI@index');
+Route::get('chemical/{id}','ChemicalControllerAPI@showChemical');
+
+
 Route::get('clinicalvariants', 'ClinicalVariantControllerAPI@index');
 Route::get('clinicalannotations','ClinicalAnnotationControllerAPI@index');
 Route::get('druglabels','DrugLabelControllerAPI@index');

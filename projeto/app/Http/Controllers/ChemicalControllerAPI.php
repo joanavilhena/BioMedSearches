@@ -14,75 +14,16 @@ class ChemicalControllerAPI extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        //
-        return ChemicalResource::collection(Chemical::paginate(10));
+        return ChemicalResource::collection(Chemical::paginate(5));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function showChemical($id)
     {
-        //
+        return new ChemicalResource(Chemical::where('idp',$id)->first());
+       
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Chemicals  $chemicals
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Chemicals $chemicals)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Chemicals  $chemicals
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Chemicals $chemicals)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Chemicals  $chemicals
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Chemicals $chemicals)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Chemicals  $chemicals
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Chemicals $chemicals)
-    {
-        //
-    }
 }

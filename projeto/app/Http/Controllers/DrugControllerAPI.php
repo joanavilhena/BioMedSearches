@@ -22,4 +22,6 @@ class DrugControllerAPI extends Controller
         return new DrugResource(Drug::where('idp',$id)->first());
        
     }
+
+  
 }

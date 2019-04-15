@@ -1819,6 +1819,7 @@ module.exports = {
 //
 //
 //
+//
 module.exports = {
   data: function data() {
     return {
@@ -1941,11 +1942,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['currentDrug'],
   data: function data() {
     return {
       genericNames: this.currentDrug.genericNames,
+      references: this.currentDrug.crossreferences,
       showingDetails: true,
       showingDosingInfo: false,
       showingPub: false
@@ -1963,6 +1977,19 @@ __webpack_require__.r(__webpack_exports__);
       var res = this.genericNames.split(",");
       this.genericNames = res;
       console.log(this.genericNames);
+    }
+
+    if (this.references != null) {
+      var _res = this.references.split(",");
+
+      for (var i = 0; i < _res.Length; i++) {
+        _res[i] = _res[i].Replace("/", " ");
+      }
+
+      console.log(_res); //prints: 123
+
+      this.references = _res;
+      console.log(this.references);
     }
   }
 });
@@ -2060,10 +2087,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
 //
 //
 //
@@ -33348,7 +33371,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.navbar-custom {\r\nbackground-color: black;\n}\n.list-group{\r\n    width:25%;\r\n    height:50%;\n}\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n.navbar-custom {\r\nbackground-color: black;\n}\n.list-group{\r\n    width:25%;\r\n    height:50%;\n}\n.box{\r\n  width:100%;\r\n  display:block;\r\n  padding:5px;\r\n  clear:both;\n}\n.innerBox{\r\n  width:33%;\r\n  height:200px;\r\n  background-color:#ccc;\r\n  border:1px solid #444;\n}\n.innerBox.left{\r\n  float:left;\n}\n.innerBox.center{\r\n  margin:auto;\n}\n.innerBox.right{\r\n  float:right;\n}\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -64820,34 +64843,47 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _vm.showingDetails
-        ? _c(
-            "div",
-            { attrs: { id: "content" } },
-            [
-              _c("span", [
-                _vm._m(1),
+        ? _c("div", [
+            _c("div", { attrs: { sytle: "float:left;" } }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("td", [_c("h6", [_vm._v(" " + _vm._s(_vm.currentDrug.idp))])])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { attrs: { sytle: "float:left;" } },
+              [
+                _vm._m(2),
                 _vm._v(" "),
-                _c("td", [
-                  _c("h6", [_vm._v(" " + _vm._s(_vm.currentDrug.idp))])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _vm._l(_vm.genericNames, function(name, index) {
-                return _c("ul", { key: index, staticClass: "list-group" }, [
-                  _c("li", { staticClass: "list-group-item" }, [
-                    _vm._v(_vm._s(name))
-                  ])
-                ])
-              }),
-              _vm._v(" "),
-              _vm._m(3)
-            ],
-            2
-          )
+                _vm._l(_vm.genericNames, function(name, index) {
+                  return _c(
+                    "ul",
+                    { key: index, staticStyle: { "list-style-type": "none" } },
+                    [_c("li", [_vm._v(_vm._s(name))])]
+                  )
+                })
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { attrs: { sytle: "float:right;" } },
+              [
+                _vm._m(3),
+                _vm._v(" "),
+                _vm._l(_vm.references, function(reference, index) {
+                  return _c(
+                    "ul",
+                    { key: index, staticStyle: { "list-style-type": "none" } },
+                    [_c("li", [_vm._v(_vm._s(reference))])]
+                  )
+                })
+              ],
+              2
+            )
+          ])
         : _vm._e(),
       _vm._v(" "),
       _vm.showingDosingInfo ? _c("show-drug-dose") : _vm._e(),
@@ -64921,6 +64957,50 @@ var staticRenderFns = [
                   },
                   [_vm._v("Pubs")]
                 )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-xs",
+                    staticStyle: { color: "white" }
+                  },
+                  [_vm._v("Clinical Annotations")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-xs",
+                    staticStyle: { color: "white", "font-size": "16px" }
+                  },
+                  [_vm._v("Drug Annotations")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-xs",
+                    staticStyle: { color: "white", "font-size": "16px" }
+                  },
+                  [_vm._v("Variant Annotations")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-xs",
+                    staticStyle: { color: "white", "font-size": "16px" }
+                  },
+                  [_vm._v("Label Annotations")]
+                )
               ])
             ])
           ]
@@ -64944,7 +65024,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("td", [_c("p")])])
+    return _c("th", [_c("h5", [_vm._v("Cross References:")])])
   }
 ]
 render._withStripped = true
@@ -65146,9 +65226,20 @@ var render = function() {
         attrs: { id: "na" }
       },
       [
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._m(1),
+        _c(
+          "router-link",
+          { staticClass: "navbar-brand", attrs: { to: "/home" } },
+          [
+            _c("img", {
+              attrs: {
+                src: "storage/assets/logo.png",
+                height: "50%",
+                width: "50%",
+                alt: ""
+              }
+            })
+          ]
+        ),
         _vm._v(" "),
         _c(
           "div",
@@ -65228,47 +65319,12 @@ var render = function() {
             ])
           ]
         )
-      ]
+      ],
+      1
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-      _c("img", {
-        attrs: {
-          src: "storage/assets/logo.png",
-          height: "50%",
-          width: "50%",
-          alt: ""
-        }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "navbar-toggler",
-        attrs: {
-          type: "button",
-          "data-toggle": "collapse",
-          "data-target": "#navbarsExample06",
-          "aria-controls": "navbarsExample06",
-          "aria-expanded": "false",
-          "aria-label": "Toggle navigation"
-        }
-      },
-      [_c("span", { staticClass: "navbar-toggler-icon" })]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -21,7 +21,8 @@
         <!-- Material Design Bootstrap -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">
 
-       
+        <link rel="shortcut icon" href="storage/assets/logo.png">
+
             
     </head>
     <style>

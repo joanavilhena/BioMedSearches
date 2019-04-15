@@ -7,6 +7,7 @@
     <h1>Drugs</h1>
     <br>
 </div>
+
 <div  v-if="!showDrug">
 <form class="form-inline md-form form-sm mt-0">
   <i class="fas fa-search" aria-hidden="true"></i>

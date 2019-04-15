@@ -10,11 +10,6 @@ class Chemical extends Model
 
     protected $table = 'chemicals';
 
-    protected $fillable = [
-        'idp',
-        'name',
-       
-      ];
-
+   
    
 }
