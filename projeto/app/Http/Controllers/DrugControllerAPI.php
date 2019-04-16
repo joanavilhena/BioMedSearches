@@ -30,6 +30,22 @@ class DrugControllerAPI extends Controller
         return new ChemicalResource(Chemical::where('idp',$id)->paginate(5));
     }
 
+    public function searchDrug(Request $request)
+    {
+        $s=$request->search;
+   
+        $results = new DrugResource(Drug::where('name','like','%'.$s.'%')->paginate(5));
+        
+        if($results==null)
+        {
+            $results = new DrugResource(Drug::where('genericNames','%'+$s+'%')->paginate(5));
+        }
+
+        return $results;
+        
+
+    }
+
     
 
   

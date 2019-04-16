@@ -9,17 +9,22 @@
 </div>
 
 <div  v-if="!showDrug">
-<form class="form-inline md-form form-sm mt-0">
-  <i class="fas fa-search" aria-hidden="true"></i>
-  <input class="form-control form-control-sm ml-3 w-75" @keyup.enter="myFunction" type="text" placeholder="Search" aria-label="Search for drugs...">
-</form>
+    
+  <div class="inline">
+        <input class="form-control"  type="text" v-model="search">
+        <button class="btn" @click="getSearchResults">search</button>
+    </div>
+
+
+
+
+
   <table class="table table-hover table-dark">
     <thead>
         <tr table-light>
            
-            <th >Name</th>
+            <th>Name</th>
             <th>Generic Names</th>
-           
             <th>Type</th>
             <th>Actions</th>
       
@@ -29,7 +34,7 @@
     </thead>
 
     <tbody>
-       <tr v-for="(drug,index) in drugs" :key="drug.idp">
+       <tr v-for="(drug,index) in drugs" :key="index">
           
            <td>{{drug.name}}</td>
            
@@ -68,6 +73,8 @@
             last:1,
             total:1,
             i:0,
+            search:'a',
+            results:[],
         }
 
         },
@@ -100,6 +107,31 @@
                 })
             },
 
+            getSearchResults()
+            {
+                let s = this.search
+                 axios.get('api/drugss',{ params: { search: this.search } })
+                .then((response) => {
+
+               
+            console.log(response);
+                    
+               this.drugs= response.data.data;
+                this.last = response.data.last_page;
+                this.total = response.data.total;
+
+                //console.log(this.drugs);
+              
+                
+        
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+
+            },
+
             showItem(drug)
             {
                 this.showDrug=true;
@@ -112,11 +144,27 @@
                 this.i++;
                 console.log(this.i);
 
+                axios.post('drugs')
+
                 //axios get search on drugs
             },
-
+         fetch() {
+            axios.get('/api/drugss', { params: { search: this.search } })
+                .then(response => this.results = response.data)
+                .catch(error => {});
+        }
            
         },
+
+        watch: {
+            search(after, before) {
+                this.fetch();
+            }
+        },
+
+    
+       
+    
         created()
         {
             

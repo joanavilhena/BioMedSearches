@@ -14,10 +14,10 @@
                         <button @click="showDetails" class="btn btn-xs" style="color:white; font-size: 16px;" >Details</button>
                     </li>
                      <li class="nav-item">
-                        <button   @click="showChemicals" class="btn btn-xs" style="color:white; font-size: 16px;" >Associated Chemicals</button>
+                        <button @click="showChemicals" class="btn btn-xs" style="color:white; font-size: 16px;" >Associated Chemicals</button>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-xs" style="color:white; font-size: 16px;" >Dosing Info</button>
+                        <button  @click="showDoseInfo" class="btn btn-xs" style="color:white; font-size: 16px;" >Dosing Info</button>
                     </li>
                     <li class="nav-item">
                         <button @click="showPub" class="btn btn-xs" style="color:white; font-size: 16px;" >Pubs</button>
@@ -62,7 +62,7 @@
 
     </div>
 
-        <show-drug-dose v-if="showingDosingInfo"></show-drug-dose>
+        <show-drug-dose v-bind:currentDrug="currentDrug" v-if="showingDosingInfo"></show-drug-dose>
         <show-drug-pubs v-bind:currentDrug="currentDrug" v-if="showingPub"></show-drug-pubs>
         <show-drug-chemicals v-bind:currentDrug="currentDrug" v-if="showingChemicals"></show-drug-chemicals>
         <button class="btn btn-warning" @click="atum()" >Back</button>
@@ -96,6 +96,14 @@ export default {
             console.log("atum");
             this.$router.push('/drugs');
             this.$emit('show-drug',false);
+        },
+
+        showDoseInfo()
+        {
+            this.showingDetails=false;
+            this.showingDosingInfo=true;
+            this.showingPub=false;
+            this.showingChemicals=false;
         },
 
         showPub()
