@@ -8,18 +8,19 @@
 
         <nav id="na" class=" navbar-custom navbar navbar-expand-xl navbar-dark " style="color=black">
         
-     
-
             <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <button class="btn btn-xs" style="color:white; font-size: 16px;" >Details</button>
+                        <button @click="showDetails" class="btn btn-xs" style="color:white; font-size: 16px;" >Details</button>
+                    </li>
+                     <li class="nav-item">
+                        <button @click="showChemicals" class="btn btn-xs" style="color:white; font-size: 16px;" >Associated Chemicals</button>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-xs" style="color:white; font-size: 16px;" >Dosing Info</button>
+                        <button  @click="showDoseInfo" class="btn btn-xs" style="color:white; font-size: 16px;" >Dosing Info</button>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-xs" style="color:white; font-size: 16px;" >Pubs</button>
+                        <button @click="showPub" class="btn btn-xs" style="color:white; font-size: 16px;" >Pubs</button>
                     </li>
                     <li class="nav-item">
                         <button class="btn btn-xs" style="color:white;" >Clinical Annotations</button>
@@ -54,19 +55,17 @@
                 </ul>
             </div>
 
-
-            <div sytle="float:right;">
-                 <th><h5>Cross References:</h5></th>
-                  <ul style="list-style-type:none;" v-for="(reference,index) in references" :key="index">
-                    <li>{{reference}}</li>
-        
-                </ul>
+            <div v-if="genericNames==null">
+                <p> No generic names</p>
             </div>
+            
+
     </div>
 
-        <show-drug-dose v-if="showingDosingInfo"></show-drug-dose>
-        <show-drug-pubs v-if="showingPub"></show-drug-pubs>
-        <button @click="atum()" >Voltar atras</button>
+        <show-drug-dose v-bind:currentDrug="currentDrug" v-if="showingDosingInfo"></show-drug-dose>
+        <show-drug-pubs v-bind:currentDrug="currentDrug" v-if="showingPub"></show-drug-pubs>
+        <show-drug-chemicals v-bind:currentDrug="currentDrug" v-if="showingChemicals"></show-drug-chemicals>
+        <button class="btn btn-warning" @click="atum()" >Back</button>
 
         
 
@@ -87,6 +86,7 @@ export default {
             showingDetails:true,
             showingDosingInfo:false,
             showingPub:false,
+            showingChemicals:false,
         }
     },
     methods:
@@ -96,6 +96,36 @@ export default {
             console.log("atum");
             this.$router.push('/drugs');
             this.$emit('show-drug',false);
+        },
+
+        showDoseInfo()
+        {
+            this.showingDetails=false;
+            this.showingDosingInfo=true;
+            this.showingPub=false;
+            this.showingChemicals=false;
+        },
+
+        showPub()
+        {
+            this.showingDetails=false;
+            this.showingDosingInfo=false;
+            this.showingPub=true;
+            this.showingChemicals=false;
+        },
+        showDetails()
+        {
+            this.showingDetails=true;
+            this.showingDosingInfo=false;
+            this.showingPub=false;
+            this.showingChemicals=false;
+        },
+        showChemicals()
+        {
+            this.showingDetails=false;
+            this.showingDosingInfo=false;
+            this.showingPub=false;
+            this.showingChemicals=true;
         }
     },
     created()
@@ -108,19 +138,7 @@ export default {
            console.log(this.genericNames);
      
       }
-      if(this.references!=null)
-      {
-          
-        let res = this.references.split(",");
-
-        for(let i = 0; i < res.Length; i++){
-            res[i] = res[i].Replace("/", " ");
-        }
-            
-            console.log(res);   //prints: 123
-           this.references=res;
-           console.log(this.references);
-      }
+      
 
     }
     

@@ -34,12 +34,21 @@ const mainPage = Vue.component('example-component', require('./components/MainPa
 //Drugs
 const listdrugs=Vue.component('list-drugs', require('./components/Drugs/ListDrugs.vue').default);
 const showDrug=Vue.component('show-drug', require('./components/Drugs/ShowDrug.vue').default);
-const showDrugRefs=Vue.component('show-drug-dose', require('./components/Drugs/DrugDose.vue').default);
-const showDrugPubs=Vue.component('show-drug-pubs', require('./components/Drugs/DrugPubs.vue').default);
+const showDrugRefs=Vue.component('show-drug-dose', require('./components/Drugs/Nav/DrugDose.vue').default);
+const showDrugPubs=Vue.component('show-drug-pubs', require('./components/Drugs/Nav/DrugPubs.vue').default);
+const showAssociatedChemicals=Vue.component('show-drug-chemicals', require('./components/Drugs/Nav/AssociatedChemicals.vue').default);
+
+//Chemicals
+const listchemicals=Vue.component('list-chemicals', require('./components/Chemicals/ListChemicals.vue').default);
+
+//Genes
+const listgenes=Vue.component('list-genes', require('./components/Genes/ListGenes.vue').default);
 
 const routes = [
     {path:'/', redirect:'/home'},
     {path:'/drugs', component:listdrugs},
+    {path:'/chemicals', component:listchemicals},
+    {path:'/genes', component:listgenes},
     {path:'/home', component:mainPage},
 ];
 const router = new VueRouter({
