@@ -110,7 +110,7 @@
             getSearchResults()
             {
                 let s = this.search
-                 axios.get('api/drugss',{ params: { search: this.search } })
+                 axios.get('api/drugssearch',{ params: { search: this.search } })
                 .then((response) => {
 
                

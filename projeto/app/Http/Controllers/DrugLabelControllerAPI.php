@@ -19,69 +19,11 @@ class DrugLabelControllerAPI extends Controller
         return DrugLabelResource::collection(DrugLabel::paginate(10));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function showDrugLabel($id)
     {
-        //
+        return new DrugLabelResource(DrugLabel::where('idp',$id)->first());
+       
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\DrugLabel  $drugLabel
-     * @return \Illuminate\Http\Response
-     */
-    public function show(DrugLabel $drugLabel)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\DrugLabel  $drugLabel
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(DrugLabel $drugLabel)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\DrugLabel  $drugLabel
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, DrugLabel $drugLabel)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\DrugLabel  $drugLabel
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(DrugLabel $drugLabel)
-    {
-        //
-    }
+   
 }

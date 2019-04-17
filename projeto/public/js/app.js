@@ -1970,7 +1970,7 @@ module.exports = {
       var _this2 = this;
 
       var s = this.search;
-      axios.get('api/drugss', {
+      axios.get('api/drugssearch', {
         params: {
           search: this.search
         }
@@ -2402,13 +2402,13 @@ module.exports = {
       var _this2 = this;
 
       var s = this.search;
-      axios.get('api/drugss', {
+      axios.get('api/genessearch', {
         params: {
           search: this.search
         }
       }).then(function (response) {
-        console.log(response);
-        _this2.drugs = response.data.data;
+        console.log(response.data.data);
+        _this2.genes = response.data.data;
         _this2.last = response.data.last_page;
         _this2.total = response.data.total;
       })["catch"](function (error) {
