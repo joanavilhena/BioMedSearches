@@ -1945,7 +1945,7 @@ module.exports = {
       last: 1,
       total: 1,
       i: 0,
-      search: 'a',
+      search: '',
       results: []
     };
   },
@@ -2365,6 +2365,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 module.exports = {
   data: function data() {
     return {
@@ -2373,7 +2374,8 @@ module.exports = {
       page: 1,
       last: 1,
       total: 1,
-      i: 0
+      i: 0,
+      search: ''
     };
   },
   methods: {
@@ -2396,10 +2398,23 @@ module.exports = {
     showItem: function showItem(gene) {
       this.showGene = true; //this.currentGene = Object.assign({},gene);
     },
-    myFunction: function myFunction() {
-      console.log("Keyup");
-      this.i++;
-      console.log(this.i); //axios get search on drugs
+    getSearchResults: function getSearchResults() {
+      var _this2 = this;
+
+      var s = this.search;
+      axios.get('api/drugss', {
+        params: {
+          search: this.search
+        }
+      }).then(function (response) {
+        console.log(response);
+        _this2.drugs = response.data.data;
+        _this2.last = response.data.last_page;
+        _this2.total = response.data.total;
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
     }
   },
   created: function created() {},
@@ -2634,7 +2649,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      user: []
+    };
+  }
+});
 
 /***/ }),
 
@@ -65443,7 +65476,7 @@ var render = function() {
       _vm._v(" "),
       !_vm.showDrug
         ? _c("div", [
-            _c("div", { staticClass: "inline" }, [
+            _c("div", { staticClass: "input-group mb-3" }, [
               _c("input", {
                 directives: [
                   {
@@ -65994,31 +66027,40 @@ var render = function() {
     _vm._v(" "),
     !_vm.showGene
       ? _c("div", [
-          _c("form", { staticClass: "form-inline md-form form-sm mt-0" }, [
-            _c("i", {
-              staticClass: "fas fa-search",
-              attrs: { "aria-hidden": "true" }
-            }),
-            _vm._v(" "),
+          _c("div", { staticClass: "input-group mb-3" }, [
             _c("input", {
-              staticClass: "form-control form-control-sm ml-3 w-75",
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.search,
+                  expression: "search"
+                }
+              ],
+              staticClass: "form-control",
               attrs: {
-                type: "text",
-                placeholder: "Search",
-                "aria-label": "Search for drugs..."
+                placeholder: "Search for name or PharmaGKB ID...",
+                type: "text"
               },
+              domProps: { value: _vm.search },
               on: {
-                keyup: function($event) {
-                  if (
-                    !$event.type.indexOf("key") &&
-                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                  ) {
-                    return null
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
                   }
-                  return _vm.myFunction($event)
+                  _vm.search = $event.target.value
                 }
               }
-            })
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                on: { click: _vm.getSearchResults }
+              },
+              [_vm._v("Search")]
+            )
           ]),
           _vm._v(" "),
           _c("table", { staticClass: "table table-hover table-dark" }, [
@@ -66277,7 +66319,7 @@ var staticRenderFns = [
               staticClass: "form-control",
               attrs: {
                 type: "text",
-                placeholder: "Recipient's username",
+                placeholder: "Search for gene, variant, drug, chemical...",
                 "aria-label": "Recipient's username",
                 "aria-describedby": "button-addon2"
               }
@@ -66290,7 +66332,7 @@ var staticRenderFns = [
                   staticClass: "btn btn-primary",
                   attrs: { type: "button", id: "btn-search" }
                 },
-                [_vm._v("Button")]
+                [_vm._v("Search")]
               )
             ])
           ]),
@@ -66467,75 +66509,140 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container" }, [
+    _c("nav", { staticClass: "navbar navbar-expand-sm justify-content-end" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
       _c(
-        "nav",
-        { staticClass: "navbar navbar-expand-sm justify-content-end" },
+        "div",
+        {
+          staticClass: "collapse navbar-collapse flex-grow-0 ml-auto mr-1",
+          attrs: { id: "navbarSupportedContent" }
+        },
         [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-            _c("img", { attrs: { src: "storage/assets/logo.png", alt: "" } })
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "navbar-toggler",
-              attrs: {
-                type: "button",
-                "data-toggle": "collapse",
-                "data-target": "#navbarSupportedContent"
-              }
-            },
-            [_c("span", { staticClass: "navbar-toggler-icon" })]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "collapse navbar-collapse flex-grow-0 ml-auto mr-1",
-              attrs: { id: "navbarSupportedContent" }
-            },
-            [
-              _c("ul", { staticClass: "navbar-nav text-right " }, [
-                _c("li", { staticClass: "nav-item active" }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Home")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item " }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("News")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item " }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Publications")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item " }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("About Us")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item " }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Contacts")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
+          _c("ul", { staticClass: "navbar-nav text-right " }, [
+            _c(
+              "li",
+              { staticClass: "nav-item active" },
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "nav-link", attrs: { to: "/home" } },
+                  [_vm._v("Home")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "nav-item " },
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "nav-link", attrs: { to: "/genes" } },
+                  [_vm._v("Genes")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "nav-item " },
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "nav-link", attrs: { to: "/variants" } },
+                  [_vm._v("Variants")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "nav-item " },
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "nav-link", attrs: { to: "/drugs" } },
+                  [_vm._v("Drugs")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "nav-item " },
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "nav-link", attrs: { to: "/chemicals" } },
+                  [_vm._v("Chemicals")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "nav-item " },
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "nav-link", attrs: { to: "/news" } },
+                  [_vm._v("News")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "nav-item " },
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "nav-link", attrs: { to: "/publications" } },
+                  [_vm._v("Publications")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "nav-item " },
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "nav-link", attrs: { to: "/aboutus" } },
+                  [_vm._v("AboustUs")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "nav-item " },
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "nav-link", attrs: { to: "/contacts" } },
+                  [_vm._v("Contacts")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("li", [
+              (_vm.user = ![])
+                ? _c(
                     "button",
                     {
                       staticClass: "btn btn-outline-info",
@@ -66543,30 +66650,52 @@ var staticRenderFns = [
                     },
                     [_vm._v("Login")]
                   )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              (_vm.user = ![])
+                ? _c(
                     "button",
                     {
-<<<<<<< HEAD
                       staticClass: "btn btn-outline-info",
                       attrs: { type: "button" }
-=======
-                      staticClass: "nav-link",
-                      staticStyle: { color: "black", "font-size": "16px" },
-                      attrs: { to: "/about" }
->>>>>>> master
                     },
                     [_vm._v("Sign Up")]
                   )
-                ])
-              ])
-            ]
-          )
+                : _vm._e()
+            ])
+          ])
         ]
       )
     ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "navbar-brand", attrs: { href: "/home" } }, [
+      _c("img", { attrs: { src: "storage/assets/logo.png", alt: "" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent"
+        }
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
   }
 ]
 render._withStripped = true
@@ -81389,7 +81518,7 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_M
 
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('navigation', __webpack_require__(/*! ./components/NavigationBar.vue */ "./resources/js/components/NavigationBar.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('feed', __webpack_require__(/*! ./components/MainPage/FeedNews.vue */ "./resources/js/components/MainPage/FeedNews.vue")["default"]);
-var mainPage = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('example-component', __webpack_require__(/*! ./components/MainPage/Main.vue */ "./resources/js/components/MainPage/Main.vue")["default"]); //Drugs
+var mainPage = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('main', __webpack_require__(/*! ./components/MainPage/Main.vue */ "./resources/js/components/MainPage/Main.vue")["default"]); //Drugs
 
 var listdrugs = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('list-drugs', __webpack_require__(/*! ./components/Drugs/ListDrugs.vue */ "./resources/js/components/Drugs/ListDrugs.vue")["default"]);
 var showDrug = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug', __webpack_require__(/*! ./components/Drugs/ShowDrug.vue */ "./resources/js/components/Drugs/ShowDrug.vue")["default"]);
@@ -82084,15 +82213,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************!*\
   !*** ./resources/js/components/MainPage/Main.vue ***!
   \***************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Main_vue_vue_type_template_id_bc912176___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Main.vue?vue&type=template&id=bc912176& */ "./resources/js/components/MainPage/Main.vue?vue&type=template&id=bc912176&");
 /* harmony import */ var _Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Main.vue?vue&type=script&lang=js& */ "./resources/js/components/MainPage/Main.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _Main_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Main.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/MainPage/Main.vue?vue&type=style&index=0&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Main_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Main.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/MainPage/Main.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _Main_vue_vue_type_style_index_1_lang_scss___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Main.vue?vue&type=style&index=1&lang=scss& */ "./resources/js/components/MainPage/Main.vue?vue&type=style&index=1&lang=scss&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -82126,7 +82254,7 @@ component.options.__file = "resources/js/components/MainPage/Main.vue"
 /*!****************************************************************************!*\
   !*** ./resources/js/components/MainPage/Main.vue?vue&type=script&lang=js& ***!
   \****************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -82291,8 +82419,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Projects\BioMedSearches\projeto\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Projects\BioMedSearches\projeto\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Joana\Web\BioMedSearches\BioMedSearches\projeto\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Joana\Web\BioMedSearches\BioMedSearches\projeto\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -9,10 +9,11 @@
 </div>
 
 <div  v-if="!showGene">
-<form class="form-inline md-form form-sm mt-0">
-  <i class="fas fa-search" aria-hidden="true"></i>
-  <input class="form-control form-control-sm ml-3 w-75" @keyup.enter="myFunction" type="text" placeholder="Search" aria-label="Search for drugs...">
-</form>
+    <div class="input-group mb-3">
+        <input class="form-control"  placeholder="Search for name or PharmaGKB ID..." type="text" v-model="search">
+        <button class="btn btn-primary" @click="getSearchResults">Search</button>
+    </div>
+
   <table class="table table-hover table-dark">
     <thead>
         <tr table-light>
@@ -66,6 +67,7 @@
             last:1,
             total:1,
             i:0,
+            search:'',
         }
 
         },
@@ -104,13 +106,30 @@
                 //this.currentGene = Object.assign({},gene);
             },
 
-            myFunction()
+         
+            getSearchResults()
             {
-                console.log("Keyup");
-                this.i++;
-                console.log(this.i);
+                let s = this.search
+                 axios.get('api/drugss',{ params: { search: this.search } })
+                .then((response) => {
 
-                //axios get search on drugs
+               
+                    console.log(response);
+                            
+                    this.drugs= response.data.data;
+                    this.last = response.data.last_page;
+                    this.total = response.data.total;
+
+                  
+                    
+                
+        
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+
             },
 
            

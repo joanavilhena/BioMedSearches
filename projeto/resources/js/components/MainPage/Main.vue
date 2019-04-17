@@ -12,12 +12,12 @@
       <input
         type="text"
         class="form-control"
-        placeholder="Recipient's username"
+        placeholder="Search for gene, variant, drug, chemical..."
         aria-label="Recipient's username"
         aria-describedby="button-addon2"
       >
       <div class="input-group-append">
-        <button class="btn btn-primary" type="button" id="btn-search">Button</button>
+        <button class="btn btn-primary" type="button" id="btn-search">Search</button>
       </div>
     </div>
 <div class="text-center">

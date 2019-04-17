@@ -27,7 +27,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 //Home
 Vue.component('navigation', require('./components/NavigationBar.vue').default);
 Vue.component('feed', require('./components/MainPage/FeedNews.vue').default);
-const mainPage = Vue.component('example-component', require('./components/MainPage/Main.vue').default);
+const mainPage = Vue.component('main', require('./components/MainPage/Main.vue').default);
 
 
 

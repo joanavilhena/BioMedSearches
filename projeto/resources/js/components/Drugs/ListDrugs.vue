@@ -10,7 +10,7 @@
 
 <div  v-if="!showDrug">
     
-  <div class="inline">
+    <div class="input-group mb-3">
         <input class="form-control"  type="text" v-model="search">
         <button class="btn" @click="getSearchResults">search</button>
     </div>
@@ -73,7 +73,7 @@
             last:1,
             total:1,
             i:0,
-            search:'a',
+            search:'',
             results:[],
         }
 
