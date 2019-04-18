@@ -1993,22 +1993,6 @@ module.exports = {
       this.i++;
       console.log(this.i);
       axios.post('drugs'); //axios get search on drugs
-    },
-    fetch: function fetch() {
-      var _this3 = this;
-
-      axios.get('/api/drugss', {
-        params: {
-          search: this.search
-        }
-      }).then(function (response) {
-        return _this3.results = response.data;
-      })["catch"](function (error) {});
-    }
-  },
-  watch: {
-    search: function search(after, before) {
-      this.fetch();
     }
   },
   created: function created() {},
@@ -65487,7 +65471,10 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text" },
+                attrs: {
+                  placeholder: "Search for name or PharmaGKB ID...",
+                  type: "text"
+                },
                 domProps: { value: _vm.search },
                 on: {
                   input: function($event) {
@@ -65501,8 +65488,11 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "button",
-                { staticClass: "btn", on: { click: _vm.getSearchResults } },
-                [_vm._v("search")]
+                {
+                  staticClass: "btn btn-primary",
+                  on: { click: _vm.getSearchResults }
+                },
+                [_vm._v("Search")]
               )
             ]),
             _vm._v(" "),

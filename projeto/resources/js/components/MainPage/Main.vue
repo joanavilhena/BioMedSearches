@@ -23,13 +23,13 @@
 <div class="text-center">
     <br>
     <br>   
-     <br>
+    <br>
     <br>  
-     <br>
+    <br>
     <br>  
-     <br>
+    <br>
     <br>  
-     <br>
+    <br>
     <br>  
     <h2 >Pharmacogenetics</h2>
     <br>

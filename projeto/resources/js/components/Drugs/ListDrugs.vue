@@ -9,10 +9,10 @@
 </div>
 
 <div  v-if="!showDrug">
-    
+
     <div class="input-group mb-3">
-        <input class="form-control"  type="text" v-model="search">
-        <button class="btn" @click="getSearchResults">search</button>
+        <input class="form-control"  placeholder="Search for name or PharmaGKB ID..." type="text" v-model="search">
+        <button class="btn btn-primary" @click="getSearchResults">Search</button>
     </div>
 
 
@@ -148,19 +148,11 @@
 
                 //axios get search on drugs
             },
-         fetch() {
-            axios.get('/api/drugss', { params: { search: this.search } })
-                .then(response => this.results = response.data)
-                .catch(error => {});
-        }
+        
            
         },
 
-        watch: {
-            search(after, before) {
-                this.fetch();
-            }
-        },
+
 
     
        

@@ -31,20 +31,14 @@ class GeneControllerAPI extends Controller
     {
         $s=$request->search;
         $s = strtolower($s);
-        
-        $result = DB::table('genes')->where('name','like','%'.$s.'%')
-                                    ->orWhere('alternateNames','like','%'.$s.'%' )
-                                    ->orWhere('idp','%'.$s.'%')
-                                    ->orWhere('alternateNames','like','%'.$s.'%')
-                                    ->orWhere('alternateSymbols','like','%'.$s.'%')
-                                    ->orWhere('symbol','like','%'.$s.'%')
+
+        $result = DB::table('genes')->whereRaw('lower(name) like lower(?)', ["%{$s}%"])
+                                    ->orWhereRaw('lower(alternateNames) like lower(?)', ["%{$s}%"])
+                                    ->orWhereRaw('lower(idp) like lower(?)', ["%{$s}%"])
+                                    ->orWhereRaw('lower(alternateNames) like lower(?)', ["%{$s}%"])
+                                    ->orWhereRaw('lower(alternateSymbols) like lower(?)', ["%{$s}%"])
+                                    ->orWhereRaw('lower(symbol) like lower(?)', ["%{$s}%"])
                                     ->paginate(5);
-
-       
-      
-        
-
-
 
         return $result;
         
