@@ -30,6 +30,7 @@ class GeneControllerAPI extends Controller
     public function searchGene(Request $request)
     {
         $s=$request->search;
+        $s = strtolower($s);
         
         $result = DB::table('genes')->where('name','like','%'.$s.'%')
                                     ->orWhere('alternateNames','like','%'.$s.'%' )
