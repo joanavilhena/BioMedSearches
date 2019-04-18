@@ -1,7 +1,7 @@
 <template>
 <div class ='container'>
 <nav class="navbar navbar-expand-sm justify-content-end">
-     <a class="navbar-brand" href="/home">
+     <a class="navbar-brand" href="/#/home">
     <img src="storage/assets/logo.png" alt="">
   </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">

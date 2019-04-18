@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="">
-            <h1>{{currentDrug.name}}</h1>
+            <h1>{{currentChemical.name}}</h1>
             <br>
             <h3>Details</h3>
         </div>
@@ -12,9 +12,6 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <button @click="showDetails" class="btn btn-xs" style="color:white; font-size: 16px;" >Details</button>
-                    </li>
-                     <li class="nav-item">
-                        <button @click="showChemicals" class="btn btn-xs" style="color:white; font-size: 16px;" >Associated Chemicals</button>
                     </li>
                     <li class="nav-item">
                         <button  @click="showDoseInfo" class="btn btn-xs" style="color:white; font-size: 16px;" >Dosing Info</button>
@@ -43,7 +40,7 @@
     <div v-if="showingDetails" >
             <div sytle="float:left;">
                 <th><h5>PharmGKB ID:</h5></th>
-                    <td> <h6> {{currentDrug.idp}}</h6></td>
+                    <td> <h6> {{currentChemical.idp}}</h6></td>
             </div>
 
             <div sytle="float:left;">
@@ -64,7 +61,6 @@
 
         <show-drug-dose v-bind:currentDrug="currentDrug" v-if="showingDosingInfo"></show-drug-dose>
         <show-drug-pubs v-bind:currentDrug="currentDrug" v-if="showingPub"></show-drug-pubs>
-        <show-drug-chemicals v-bind:currentDrug="currentDrug" v-if="showingChemicals"></show-drug-chemicals>
         <button class="btn btn-warning" @click="atum()" >Back</button>
 
         
@@ -88,7 +84,7 @@ export default {
             showingPub:false,
             showingChemicals:false,
             id: this.$route.params.id,
-            currentDrug:[],
+            currentChemical:[],
         }
     },
     methods:
@@ -96,8 +92,8 @@ export default {
         atum()
         {
             console.log("atum");
-            this.$router.push('/drugs');
-            this.$emit('show-drug',false);
+            this.$router.push('/chemicals');
+            this.$emit('show-chemical',false);
         },
 
         showDoseInfo()
@@ -136,24 +132,24 @@ export default {
      /* */
 
       console.log(this.$route.params.id);
-      axios.get('api/drug/'+this.$route.params.id)
+      axios.get('api/chemical/'+this.$route.params.id)
                 .then((response) => {
 
                
                 console.log(response.data);
                     
-                this.currentDrug= response.data.data;
+                this.currentChemical= response.data.data;
     
-                this.genericNames = this.currentDrug.genericNames;
+                this.genericNames = this.currentChemical.genericNames;
 
                 //console.log(this.drugs);
               if(this.genericNames!=null)
-      {
-           let res = this.genericNames.split(",");
-           this.genericNames=res;
-           console.log(this.genericNames);
-     
-      }
+                {
+                    let res = this.genericNames.split(",");
+                    this.genericNames=res;
+                    console.log(this.genericNames);
+                
+                }
                 
         
                 })

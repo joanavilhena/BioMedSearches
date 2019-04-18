@@ -27,7 +27,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 //Home
 Vue.component('navigation', require('./components/NavigationBar.vue').default);
 Vue.component('feed', require('./components/MainPage/FeedNews.vue').default);
-const mainPage = Vue.component('main', require('./components/MainPage/Main.vue').default);
+const mainPage = Vue.component('main', require('./components/MainPage/MainIndex.vue').default);
 
 
 
@@ -40,15 +40,24 @@ const showAssociatedChemicals=Vue.component('show-drug-chemicals', require('./co
 
 //Chemicals
 const listchemicals=Vue.component('list-chemicals', require('./components/Chemicals/ListChemicals.vue').default);
+const showChemical=Vue.component('show-chemical', require('./components/Chemicals/ShowChemical.vue').default);
 
 //Genes
 const listgenes=Vue.component('list-genes', require('./components/Genes/ListGenes.vue').default);
 
+//Variants
+
+const listVariants=Vue.component('list-variants', require('./components/Variants/ListVariants.vue').default);
+
+
 const routes = [
     {path:'/', redirect:'/home'},
     {path:'/drugs', component:listdrugs},
+    {path:'/drug/:id', component:showDrug},
     {path:'/chemicals', component:listchemicals},
+    {path:'/chemical/:id', component:showChemical},
     {path:'/genes', component:listgenes},
+    {path:'/variants', component:listVariants},
     {path:'/home', component:mainPage},
 ];
 const router = new VueRouter({

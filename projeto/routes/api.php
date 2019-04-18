@@ -31,6 +31,9 @@ Route::get('druglabel/{id}','DrugControllerAPI@showDrugLabel');
 //Chemicals
 Route::get('chemicals', 'ChemicalControllerAPI@index');
 Route::get('chemical/{id}','ChemicalControllerAPI@showChemical');
+Route::get('chemicalssearch','ChemicalControllerAPI@searchChemical');
+
+
 
 //Genes
 Route::get('genes','GeneControllerAPI@index');
