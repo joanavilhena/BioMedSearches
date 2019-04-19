@@ -44,11 +44,12 @@ const showChemical=Vue.component('show-chemical', require('./components/Chemical
 
 //Genes
 const listgenes=Vue.component('list-genes', require('./components/Genes/ListGenes.vue').default);
+const showGene=Vue.component('show-gene', require('./components/Genes/ShowGene.vue').default);
 
 //Variants
 
 const listVariants=Vue.component('list-variants', require('./components/Variants/ListVariants.vue').default);
-
+const showVariant=Vue.component('show-variant', require('./components/Variants/ShowVariant.vue').default);
 
 const routes = [
     {path:'/', redirect:'/home'},
@@ -57,11 +58,13 @@ const routes = [
     {path:'/chemicals', component:listchemicals},
     {path:'/chemical/:id', component:showChemical},
     {path:'/genes', component:listgenes},
+    {path:'/gene/:id', component:showGene},
     {path:'/variants', component:listVariants},
+    {path:'/variant/:id', component:showVariant},
     {path:'/home', component:mainPage},
 ];
 const router = new VueRouter({
-    //mode:'history',
+    mode:'history',
     routes: routes 
   });
 

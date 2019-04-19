@@ -103,9 +103,10 @@
                 })
             },
 
-            showItem(chemical)
+            showItem(variant)
             {
                 this.showVariant=true;
+                this.$router.push('/variant/'+variant.variantID);
               //  this.currentDrug = Object.assign({},drug);
             },
 

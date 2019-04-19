@@ -102,7 +102,9 @@
 
             showItem(chemical)
             {
-                this.showChemical=true;
+              //  this.showChemical=true;
+                this.$router.push('/chemical/'+chemical.idp);
+
               //  this.currentDrug = Object.assign({},drug);
             },
 

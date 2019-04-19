@@ -103,6 +103,8 @@
             showItem(gene)
             {
                 this.showGene=true;
+                this.$router.push('/gene/'+gene.idp);
+
                 //this.currentGene = Object.assign({},gene);
             },
 

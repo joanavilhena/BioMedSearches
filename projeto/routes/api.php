@@ -44,6 +44,7 @@ Route::get('genessearch','GeneControllerAPI@searchGene');
 //Variants
 Route::get('variants', 'VariantControllerAPI@index');
 Route::get('variant/{id}','VariantControllerAPI@showVariant');
+Route::get('variantssearch','VariantControllerAPI@searchVariant');
 
 //Clinical Variants
 Route::get('clinicalvariants', 'ClinicalVariantControllerAPI@index');
