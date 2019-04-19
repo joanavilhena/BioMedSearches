@@ -29,7 +29,7 @@ class VariantControllerAPI extends Controller
        
     }
 
-    public function searchChemical(Request $request)
+    public function searchVariant(Request $request)
     {
         $s=$request->search;
         $s = strtolower($s);
