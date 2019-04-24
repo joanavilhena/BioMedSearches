@@ -1,120 +1,127 @@
 <template>
-<div>
-  <div id="search_container" class="container">
-    <br>
-    <br>
-    <br>
-    <br>
-     <br>
-    <br>  
-    <h1>What are you loking for?</h1>
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Recipient's username"
-        aria-label="Recipient's username"
-        aria-describedby="button-addon2"
-      >
-      <div class="input-group-append">
-        <button class="btn btn-primary" type="button" id="btn-search">Button</button>
+  <div>
+    <div id="img-background">
+      <div id="search_container" class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1>What are you loking for?</h1>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Recipient's username"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          >
+          <div class="input-group-append">
+            <router-link to="/searchResult">
+              <button class="btn btn-primary" type="button" id="btn-search">Button</button>
+            </router-link>
+          </div>
+        </div>
+        <div class="text-center">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <h2>Pharmacogenetics</h2>
+          <br>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <br>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui ut ornare lectus sit amet est placerat. Elementum integer enim neque volutpat ac tincidunt. Gravida neque convallis a cras semper auctor neque. Sapien pellentesque habitant morbi tristique senectus et. Fringilla urna porttitor rhoncus dolor purus non. Amet mauris commodo quis imperdiet. Tellus at urna condimentum mattis pellentesque id.</p>
+        </div>
       </div>
     </div>
-<div class="text-center">
+    <img src="storage/assets/separador.png" width="100%">
     <br>
-    <br>   
-     <br>
-    <br>  
-     <br>
-    <br>  
-     <br>
-    <br>  
-     <br>
-    <br>  
-    <h2 >Pharmacogenetics</h2>
     <br>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui ut ornare lectus sit amet est placerat. Elementum integer enim neque volutpat ac tincidunt. Gravida neque convallis a cras semper auctor neque. Sapien pellentesque habitant morbi tristique senectus et. Fringilla urna porttitor rhoncus dolor purus non. Amet mauris commodo quis imperdiet. Tellus at urna condimentum mattis pellentesque id. </p>
-</div>
-   </div>
-    <img src="storage/assets/separador.png" width="100%"/>  
+    <h2 class="text-center">Statistics</h2>
+    <br>
     <div class="container">
       <div class="row" margin="auto">
-		<div class="col-sm-4 col-md-3">
-			<div class="progress" data-percentage="20">
-				<span class="progress-left">
-					<span class="progress-bar"></span>
-				</span>
-				<span class="progress-right">
-					<span class="progress-bar"></span>
-				</span>
-				<div class="progress-value">
-					<div>
-						20%<br>
-						<span>completed</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-4 col-md-3">
-			<div class="progress" data-percentage="40">
-				<span class="progress-left">
-					<span class="progress-bar"></span>
-				</span>
-				<span class="progress-right">
-					<span class="progress-bar"></span>
-				</span>
-				<div class="progress-value">
-					<div>
-						40%<br>
-						<span>completed</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-sm-4 col-md-3">
-			<div class="progress" data-percentage="80">
-				<span class="progress-left">
-					<span class="progress-bar"></span>
-				</span>
-				<span class="progress-right">
-					<span class="progress-bar"></span>
-				</span>
-				<div class="progress-value">
-					<div>
-						80%<br>
-						<span>completed</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
-		<div class="col-sm-4 col-md-3">
-			<div class="progress" data-percentage="100">
-				<span class="progress-left">
-					<span class="progress-bar"></span>
-				</span>
-				<span class="progress-right">
-					<span class="progress-bar"></span>
-				</span>
-				<div class="progress-value">
-					<div>
-						100%<br>
-						<span>completed</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
-		
-	</div>
-        </div>  
+        <div class="col-sm-4 col-md-3">
+          <div class="progress" data-percentage="20">
+            <span class="progress-left">
+              <span class="progress-bar"></span>
+            </span>
+            <span class="progress-right">
+              <span class="progress-bar"></span>
+            </span>
+            <div class="progress-value">
+              <div>
+                20%
+                <br>
+                <span>completed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="progress" data-percentage="40">
+            <span class="progress-left">
+              <span class="progress-bar"></span>
+            </span>
+            <span class="progress-right">
+              <span class="progress-bar"></span>
+            </span>
+            <div class="progress-value">
+              <div>
+                40%
+                <br>
+                <span>completed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 col-md-3">
+          <div class="progress" data-percentage="80">
+            <span class="progress-left">
+              <span class="progress-bar"></span>
+            </span>
+            <span class="progress-right">
+              <span class="progress-bar"></span>
+            </span>
+            <div class="progress-value">
+              <div>
+                80%
+                <br>
+                <span>completed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 col-md-3">
+          <div class="progress" data-percentage="100">
+            <span class="progress-left">
+              <span class="progress-bar"></span>
+            </span>
+            <span class="progress-right">
+              <span class="progress-bar"></span>
+            </span>
+            <div class="progress-value">
+              <div>
+                100%
+                <br>
+                <span>completed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
+  </div>
 </template>
 <script>
 export default {};
@@ -134,7 +141,9 @@ export default {};
   box-shadow: 0px 9px 7px -2px rgba(171, 166, 171, 1);
 }
 
-
+#img-background {
+ 
+}
 </style>
 <style lang="scss">
 
@@ -142,7 +151,7 @@ export default {};
 $borderWidth: 7px;
 $animationTime: 1.5s;
 $border-color-default: #eee;
-$border-color-fill:#0083ff;
+$border-color-fill: #43a0b8;
 $size: 150px;
 
 //Create how many steps

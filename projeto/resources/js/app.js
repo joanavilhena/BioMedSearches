@@ -30,6 +30,8 @@ Vue.component('feed', require('./components/MainPage/FeedNews.vue').default);
 const mainPage = Vue.component('example-component', require('./components/MainPage/Main.vue').default);
 
 
+const searchResult = Vue.component('searchResult', require('./components/MainPage/SearchResult.vue').default);
+
 
 //Drugs
 const listdrugs=Vue.component('list-drugs', require('./components/Drugs/ListDrugs.vue').default);
@@ -50,6 +52,7 @@ const routes = [
     {path:'/chemicals', component:listchemicals},
     {path:'/genes', component:listgenes},
     {path:'/home', component:mainPage},
+    {path:'/searchResult', component:searchResult},
 ];
 const router = new VueRouter({
     //mode:'history',

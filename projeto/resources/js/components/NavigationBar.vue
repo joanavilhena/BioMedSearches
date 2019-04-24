@@ -1,7 +1,7 @@
 <template>
 <div class ='container'>
 <nav class="navbar navbar-expand-sm justify-content-end">
-     <a class="navbar-brand" href="#">
+     <a class="navbar-brand" href="#/home">
     <img src="storage/assets/logo.png" alt="">
   </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -13,7 +13,7 @@
                 <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="#">News</a>
+                <a class="nav-link" href="api/drugs">News</a>
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href="#">Publications</a>
@@ -59,5 +59,6 @@ export default {
    border-color: #4acaff;
    border-radius: 5px;
  }
+
 
  </style>

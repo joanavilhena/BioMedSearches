@@ -2582,6 +2582,84 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPage/SearchResult.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainPage/SearchResult.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -33853,7 +33931,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".progress {\n  width: 150px;\n  height: 150px;\n  line-height: 150px;\n  background: none;\n  margin: 0 auto;\n  box-shadow: none;\n  position: relative;\n}\n.progress:after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  border: 7px solid #eee;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.progress > span {\n  width: 50%;\n  height: 100%;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  z-index: 1;\n}\n.progress .progress-left {\n  left: 0;\n}\n.progress .progress-bar {\n  width: 100%;\n  height: 100%;\n  background: none;\n  border-width: 7px;\n  border-style: solid;\n  position: absolute;\n  top: 0;\n  border-color: #0083ff;\n}\n.progress .progress-left .progress-bar {\n  left: 100%;\n  border-top-right-radius: 75px;\n  border-bottom-right-radius: 75px;\n  border-left: 0;\n  -webkit-transform-origin: center left;\n  transform-origin: center left;\n}\n.progress .progress-right {\n  right: 0;\n}\n.progress .progress-right .progress-bar {\n  left: -100%;\n  border-top-left-radius: 75px;\n  border-bottom-left-radius: 75px;\n  border-right: 0;\n  -webkit-transform-origin: center right;\n  transform-origin: center right;\n}\n.progress .progress-value {\n  display: flex;\n  border-radius: 50%;\n  font-size: 36px;\n  text-align: center;\n  line-height: 20px;\n  align-items: center;\n  justify-content: center;\n  height: 100%;\n  font-weight: 300;\n}\n.progress .progress-value div {\n  margin-top: 10px;\n}\n.progress .progress-value span {\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\n/* This for loop creates the \tnecessary css animation names \r\nDue to the split circle of progress-left and progress right, we must use the animations on each side. \r\n*/\n.progress[data-percentage=\"10\"] .progress-right .progress-bar {\n  -webkit-animation: loading-1 1.5s linear forwards;\n          animation: loading-1 1.5s linear forwards;\n}\n.progress[data-percentage=\"10\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"20\"] .progress-right .progress-bar {\n  -webkit-animation: loading-2 1.5s linear forwards;\n          animation: loading-2 1.5s linear forwards;\n}\n.progress[data-percentage=\"20\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"30\"] .progress-right .progress-bar {\n  -webkit-animation: loading-3 1.5s linear forwards;\n          animation: loading-3 1.5s linear forwards;\n}\n.progress[data-percentage=\"30\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"40\"] .progress-right .progress-bar {\n  -webkit-animation: loading-4 1.5s linear forwards;\n          animation: loading-4 1.5s linear forwards;\n}\n.progress[data-percentage=\"40\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"50\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"50\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"60\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"60\"] .progress-left .progress-bar {\n  -webkit-animation: loading-1 1.5s linear forwards 1.5s;\n          animation: loading-1 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"70\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"70\"] .progress-left .progress-bar {\n  -webkit-animation: loading-2 1.5s linear forwards 1.5s;\n          animation: loading-2 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"80\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"80\"] .progress-left .progress-bar {\n  -webkit-animation: loading-3 1.5s linear forwards 1.5s;\n          animation: loading-3 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"90\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"90\"] .progress-left .progress-bar {\n  -webkit-animation: loading-4 1.5s linear forwards 1.5s;\n          animation: loading-4 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"100\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"100\"] .progress-left .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards 1.5s;\n          animation: loading-5 1.5s linear forwards 1.5s;\n}\n@-webkit-keyframes loading-1 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(36);\n    transform: rotate(36deg);\n}\n}\n@keyframes loading-1 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(36);\n    transform: rotate(36deg);\n}\n}\n@-webkit-keyframes loading-2 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(72);\n    transform: rotate(72deg);\n}\n}\n@keyframes loading-2 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(72);\n    transform: rotate(72deg);\n}\n}\n@-webkit-keyframes loading-3 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(108);\n    transform: rotate(108deg);\n}\n}\n@keyframes loading-3 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(108);\n    transform: rotate(108deg);\n}\n}\n@-webkit-keyframes loading-4 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(144);\n    transform: rotate(144deg);\n}\n}\n@keyframes loading-4 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(144);\n    transform: rotate(144deg);\n}\n}\n@-webkit-keyframes loading-5 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(180);\n    transform: rotate(180deg);\n}\n}\n@keyframes loading-5 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(180);\n    transform: rotate(180deg);\n}\n}\n.progress {\n  margin-bottom: 1em;\n}", ""]);
+exports.push([module.i, ".progress {\n  width: 150px;\n  height: 150px;\n  line-height: 150px;\n  background: none;\n  margin: 0 auto;\n  box-shadow: none;\n  position: relative;\n}\n.progress:after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  border: 7px solid #eee;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.progress > span {\n  width: 50%;\n  height: 100%;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  z-index: 1;\n}\n.progress .progress-left {\n  left: 0;\n}\n.progress .progress-bar {\n  width: 100%;\n  height: 100%;\n  background: none;\n  border-width: 7px;\n  border-style: solid;\n  position: absolute;\n  top: 0;\n  border-color: #43a0b8;\n}\n.progress .progress-left .progress-bar {\n  left: 100%;\n  border-top-right-radius: 75px;\n  border-bottom-right-radius: 75px;\n  border-left: 0;\n  -webkit-transform-origin: center left;\n  transform-origin: center left;\n}\n.progress .progress-right {\n  right: 0;\n}\n.progress .progress-right .progress-bar {\n  left: -100%;\n  border-top-left-radius: 75px;\n  border-bottom-left-radius: 75px;\n  border-right: 0;\n  -webkit-transform-origin: center right;\n  transform-origin: center right;\n}\n.progress .progress-value {\n  display: flex;\n  border-radius: 50%;\n  font-size: 36px;\n  text-align: center;\n  line-height: 20px;\n  align-items: center;\n  justify-content: center;\n  height: 100%;\n  font-weight: 300;\n}\n.progress .progress-value div {\n  margin-top: 10px;\n}\n.progress .progress-value span {\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\n/* This for loop creates the \tnecessary css animation names \r\nDue to the split circle of progress-left and progress right, we must use the animations on each side. \r\n*/\n.progress[data-percentage=\"10\"] .progress-right .progress-bar {\n  -webkit-animation: loading-1 1.5s linear forwards;\n          animation: loading-1 1.5s linear forwards;\n}\n.progress[data-percentage=\"10\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"20\"] .progress-right .progress-bar {\n  -webkit-animation: loading-2 1.5s linear forwards;\n          animation: loading-2 1.5s linear forwards;\n}\n.progress[data-percentage=\"20\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"30\"] .progress-right .progress-bar {\n  -webkit-animation: loading-3 1.5s linear forwards;\n          animation: loading-3 1.5s linear forwards;\n}\n.progress[data-percentage=\"30\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"40\"] .progress-right .progress-bar {\n  -webkit-animation: loading-4 1.5s linear forwards;\n          animation: loading-4 1.5s linear forwards;\n}\n.progress[data-percentage=\"40\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"50\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"50\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"60\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"60\"] .progress-left .progress-bar {\n  -webkit-animation: loading-1 1.5s linear forwards 1.5s;\n          animation: loading-1 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"70\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"70\"] .progress-left .progress-bar {\n  -webkit-animation: loading-2 1.5s linear forwards 1.5s;\n          animation: loading-2 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"80\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"80\"] .progress-left .progress-bar {\n  -webkit-animation: loading-3 1.5s linear forwards 1.5s;\n          animation: loading-3 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"90\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"90\"] .progress-left .progress-bar {\n  -webkit-animation: loading-4 1.5s linear forwards 1.5s;\n          animation: loading-4 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"100\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"100\"] .progress-left .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards 1.5s;\n          animation: loading-5 1.5s linear forwards 1.5s;\n}\n@-webkit-keyframes loading-1 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(36);\n    transform: rotate(36deg);\n}\n}\n@keyframes loading-1 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(36);\n    transform: rotate(36deg);\n}\n}\n@-webkit-keyframes loading-2 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(72);\n    transform: rotate(72deg);\n}\n}\n@keyframes loading-2 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(72);\n    transform: rotate(72deg);\n}\n}\n@-webkit-keyframes loading-3 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(108);\n    transform: rotate(108deg);\n}\n}\n@keyframes loading-3 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(108);\n    transform: rotate(108deg);\n}\n}\n@-webkit-keyframes loading-4 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(144);\n    transform: rotate(144deg);\n}\n}\n@keyframes loading-4 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(144);\n    transform: rotate(144deg);\n}\n}\n@-webkit-keyframes loading-5 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(180);\n    transform: rotate(180deg);\n}\n}\n@keyframes loading-5 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(180);\n    transform: rotate(180deg);\n}\n}\n.progress {\n  margin-bottom: 1em;\n}", ""]);
 
 // exports
 
@@ -33929,7 +34007,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#search_container > h1 {\r\n  color: #0c5a89;\n}\n#btn-search {\r\n  width: 150px;\n}\n.input-group {\r\n  box-shadow: 0px 9px 7px -2px rgba(171, 166, 171, 1);\n}\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n#search_container > h1 {\r\n  color: #0c5a89;\n}\n#btn-search {\r\n  width: 150px;\n}\n.input-group {\r\n  box-shadow: 0px 9px 7px -2px rgba(171, 166, 171, 1);\n}\n#img-background {\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPage/SearchResult.vue?vue&type=style&index=0&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainPage/SearchResult.vue?vue&type=style&index=0&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.nav-pills>.nav-link.active{\r\n    border: solid 2px transparent;\r\n    background: none;\r\n    color: #0075bd;\r\n    border-bottom-color: #0075bd;\r\n    font-weight: bold;\n}\n.nav-pills>.nav-link:hover{\r\n    border: solid 2px transparent;\r\n    background: none;\r\n    color: #0075bd;\r\n    border-bottom-color: #0075bd;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -33948,7 +34045,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link{\n  color:black;\n}\na.nav-link{\n  border-top-style:solid;\n  border-color: transparent;\n}\na.nav-link:hover{\n  border-color: #4acaff;\n  border-radius: 5px;\n}\na.nav-link:focus{\n  border-color: #4acaff;\n  border-radius: 5px;\n}\n\n", ""]);
+exports.push([module.i, "\n.nav-link{\n  color:black;\n}\na.nav-link{\n  border-top-style:solid;\n  border-color: transparent;\n}\na.nav-link:hover{\n  border-color: #4acaff;\n  border-radius: 5px;\n}\na.nav-link:focus{\n  border-color: #4acaff;\n  border-radius: 5px;\n}\n\n\n", ""]);
 
 // exports
 
@@ -64639,6 +64736,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPage/SearchResult.vue?vue&type=style&index=0&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainPage/SearchResult.vue?vue&type=style&index=0&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./SearchResult.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPage/SearchResult.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NavigationBar.vue?vue&type=style&index=0&lang=css&":
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/NavigationBar.vue?vue&type=style&index=0&lang=css& ***!
@@ -66246,14 +66373,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
+  return _c("div", [
+    _c("div", { attrs: { id: "img-background" } }, [
       _c(
         "div",
         { staticClass: "container", attrs: { id: "search_container" } },
@@ -66283,164 +66404,426 @@ var staticRenderFns = [
               }
             }),
             _vm._v(" "),
-            _c("div", { staticClass: "input-group-append" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { type: "button", id: "btn-search" }
-                },
-                [_vm._v("Button")]
-              )
-            ])
+            _c(
+              "div",
+              { staticClass: "input-group-append" },
+              [
+                _c("router-link", { attrs: { to: "/searchResult" } }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "button", id: "btn-search" }
+                    },
+                    [_vm._v("Button")]
+                  )
+                ])
+              ],
+              1
+            )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "text-center" }, [
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("h2", [_vm._v("Pharmacogenetics")]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-              )
-            ]),
-            _c("br"),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui ut ornare lectus sit amet est placerat. Elementum integer enim neque volutpat ac tincidunt. Gravida neque convallis a cras semper auctor neque. Sapien pellentesque habitant morbi tristique senectus et. Fringilla urna porttitor rhoncus dolor purus non. Amet mauris commodo quis imperdiet. Tellus at urna condimentum mattis pellentesque id. "
-              )
-            ])
-          ])
+          _vm._m(0)
         ]
-      ),
+      )
+    ]),
+    _vm._v(" "),
+    _c("img", {
+      attrs: { src: "storage/assets/separador.png", width: "100%" }
+    }),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("h2", { staticClass: "text-center" }, [_vm._v("Statistics")]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("br"),
       _vm._v(" "),
-      _c("img", {
-        attrs: { src: "storage/assets/separador.png", width: "100%" }
-      }),
+      _c("br"),
       _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row", attrs: { margin: "auto" } }, [
-          _c("div", { staticClass: "col-sm-4 col-md-3" }, [
-            _c(
-              "div",
-              { staticClass: "progress", attrs: { "data-percentage": "20" } },
-              [
-                _c("span", { staticClass: "progress-left" }, [
-                  _c("span", { staticClass: "progress-bar" })
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "progress-right" }, [
-                  _c("span", { staticClass: "progress-bar" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "progress-value" }, [
-                  _c("div", [
-                    _vm._v("\r\n\t\t\t\t\t\t20%"),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("span", [_vm._v("completed")])
-                  ])
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("h2", [_vm._v("Pharmacogenetics")]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        )
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui ut ornare lectus sit amet est placerat. Elementum integer enim neque volutpat ac tincidunt. Gravida neque convallis a cras semper auctor neque. Sapien pellentesque habitant morbi tristique senectus et. Fringilla urna porttitor rhoncus dolor purus non. Amet mauris commodo quis imperdiet. Tellus at urna condimentum mattis pellentesque id."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row", attrs: { margin: "auto" } }, [
+        _c("div", { staticClass: "col-sm-4 col-md-3" }, [
+          _c(
+            "div",
+            { staticClass: "progress", attrs: { "data-percentage": "20" } },
+            [
+              _c("span", { staticClass: "progress-left" }, [
+                _c("span", { staticClass: "progress-bar" })
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "progress-right" }, [
+                _c("span", { staticClass: "progress-bar" })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "progress-value" }, [
+                _c("div", [
+                  _vm._v("\n              20%\n              "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("completed")])
                 ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-4 col-md-3" }, [
-            _c(
-              "div",
-              { staticClass: "progress", attrs: { "data-percentage": "40" } },
-              [
-                _c("span", { staticClass: "progress-left" }, [
-                  _c("span", { staticClass: "progress-bar" })
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "progress-right" }, [
-                  _c("span", { staticClass: "progress-bar" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "progress-value" }, [
-                  _c("div", [
-                    _vm._v("\r\n\t\t\t\t\t\t40%"),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("span", [_vm._v("completed")])
-                  ])
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-4 col-md-3" }, [
+          _c(
+            "div",
+            { staticClass: "progress", attrs: { "data-percentage": "40" } },
+            [
+              _c("span", { staticClass: "progress-left" }, [
+                _c("span", { staticClass: "progress-bar" })
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "progress-right" }, [
+                _c("span", { staticClass: "progress-bar" })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "progress-value" }, [
+                _c("div", [
+                  _vm._v("\n              40%\n              "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("completed")])
                 ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-4 col-md-3" }, [
-            _c(
-              "div",
-              { staticClass: "progress", attrs: { "data-percentage": "80" } },
-              [
-                _c("span", { staticClass: "progress-left" }, [
-                  _c("span", { staticClass: "progress-bar" })
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "progress-right" }, [
-                  _c("span", { staticClass: "progress-bar" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "progress-value" }, [
-                  _c("div", [
-                    _vm._v("\r\n\t\t\t\t\t\t80%"),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("span", [_vm._v("completed")])
-                  ])
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-4 col-md-3" }, [
+          _c(
+            "div",
+            { staticClass: "progress", attrs: { "data-percentage": "80" } },
+            [
+              _c("span", { staticClass: "progress-left" }, [
+                _c("span", { staticClass: "progress-bar" })
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "progress-right" }, [
+                _c("span", { staticClass: "progress-bar" })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "progress-value" }, [
+                _c("div", [
+                  _vm._v("\n              80%\n              "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("completed")])
                 ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-4 col-md-3" }, [
-            _c(
-              "div",
-              { staticClass: "progress", attrs: { "data-percentage": "100" } },
-              [
-                _c("span", { staticClass: "progress-left" }, [
-                  _c("span", { staticClass: "progress-bar" })
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "progress-right" }, [
-                  _c("span", { staticClass: "progress-bar" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "progress-value" }, [
-                  _c("div", [
-                    _vm._v("\r\n\t\t\t\t\t\t100%"),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("span", [_vm._v("completed")])
-                  ])
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-4 col-md-3" }, [
+          _c(
+            "div",
+            { staticClass: "progress", attrs: { "data-percentage": "100" } },
+            [
+              _c("span", { staticClass: "progress-left" }, [
+                _c("span", { staticClass: "progress-bar" })
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "progress-right" }, [
+                _c("span", { staticClass: "progress-bar" })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "progress-value" }, [
+                _c("div", [
+                  _vm._v("\n              100%\n              "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("completed")])
                 ])
-              ]
-            )
-          ])
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPage/SearchResult.vue?vue&type=template&id=c6be091e&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainPage/SearchResult.vue?vue&type=template&id=c6be091e& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("br"),
+      _vm._v(" "),
+      _c("h4", [_vm._v(' Results for search "name_drug"')]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-3" }, [
+          _c(
+            "div",
+            {
+              staticClass: "nav flex-column nav-pills",
+              attrs: {
+                id: "v-pills-tab",
+                role: "tablist",
+                "aria-orientation": "vertical"
+              }
+            },
+            [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link active",
+                  attrs: {
+                    id: "v-pills-home-tab",
+                    "data-toggle": "pill",
+                    href: "#v-pills-home",
+                    role: "tab",
+                    "aria-controls": "v-pills-home",
+                    "aria-selected": "true"
+                  }
+                },
+                [_vm._v("Home")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: {
+                    id: "v-pills-profile-tab",
+                    "data-toggle": "pill",
+                    href: "#v-pills-profile",
+                    role: "tab",
+                    "aria-controls": "v-pills-profile",
+                    "aria-selected": "false"
+                  }
+                },
+                [_vm._v("Profile")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: {
+                    id: "v-pills-messages-tab",
+                    "data-toggle": "pill",
+                    href: "#v-pills-messages",
+                    role: "tab",
+                    "aria-controls": "v-pills-messages",
+                    "aria-selected": "false"
+                  }
+                },
+                [_vm._v("Messages")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: {
+                    id: "v-pills-settings-tab",
+                    "data-toggle": "pill",
+                    href: "#v-pills-settings",
+                    role: "tab",
+                    "aria-controls": "v-pills-settings",
+                    "aria-selected": "false"
+                  }
+                },
+                [_vm._v("Settings")]
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-9" }, [
+          _c(
+            "div",
+            { staticClass: "tab-content", attrs: { id: "v-pills-tabContent" } },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "tab-pane fade show active",
+                  attrs: {
+                    id: "v-pills-home",
+                    role: "tabpanel",
+                    "aria-labelledby": "v-pills-home-tab"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "table-responsive-md" }, [
+                    _c("table", { staticClass: "table table-hover" }, [
+                      _c("thead", [
+                        _c("tr", [
+                          _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
+                          _vm._v(" "),
+                          _c("th", { attrs: { scope: "col" } }, [
+                            _vm._v("First")
+                          ]),
+                          _vm._v(" "),
+                          _c("th", { attrs: { scope: "col" } }, [
+                            _vm._v("Last")
+                          ]),
+                          _vm._v(" "),
+                          _c("th", { attrs: { scope: "col" } }, [
+                            _vm._v("Handle")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("tbody", [
+                        _c("tr", [
+                          _c("th", { attrs: { scope: "row" } }, [_vm._v("1")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("Mark")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("Otto")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("@mdo")])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("th", { attrs: { scope: "row" } }, [_vm._v("2")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("Jacob")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("Thornton")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("@fat")])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("th", { attrs: { scope: "row" } }, [_vm._v("3")]),
+                          _vm._v(" "),
+                          _c("td", { attrs: { colspan: "2" } }, [
+                            _vm._v("Larry the Bird")
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("@twitter")])
+                        ])
+                      ])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "tab-pane fade",
+                  attrs: {
+                    id: "v-pills-profile",
+                    role: "tabpanel",
+                    "aria-labelledby": "v-pills-profile-tab"
+                  }
+                },
+                [_vm._v("...")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "tab-pane fade",
+                  attrs: {
+                    id: "v-pills-messages",
+                    role: "tabpanel",
+                    "aria-labelledby": "v-pills-messages-tab"
+                  }
+                },
+                [_vm._v("...")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "tab-pane fade",
+                  attrs: {
+                    id: "v-pills-settings",
+                    role: "tabpanel",
+                    "aria-labelledby": "v-pills-settings-tab"
+                  }
+                },
+                [_vm._v("...")]
+              )
+            ]
+          )
         ])
       ])
     ])
@@ -66479,7 +66862,7 @@ var staticRenderFns = [
         "nav",
         { staticClass: "navbar navbar-expand-sm justify-content-end" },
         [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+          _c("a", { staticClass: "navbar-brand", attrs: { href: "#/home" } }, [
             _c("img", { attrs: { src: "storage/assets/logo.png", alt: "" } })
           ]),
           _vm._v(" "),
@@ -66511,9 +66894,11 @@ var staticRenderFns = [
                 ]),
                 _vm._v(" "),
                 _c("li", { staticClass: "nav-item " }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("News")
-                  ])
+                  _c(
+                    "a",
+                    { staticClass: "nav-link", attrs: { href: "api/drugs" } },
+                    [_vm._v("News")]
+                  )
                 ]),
                 _vm._v(" "),
                 _c("li", { staticClass: "nav-item " }, [
@@ -66549,14 +66934,8 @@ var staticRenderFns = [
                   _c(
                     "button",
                     {
-<<<<<<< HEAD
                       staticClass: "btn btn-outline-info",
                       attrs: { type: "button" }
-=======
-                      staticClass: "nav-link",
-                      staticStyle: { color: "black", "font-size": "16px" },
-                      attrs: { to: "/about" }
->>>>>>> master
                     },
                     [_vm._v("Sign Up")]
                   )
@@ -81389,7 +81768,8 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_M
 
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('navigation', __webpack_require__(/*! ./components/NavigationBar.vue */ "./resources/js/components/NavigationBar.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('feed', __webpack_require__(/*! ./components/MainPage/FeedNews.vue */ "./resources/js/components/MainPage/FeedNews.vue")["default"]);
-var mainPage = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('example-component', __webpack_require__(/*! ./components/MainPage/Main.vue */ "./resources/js/components/MainPage/Main.vue")["default"]); //Drugs
+var mainPage = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('example-component', __webpack_require__(/*! ./components/MainPage/Main.vue */ "./resources/js/components/MainPage/Main.vue")["default"]);
+var searchResult = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('searchResult', __webpack_require__(/*! ./components/MainPage/SearchResult.vue */ "./resources/js/components/MainPage/SearchResult.vue")["default"]); //Drugs
 
 var listdrugs = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('list-drugs', __webpack_require__(/*! ./components/Drugs/ListDrugs.vue */ "./resources/js/components/Drugs/ListDrugs.vue")["default"]);
 var showDrug = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug', __webpack_require__(/*! ./components/Drugs/ShowDrug.vue */ "./resources/js/components/Drugs/ShowDrug.vue")["default"]);
@@ -81415,6 +81795,9 @@ var routes = [{
 }, {
   path: '/home',
   component: mainPage
+}, {
+  path: '/searchResult',
+  component: searchResult
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   //mode:'history',
@@ -82084,15 +82467,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************!*\
   !*** ./resources/js/components/MainPage/Main.vue ***!
   \***************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Main_vue_vue_type_template_id_bc912176___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Main.vue?vue&type=template&id=bc912176& */ "./resources/js/components/MainPage/Main.vue?vue&type=template&id=bc912176&");
 /* harmony import */ var _Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Main.vue?vue&type=script&lang=js& */ "./resources/js/components/MainPage/Main.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _Main_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Main.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/MainPage/Main.vue?vue&type=style&index=0&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Main_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Main.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/MainPage/Main.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _Main_vue_vue_type_style_index_1_lang_scss___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Main.vue?vue&type=style&index=1&lang=scss& */ "./resources/js/components/MainPage/Main.vue?vue&type=style&index=1&lang=scss&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -82126,7 +82508,7 @@ component.options.__file = "resources/js/components/MainPage/Main.vue"
 /*!****************************************************************************!*\
   !*** ./resources/js/components/MainPage/Main.vue?vue&type=script&lang=js& ***!
   \****************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -82181,6 +82563,93 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Main_vue_vue_type_template_id_bc912176___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Main_vue_vue_type_template_id_bc912176___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/MainPage/SearchResult.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/MainPage/SearchResult.vue ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SearchResult_vue_vue_type_template_id_c6be091e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchResult.vue?vue&type=template&id=c6be091e& */ "./resources/js/components/MainPage/SearchResult.vue?vue&type=template&id=c6be091e&");
+/* harmony import */ var _SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchResult.vue?vue&type=script&lang=js& */ "./resources/js/components/MainPage/SearchResult.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _SearchResult_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchResult.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/MainPage/SearchResult.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SearchResult_vue_vue_type_template_id_c6be091e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SearchResult_vue_vue_type_template_id_c6be091e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/MainPage/SearchResult.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/MainPage/SearchResult.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/MainPage/SearchResult.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SearchResult.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPage/SearchResult.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/MainPage/SearchResult.vue?vue&type=style&index=0&lang=css&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/MainPage/SearchResult.vue?vue&type=style&index=0&lang=css& ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./SearchResult.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPage/SearchResult.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/MainPage/SearchResult.vue?vue&type=template&id=c6be091e&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/MainPage/SearchResult.vue?vue&type=template&id=c6be091e& ***!
+  \******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_template_id_c6be091e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SearchResult.vue?vue&type=template&id=c6be091e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPage/SearchResult.vue?vue&type=template&id=c6be091e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_template_id_c6be091e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_template_id_c6be091e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

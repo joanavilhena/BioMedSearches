@@ -23,8 +23,8 @@
     </head>
     <style>
         body{
-            background-image:  url("/storage/assets/background.png");
-            background-size: cover;        
+            background-image: url('/storage/assets/background.png');
+  background-size: cover;     
         }
     </style>
     <body>
