@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="">
-            <h1>{{currentDrug.name}}</h1>
+            <h1>{{currentGene.name}}</h1>
             <br>
             <h3>Details</h3>
         </div>
@@ -43,8 +43,18 @@
     <div v-if="showingDetails" >
             <div sytle="float:left;">
                 <th><h5>PharmGKB ID:</h5></th>
-                    <td> <h6> {{currentDrug.idp}}</h6></td>
+                <td> <h6> {{currentGene.idp}}</h6></td>
             </div>
+
+            <div sytle="float:left;">
+                <th><h5>Ensembl ID:</h5></th>
+                <td> <h6> {{currentGene.ensemblId}}</h6></td>
+            </div>
+            <div sytle="float:left;">
+                <th><h5>Name:</h5></th>
+                <td> <h6> {{currentGene.name}}</h6></td>
+            </div>
+
 
             <div sytle="float:left;">
                 <th><h5>Generic Names:</h5></th>
@@ -62,9 +72,7 @@
 
     </div>
 
-        <show-drug-dose v-bind:currentDrug="currentDrug" v-if="showingDosingInfo"></show-drug-dose>
-        <show-drug-pubs v-bind:currentDrug="currentDrug" v-if="showingPub"></show-drug-pubs>
-        <show-drug-chemicals v-bind:currentDrug="currentDrug" v-if="showingChemicals"></show-drug-chemicals>
+     
         <button class="btn btn-warning" @click="atum()" >Back</button>
 
         
@@ -88,7 +96,7 @@ export default {
             showingPub:false,
             showingChemicals:false,
             id: this.$route.params.id,
-            currentDrug:[],
+            currentGene:[],
         }
     },
     methods:
@@ -96,7 +104,7 @@ export default {
         atum()
         {
             console.log("atum");
-            this.$router.push('/drugs');
+            this.$router.push('/genes');
             this.$emit('show-drug',false);
         },
 
@@ -136,24 +144,24 @@ export default {
      /* */
 
       console.log(this.$route.params.id);
-      axios.get('api/drug/'+this.$route.params.id)
+      axios.get('api/gene/'+this.$route.params.id)
                 .then((response) => {
 
                
                 console.log(response.data);
                     
-                this.currentDrug= response.data.data;
+                this.currentGene= response.data.data;
     
-                this.genericNames = this.currentDrug.genericNames;
+              //  this.genericNames = this.currentDrug.genericNames;
 
                 //console.log(this.drugs);
-              if(this.genericNames!=null)
+           /*   if(this.genericNames!=null)
       {
            let res = this.genericNames.split(",");
            this.genericNames=res;
            console.log(this.genericNames);
      
-      }
+      }*/
                 
         
                 })

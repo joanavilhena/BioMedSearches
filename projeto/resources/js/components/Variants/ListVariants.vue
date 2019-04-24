@@ -4,15 +4,17 @@
 <div  opcity="0.8">
     <br>
     <br>
-    <h1>Genes</h1>
+    <h1>Variants</h1>
     <br>
 </div>
 
-<div  v-if="!showGene">
+<div  v-if="!showVariant">
+
     <div class="input-group mb-3">
         <input class="form-control"  placeholder="Search for name or PharmaGKB ID..." type="text" v-model="search">
         <button class="btn btn-primary" @click="getSearchResults">Search</button>
     </div>
+
 
   <table class="table table-hover table-dark">
     <thead>
@@ -20,21 +22,23 @@
            
             <th>Name</th>
             <th>Symbol</th>
-            <th>Chromosome</th>
+            <th>Gene IDs</th>
+            <th>Gene Symbols</th>
+            <th>Synonyms</th>
             <th>Actions</th>
       
-
-            
         </tr>
     </thead>
 
     <tbody>
-       <tr v-for="(gene,index) in genes" :key="index">
+       <tr v-for="(variant,index) in variants" :key="index">
           
-           <td>{{gene.name}}</td>
-           <td>{{gene.symbol}}</td>
-           <td>{{gene.chromosome}}</td>
-           <td><button v-on:click.prevent="showItem(gene)" class="btn btn-xs btn-light"><i class="fas fa-eye"></i></button></td>
+           <td>{{variant.variantName}}</td>
+           <td>{{variant.variantSymbol}}</td>
+           <td>{{variant.geneIDs}}</td>
+           <td>{{variant.geneSymbols}}</td>
+           <td>{{variant.synonyms}}</td>
+           <td><button v-on:click.prevent="showItem(variant)" class="btn btn-xs btn-light"><i class="fas fa-eye"></i></button></td>
 
 
 
@@ -45,13 +49,12 @@
   </table>
 
   <div class="overflow-auto">
-   <b-pagination  align="center" size="md-c"  v-model="page" :limit="5" :total-rows="this.total"  :per-page="5" @input="getGenes(page)"></b-pagination>
+   <b-pagination  align="center" size="md-c"  v-model="page" :limit="5" :total-rows="this.total"  :per-page="5" @input="getVariants(page)"></b-pagination>
   </div>
 
 </div>
 
   
-
 
 
   </div>
@@ -61,8 +64,8 @@
         
         data: function () {
         return {
-            showGene:false,
-            genes: [],
+            showVariant:false,
+            variants: [],
             page:1,
             last:1,
             total:1,
@@ -72,19 +75,19 @@
 
         },
         methods: {
-            closeShowGene()
+            closeShowVariant()
             {
-                this.showGene=false;
+                this.showVariant=false;
             },
-            getGenes(page)
+            getVariants(page)
             {
-                axios.get('api/genes?page='+this.page)
+                axios.get('api/variants?page='+this.page)
                 .then((response) => {
 
                
                 //console.log(response.data);
                     
-                this.genes= response.data.data;
+                this.variants= response.data.data;
                 this.last = response.data.meta.last_page;
                 this.total = response.data.meta.total;
                  
@@ -100,30 +103,28 @@
                 })
             },
 
-            showItem(gene)
+            showItem(variant)
             {
-                this.showGene=true;
-                this.$router.push('/gene/'+gene.idp);
-
-                //this.currentGene = Object.assign({},gene);
+                this.showVariant=true;
+                this.$router.push('/variant/'+variant.variantID);
+              //  this.currentDrug = Object.assign({},drug);
             },
 
-         
             getSearchResults()
             {
                 let s = this.search
-                 axios.get('api/genessearch',{ params: { search: this.search } })
+                axios.get('api/variantssearch',{ params: { search: this.search } })
                 .then((response) => {
 
                
-                    console.log(response.data.data);
-                            
-                    this.genes= response.data.data;
-                    this.last = response.data.last_page;
-                    this.total = response.data.total;
-
-                  
+            console.log(response);
                     
+               this.variants= response.data.data;
+                this.last = response.data.last_page;
+                this.total = response.data.total;
+
+                //console.log(this.drugs);
+              
                 
         
                 })
@@ -143,7 +144,7 @@
         },
         mounted()
         {
-            this.getGenes();
+            this.getVariants();
             console.log("Criado");
         }
     };

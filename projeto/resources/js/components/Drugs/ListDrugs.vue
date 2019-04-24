@@ -9,10 +9,10 @@
 </div>
 
 <div  v-if="!showDrug">
-    
-  <div class="inline">
-        <input class="form-control"  type="text" v-model="search">
-        <button class="btn" @click="getSearchResults">search</button>
+
+    <div class="input-group mb-3">
+        <input class="form-control"  placeholder="Search for name or PharmaGKB ID..." type="text" v-model="search">
+        <button class="btn btn-primary" @click="getSearchResults">Search</button>
     </div>
 
 
@@ -73,7 +73,7 @@
             last:1,
             total:1,
             i:0,
-            search:'a',
+            search:'',
             results:[],
         }
 
@@ -110,7 +110,7 @@
             getSearchResults()
             {
                 let s = this.search
-                 axios.get('api/drugss',{ params: { search: this.search } })
+                 axios.get('api/drugssearch',{ params: { search: this.search } })
                 .then((response) => {
 
                
@@ -135,32 +135,15 @@
             showItem(drug)
             {
                 this.showDrug=true;
-                this.currentDrug = Object.assign({},drug);
+                this.$router.push('/drug/'+drug.idp);
+    
             },
 
-            myFunction()
-            {
-                console.log("Keyup");
-                this.i++;
-                console.log(this.i);
-
-                axios.post('drugs')
-
-                //axios get search on drugs
-            },
-         fetch() {
-            axios.get('/api/drugss', { params: { search: this.search } })
-                .then(response => this.results = response.data)
-                .catch(error => {});
-        }
+           
            
         },
 
-        watch: {
-            search(after, before) {
-                this.fetch();
-            }
-        },
+
 
     
        
