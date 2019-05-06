@@ -2920,40 +2920,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -3025,8 +2991,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-=======
->>>>>>> master
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -34589,7 +34553,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".progress {\n  width: 150px;\n  height: 150px;\n  line-height: 150px;\n  background: none;\n  margin: 0 auto;\n  box-shadow: none;\n  position: relative;\n}\n.progress:after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  border: 7px solid #eee;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.progress > span {\n  width: 50%;\n  height: 100%;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  z-index: 1;\n}\n.progress .progress-left {\n  left: 0;\n}\n.progress .progress-bar {\n  width: 100%;\n  height: 100%;\n  background: none;\n  border-width: 7px;\n  border-style: solid;\n  position: absolute;\n  top: 0;\n  border-color: #43a0b8;\n}\n.progress .progress-left .progress-bar {\n  left: 100%;\n  border-top-right-radius: 75px;\n  border-bottom-right-radius: 75px;\n  border-left: 0;\n  -webkit-transform-origin: center left;\n  transform-origin: center left;\n}\n.progress .progress-right {\n  right: 0;\n}\n.progress .progress-right .progress-bar {\n  left: -100%;\n  border-top-left-radius: 75px;\n  border-bottom-left-radius: 75px;\n  border-right: 0;\n  -webkit-transform-origin: center right;\n  transform-origin: center right;\n}\n.progress .progress-value {\n  display: flex;\n  border-radius: 50%;\n  font-size: 36px;\n  text-align: center;\n  line-height: 20px;\n  align-items: center;\n  justify-content: center;\n  height: 100%;\n  font-weight: 300;\n}\n.progress .progress-value div {\n  margin-top: 10px;\n}\n.progress .progress-value span {\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\n/* This for loop creates the \tnecessary css animation names \r\nDue to the split circle of progress-left and progress right, we must use the animations on each side. \r\n*/\n.progress[data-percentage=\"10\"] .progress-right .progress-bar {\n  -webkit-animation: loading-1 1.5s linear forwards;\n          animation: loading-1 1.5s linear forwards;\n}\n.progress[data-percentage=\"10\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"20\"] .progress-right .progress-bar {\n  -webkit-animation: loading-2 1.5s linear forwards;\n          animation: loading-2 1.5s linear forwards;\n}\n.progress[data-percentage=\"20\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"30\"] .progress-right .progress-bar {\n  -webkit-animation: loading-3 1.5s linear forwards;\n          animation: loading-3 1.5s linear forwards;\n}\n.progress[data-percentage=\"30\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"40\"] .progress-right .progress-bar {\n  -webkit-animation: loading-4 1.5s linear forwards;\n          animation: loading-4 1.5s linear forwards;\n}\n.progress[data-percentage=\"40\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"50\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"50\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"60\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"60\"] .progress-left .progress-bar {\n  -webkit-animation: loading-1 1.5s linear forwards 1.5s;\n          animation: loading-1 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"70\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"70\"] .progress-left .progress-bar {\n  -webkit-animation: loading-2 1.5s linear forwards 1.5s;\n          animation: loading-2 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"80\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"80\"] .progress-left .progress-bar {\n  -webkit-animation: loading-3 1.5s linear forwards 1.5s;\n          animation: loading-3 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"90\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"90\"] .progress-left .progress-bar {\n  -webkit-animation: loading-4 1.5s linear forwards 1.5s;\n          animation: loading-4 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"100\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"100\"] .progress-left .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards 1.5s;\n          animation: loading-5 1.5s linear forwards 1.5s;\n}\n@-webkit-keyframes loading-1 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(36);\n    transform: rotate(36deg);\n}\n}\n@keyframes loading-1 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(36);\n    transform: rotate(36deg);\n}\n}\n@-webkit-keyframes loading-2 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(72);\n    transform: rotate(72deg);\n}\n}\n@keyframes loading-2 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(72);\n    transform: rotate(72deg);\n}\n}\n@-webkit-keyframes loading-3 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(108);\n    transform: rotate(108deg);\n}\n}\n@keyframes loading-3 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(108);\n    transform: rotate(108deg);\n}\n}\n@-webkit-keyframes loading-4 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(144);\n    transform: rotate(144deg);\n}\n}\n@keyframes loading-4 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(144);\n    transform: rotate(144deg);\n}\n}\n@-webkit-keyframes loading-5 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(180);\n    transform: rotate(180deg);\n}\n}\n@keyframes loading-5 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(180);\n    transform: rotate(180deg);\n}\n}\n.progress {\n  margin-bottom: 1em;\n}", ""]);
+exports.push([module.i, ".progress {\n  width: 150px;\n  height: 150px;\n  line-height: 150px;\n  background: none;\n  margin: 0 auto;\n  box-shadow: none;\n  position: relative;\n}\n.progress:after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  border: 7px solid #eee;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.progress > span {\n  width: 50%;\n  height: 100%;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  z-index: 1;\n}\n.progress .progress-left {\n  left: 0;\n}\n.progress .progress-bar {\n  width: 100%;\n  height: 100%;\n  background: none;\n  border-width: 7px;\n  border-style: solid;\n  position: absolute;\n  top: 0;\n  border-color: #0083ff;\n}\n.progress .progress-left .progress-bar {\n  left: 100%;\n  border-top-right-radius: 75px;\n  border-bottom-right-radius: 75px;\n  border-left: 0;\n  -webkit-transform-origin: center left;\n  transform-origin: center left;\n}\n.progress .progress-right {\n  right: 0;\n}\n.progress .progress-right .progress-bar {\n  left: -100%;\n  border-top-left-radius: 75px;\n  border-bottom-left-radius: 75px;\n  border-right: 0;\n  -webkit-transform-origin: center right;\n  transform-origin: center right;\n}\n.progress .progress-value {\n  display: flex;\n  border-radius: 50%;\n  font-size: 36px;\n  text-align: center;\n  line-height: 20px;\n  align-items: center;\n  justify-content: center;\n  height: 100%;\n  font-weight: 300;\n}\n.progress .progress-value div {\n  margin-top: 10px;\n}\n.progress .progress-value span {\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\n/* This for loop creates the \tnecessary css animation names \r\nDue to the split circle of progress-left and progress right, we must use the animations on each side. \r\n*/\n.progress[data-percentage=\"10\"] .progress-right .progress-bar {\n  -webkit-animation: loading-1 1.5s linear forwards;\n          animation: loading-1 1.5s linear forwards;\n}\n.progress[data-percentage=\"10\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"20\"] .progress-right .progress-bar {\n  -webkit-animation: loading-2 1.5s linear forwards;\n          animation: loading-2 1.5s linear forwards;\n}\n.progress[data-percentage=\"20\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"30\"] .progress-right .progress-bar {\n  -webkit-animation: loading-3 1.5s linear forwards;\n          animation: loading-3 1.5s linear forwards;\n}\n.progress[data-percentage=\"30\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"40\"] .progress-right .progress-bar {\n  -webkit-animation: loading-4 1.5s linear forwards;\n          animation: loading-4 1.5s linear forwards;\n}\n.progress[data-percentage=\"40\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"50\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"50\"] .progress-left .progress-bar {\n  -webkit-animation: 0;\n          animation: 0;\n}\n.progress[data-percentage=\"60\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"60\"] .progress-left .progress-bar {\n  -webkit-animation: loading-1 1.5s linear forwards 1.5s;\n          animation: loading-1 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"70\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"70\"] .progress-left .progress-bar {\n  -webkit-animation: loading-2 1.5s linear forwards 1.5s;\n          animation: loading-2 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"80\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"80\"] .progress-left .progress-bar {\n  -webkit-animation: loading-3 1.5s linear forwards 1.5s;\n          animation: loading-3 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"90\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"90\"] .progress-left .progress-bar {\n  -webkit-animation: loading-4 1.5s linear forwards 1.5s;\n          animation: loading-4 1.5s linear forwards 1.5s;\n}\n.progress[data-percentage=\"100\"] .progress-right .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards;\n          animation: loading-5 1.5s linear forwards;\n}\n.progress[data-percentage=\"100\"] .progress-left .progress-bar {\n  -webkit-animation: loading-5 1.5s linear forwards 1.5s;\n          animation: loading-5 1.5s linear forwards 1.5s;\n}\n@-webkit-keyframes loading-1 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(36);\n    transform: rotate(36deg);\n}\n}\n@keyframes loading-1 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(36);\n    transform: rotate(36deg);\n}\n}\n@-webkit-keyframes loading-2 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(72);\n    transform: rotate(72deg);\n}\n}\n@keyframes loading-2 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(72);\n    transform: rotate(72deg);\n}\n}\n@-webkit-keyframes loading-3 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(108);\n    transform: rotate(108deg);\n}\n}\n@keyframes loading-3 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(108);\n    transform: rotate(108deg);\n}\n}\n@-webkit-keyframes loading-4 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(144);\n    transform: rotate(144deg);\n}\n}\n@keyframes loading-4 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(144);\n    transform: rotate(144deg);\n}\n}\n@-webkit-keyframes loading-5 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(180);\n    transform: rotate(180deg);\n}\n}\n@keyframes loading-5 {\n0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(180);\n    transform: rotate(180deg);\n}\n}\n.progress {\n  margin-bottom: 1em;\n}", ""]);
 
 // exports
 
@@ -34703,7 +34667,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#search_container > h1 {\r\n  color: #0c5a89;\n}\n#btn-search {\r\n  width: 150px;\n}\n.input-group {\r\n  box-shadow: 0px 9px 7px -2px rgba(171, 166, 171, 1);\n}\n#img-background {\n}\r\n", ""]);
+exports.push([module.i, "\n#search_container > h1 {\r\n  color: #0c5a89;\n}\n#btn-search {\r\n  width: 150px;\n}\n.input-group {\r\n  box-shadow: 0px 9px 7px -2px rgba(171, 166, 171, 1);\n}\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -67678,8 +67642,14 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { attrs: { id: "img-background" } }, [
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
       _c(
         "div",
         { staticClass: "container", attrs: { id: "search_container" } },
@@ -67709,8 +67679,6 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-<<<<<<< HEAD
-=======
             _c("div", { staticClass: "input-group-append" }, [
               _c(
                 "button",
@@ -67771,195 +67739,104 @@ var render = function() {
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row", attrs: { margin: "auto" } }, [
           _c("div", { staticClass: "col-sm-4 col-md-3" }, [
->>>>>>> master
             _c(
               "div",
-              { staticClass: "input-group-append" },
+              { staticClass: "progress", attrs: { "data-percentage": "20" } },
               [
-                _c("router-link", { attrs: { to: "/searchResult" } }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-primary",
-                      attrs: { type: "button", id: "btn-search" }
-                    },
-                    [_vm._v("Button")]
-                  )
+                _c("span", { staticClass: "progress-left" }, [
+                  _c("span", { staticClass: "progress-bar" })
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "progress-right" }, [
+                  _c("span", { staticClass: "progress-bar" })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "progress-value" }, [
+                  _c("div", [
+                    _vm._v("\r\n\t\t\t\t\t\t20%"),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", [_vm._v("completed")])
+                  ])
                 ])
-              ],
-              1
+              ]
             )
           ]),
           _vm._v(" "),
-          _vm._m(0)
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("img", {
-      attrs: { src: "storage/assets/separador.png", width: "100%" }
-    }),
-    _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    _c("h2", { staticClass: "text-center" }, [_vm._v("Statistics")]),
-    _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    _vm._m(1)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center" }, [
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("h2", [_vm._v("Pharmacogenetics")]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        )
-      ]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui ut ornare lectus sit amet est placerat. Elementum integer enim neque volutpat ac tincidunt. Gravida neque convallis a cras semper auctor neque. Sapien pellentesque habitant morbi tristique senectus et. Fringilla urna porttitor rhoncus dolor purus non. Amet mauris commodo quis imperdiet. Tellus at urna condimentum mattis pellentesque id."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row", attrs: { margin: "auto" } }, [
-        _c("div", { staticClass: "col-sm-4 col-md-3" }, [
-          _c(
-            "div",
-            { staticClass: "progress", attrs: { "data-percentage": "20" } },
-            [
-              _c("span", { staticClass: "progress-left" }, [
-                _c("span", { staticClass: "progress-bar" })
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "progress-right" }, [
-                _c("span", { staticClass: "progress-bar" })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "progress-value" }, [
-                _c("div", [
-                  _vm._v("\n              20%\n              "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("span", [_vm._v("completed")])
+          _c("div", { staticClass: "col-sm-4 col-md-3" }, [
+            _c(
+              "div",
+              { staticClass: "progress", attrs: { "data-percentage": "40" } },
+              [
+                _c("span", { staticClass: "progress-left" }, [
+                  _c("span", { staticClass: "progress-bar" })
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "progress-right" }, [
+                  _c("span", { staticClass: "progress-bar" })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "progress-value" }, [
+                  _c("div", [
+                    _vm._v("\r\n\t\t\t\t\t\t40%"),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", [_vm._v("completed")])
+                  ])
                 ])
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-4 col-md-3" }, [
-          _c(
-            "div",
-            { staticClass: "progress", attrs: { "data-percentage": "40" } },
-            [
-              _c("span", { staticClass: "progress-left" }, [
-                _c("span", { staticClass: "progress-bar" })
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "progress-right" }, [
-                _c("span", { staticClass: "progress-bar" })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "progress-value" }, [
-                _c("div", [
-                  _vm._v("\n              40%\n              "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("span", [_vm._v("completed")])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-4 col-md-3" }, [
+            _c(
+              "div",
+              { staticClass: "progress", attrs: { "data-percentage": "80" } },
+              [
+                _c("span", { staticClass: "progress-left" }, [
+                  _c("span", { staticClass: "progress-bar" })
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "progress-right" }, [
+                  _c("span", { staticClass: "progress-bar" })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "progress-value" }, [
+                  _c("div", [
+                    _vm._v("\r\n\t\t\t\t\t\t80%"),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", [_vm._v("completed")])
+                  ])
                 ])
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-4 col-md-3" }, [
-          _c(
-            "div",
-            { staticClass: "progress", attrs: { "data-percentage": "80" } },
-            [
-              _c("span", { staticClass: "progress-left" }, [
-                _c("span", { staticClass: "progress-bar" })
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "progress-right" }, [
-                _c("span", { staticClass: "progress-bar" })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "progress-value" }, [
-                _c("div", [
-                  _vm._v("\n              80%\n              "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("span", [_vm._v("completed")])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-4 col-md-3" }, [
+            _c(
+              "div",
+              { staticClass: "progress", attrs: { "data-percentage": "100" } },
+              [
+                _c("span", { staticClass: "progress-left" }, [
+                  _c("span", { staticClass: "progress-bar" })
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "progress-right" }, [
+                  _c("span", { staticClass: "progress-bar" })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "progress-value" }, [
+                  _c("div", [
+                    _vm._v("\r\n\t\t\t\t\t\t100%"),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", [_vm._v("completed")])
+                  ])
                 ])
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-4 col-md-3" }, [
-          _c(
-            "div",
-            { staticClass: "progress", attrs: { "data-percentage": "100" } },
-            [
-              _c("span", { staticClass: "progress-left" }, [
-                _c("span", { staticClass: "progress-bar" })
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "progress-right" }, [
-                _c("span", { staticClass: "progress-bar" })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "progress-value" }, [
-                _c("div", [
-                  _vm._v("\n              100%\n              "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("span", [_vm._v("completed")])
-                ])
-              ])
-            ]
-          )
+              ]
+            )
+          ])
         ])
       ])
     ])
@@ -68231,67 +68108,6 @@ var render = function() {
           attrs: { id: "navbarSupportedContent" }
         },
         [
-<<<<<<< HEAD
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "#/home" } }, [
-            _c("img", { attrs: { src: "storage/assets/logo.png", alt: "" } })
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "navbar-toggler",
-              attrs: {
-                type: "button",
-                "data-toggle": "collapse",
-                "data-target": "#navbarSupportedContent"
-              }
-            },
-            [_c("span", { staticClass: "navbar-toggler-icon" })]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "collapse navbar-collapse flex-grow-0 ml-auto mr-1",
-              attrs: { id: "navbarSupportedContent" }
-            },
-            [
-              _c("ul", { staticClass: "navbar-nav text-right " }, [
-                _c("li", { staticClass: "nav-item active" }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Home")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item " }, [
-                  _c(
-                    "a",
-                    { staticClass: "nav-link", attrs: { href: "api/drugs" } },
-                    [_vm._v("News")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item " }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Publications")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item " }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("About Us")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item " }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Contacts")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-=======
           _c("ul", { staticClass: "navbar-nav text-right " }, [
             _c(
               "li",
@@ -68413,7 +68229,6 @@ var render = function() {
             _c("li", [
               (_vm.user = ![])
                 ? _c(
->>>>>>> master
                     "button",
                     {
                       staticClass: "btn btn-outline-info",
@@ -83657,12 +83472,8 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_M
 
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('navigation', __webpack_require__(/*! ./components/NavigationBar.vue */ "./resources/js/components/NavigationBar.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('feed', __webpack_require__(/*! ./components/MainPage/FeedNews.vue */ "./resources/js/components/MainPage/FeedNews.vue")["default"]);
-<<<<<<< HEAD
-var mainPage = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('example-component', __webpack_require__(/*! ./components/MainPage/Main.vue */ "./resources/js/components/MainPage/Main.vue")["default"]);
+var mainPage = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('main', __webpack_require__(/*! ./components/MainPage/MainIndex.vue */ "./resources/js/components/MainPage/MainIndex.vue")["default"]);
 var searchResult = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('searchResult', __webpack_require__(/*! ./components/MainPage/SearchResult.vue */ "./resources/js/components/MainPage/SearchResult.vue")["default"]); //Drugs
-=======
-var mainPage = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('main', __webpack_require__(/*! ./components/MainPage/MainIndex.vue */ "./resources/js/components/MainPage/MainIndex.vue")["default"]); //Drugs
->>>>>>> master
 
 var listdrugs = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('list-drugs', __webpack_require__(/*! ./components/Drugs/ListDrugs.vue */ "./resources/js/components/Drugs/ListDrugs.vue")["default"]);
 var showDrug = vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('show-drug', __webpack_require__(/*! ./components/Drugs/ShowDrug.vue */ "./resources/js/components/Drugs/ShowDrug.vue")["default"]);
@@ -84550,33 +84361,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ "./resources/js/components/MainPage/Main.vue":
-/*!***************************************************!*\
-  !*** ./resources/js/components/MainPage/Main.vue ***!
-  \***************************************************/
-=======
 /***/ "./resources/js/components/MainPage/MainIndex.vue":
 /*!********************************************************!*\
   !*** ./resources/js/components/MainPage/MainIndex.vue ***!
   \********************************************************/
->>>>>>> master
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-<<<<<<< HEAD
-/* harmony import */ var _Main_vue_vue_type_template_id_bc912176___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Main.vue?vue&type=template&id=bc912176& */ "./resources/js/components/MainPage/Main.vue?vue&type=template&id=bc912176&");
-/* harmony import */ var _Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Main.vue?vue&type=script&lang=js& */ "./resources/js/components/MainPage/Main.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Main_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Main.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/MainPage/Main.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _Main_vue_vue_type_style_index_1_lang_scss___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Main.vue?vue&type=style&index=1&lang=scss& */ "./resources/js/components/MainPage/Main.vue?vue&type=style&index=1&lang=scss&");
-=======
 /* harmony import */ var _MainIndex_vue_vue_type_template_id_c02b2c86___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainIndex.vue?vue&type=template&id=c02b2c86& */ "./resources/js/components/MainPage/MainIndex.vue?vue&type=template&id=c02b2c86&");
 /* harmony import */ var _MainIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MainIndex.vue?vue&type=script&lang=js& */ "./resources/js/components/MainPage/MainIndex.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _MainIndex_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MainIndex.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/MainPage/MainIndex.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _MainIndex_vue_vue_type_style_index_1_lang_scss___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MainIndex.vue?vue&type=style&index=1&lang=scss& */ "./resources/js/components/MainPage/MainIndex.vue?vue&type=style&index=1&lang=scss&");
->>>>>>> master
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -84605,17 +84402,10 @@ component.options.__file = "resources/js/components/MainPage/MainIndex.vue"
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ "./resources/js/components/MainPage/Main.vue?vue&type=script&lang=js&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/MainPage/Main.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************/
-=======
 /***/ "./resources/js/components/MainPage/MainIndex.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************!*\
   !*** ./resources/js/components/MainPage/MainIndex.vue?vue&type=script&lang=js& ***!
   \*********************************************************************************/
->>>>>>> master
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
