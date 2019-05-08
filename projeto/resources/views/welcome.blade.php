@@ -19,26 +19,24 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
         <link rel="shortcut icon" href="storage/assets/logo.png">
-
+        <link rel="stylesheet" type="text/css" href="/css/styleCostum.css">
     </head>
     <style>
-        body{
+        .app{
             background-image: url('/storage/assets/background.png');
-  background-size: cover;     
+            background-size: contain;
         }
     </style>
     <body>
-        <div id="app">
+        <div id="app" class="app">
+            
         
             <navigation></navigation>
             <router-view></router-view>
             
         
-
-            
         </div>
 
-       
 
         <script src="js/app.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

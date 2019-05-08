@@ -137,6 +137,7 @@ export default {
             this.showingPub=false;
             this.showingChemicals=true;
         }
+        
     },
     created()
     {
@@ -174,42 +175,21 @@ export default {
     }
     
 
+
 }
+
+    
+
+//$( document ).ready(function() {
+ //   $( "#app" ).addClass( "app2" )
+ //   });
+
 </script>
 <style>
 
-
-.navbar-custom {
-background-color: black;
-
-}
-
-.list-group{
-    width:25%;
-    height:50%;
-  
-}
-.box{
-  width:100%;
-  display:block;
-  padding:5px;
-  clear:both;
-}
-.innerBox{
-  width:33%;
-  height:200px;
-  background-color:#ccc;
-  border:1px solid #444;
-}
-.innerBox.left{
-  float:left;
-}
-.innerBox.center{
-  margin:auto;
-}
-.innerBox.right{
-  float:right;
-}
-
+ .app2{
+            background-color: white;
+            background-image: none;
+        }
 
 </style>
