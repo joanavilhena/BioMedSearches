@@ -20,262 +20,228 @@
         <button class="btn btn-primary" type="button" id="btn-search">Search</button>
       </div>
     </div>
-<div class="text-center">
-    <br>
-    <br>   
-    <br>
-    <br>  
-    <br>
-    <br>  
-    <br>
-    <br>  
-    <br>
-    <br>  
-    <h2 >Pharmacogenetics</h2>
-    <br>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui ut ornare lectus sit amet est placerat. Elementum integer enim neque volutpat ac tincidunt. Gravida neque convallis a cras semper auctor neque. Sapien pellentesque habitant morbi tristique senectus et. Fringilla urna porttitor rhoncus dolor purus non. Amet mauris commodo quis imperdiet. Tellus at urna condimentum mattis pellentesque id. </p>
+      <div id="Title__BioMed_Search">
+        <h1><span>BioMed</span><span> Search</span></h1>
+        <svg class="Linha_1">
+			<path id="Linha_1" d="M 35 0 L 260 0">
+			</path>
+		</svg>
 </div>
-   </div>
-    <img src="storage/assets/separador.png" width="100%"/>  
-    <div class="container">
-      <div class="row" margin="auto">
-		<div class="col-sm-4 col-md-3">
-			<div class="progress" data-percentage="20">
-				<span class="progress-left">
-					<span class="progress-bar"></span>
-				</span>
-				<span class="progress-right">
-					<span class="progress-bar"></span>
-				</span>
-				<div class="progress-value">
-					<div>
-						20%<br>
-						<span>completed</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-4 col-md-3">
-			<div class="progress" data-percentage="40">
-				<span class="progress-left">
-					<span class="progress-bar"></span>
-				</span>
-				<span class="progress-right">
-					<span class="progress-bar"></span>
-				</span>
-				<div class="progress-value">
-					<div>
-						40%<br>
-						<span>completed</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-sm-4 col-md-3">
-			<div class="progress" data-percentage="80">
-				<span class="progress-left">
-					<span class="progress-bar"></span>
-				</span>
-				<span class="progress-right">
-					<span class="progress-bar"></span>
-				</span>
-				<div class="progress-value">
-					<div>
-						80%<br>
-						<span>completed</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
-		<div class="col-sm-4 col-md-3">
-			<div class="progress" data-percentage="100">
-				<span class="progress-left">
-					<span class="progress-bar"></span>
-				</span>
-				<span class="progress-right">
-					<span class="progress-bar"></span>
-				</span>
-				<div class="progress-value">
-					<div>
-						100%<br>
-						<span>completed</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
-		
+
+
+<div>
+	
+		<div id="Lorem_ipsum_dolor_sit_amet__co">
+			<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. I<br/>nteger ut tincidunt ipsum, a ornare ante. Suspendisse id facilisis dui. <br/>Nam euismod molestie ex e<br/>u blandit. Integer maximus, dui sed volutpat gravida, nisi <br/>tpat vestibulum pharetra. Sed porta augue quis ullamcojasnkssk<br/>rper trisit.</span>
+		</div>		
 	</div>
-        </div>  
+  </div>
+
+
+ <div id="Seccao_estatistica">
+   <!--
+<img src="storage/assets/adenina_A0_Rectangle_9_pattern.png" alt="Snow" style="width:100%">
+<img src="storage/assets/citosina_A0_Rectangle_11_pattern.png" alt="Forest" style="width:100%">
+ <img src="storage/assets/guanina_A0_Rectangle_13_pattern.png" alt="Mountains" style="width:100%">
+<img src="storage/assets/timina_A0_Rectangle_15_pattern.png" alt="Mountains" style="width:100%">
+
+ -->
+
+	<div class="container">
+    	<div class="row" id="counter">
+        	<div class="col-sm-3 counter-Txt"> Drugs <span class="counter-value" data-count="10">0</span><img src="storage/assets/adenina_A0_Rectangle_9_pattern.png"></div>
+            <div class="col-sm-3 counter-Txt">Chemicals<span class="counter-value" data-count="25">0</span><img src="storage/assets/citosina_A0_Rectangle_11_pattern.png"></div>
+            <div class="col-sm-3 counter-Txt"> Genes <span class="counter-value" data-count="150">0</span> <img src="storage/assets/guanina_A0_Rectangle_13_pattern.png" style="width:112%"></div>
+            <div class="col-sm-3 counter-Txt">Variants<span class="counter-value" data-count="150">0</span><img src="storage/assets/timina_A0_Rectangle_15_pattern.png"></div>
+        </div>
     </div>
+
+
+  </div>
+
+   <div id="Databases_Explored">
+     <div id="Title__DatabasesExplored">
+        <h1><span>Databases Explored</span></h1>
+        <svg class="Linha_2">
+			<path id="Linha_2" d="M 35 0 L 260 0">
+			</path>
+		</svg>
+</div>
+     
+   <div class="container">
+       <div class="row blog">
+                <div class="col-md-12">
+                    <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+
+                        <ol class="carousel-indicators">
+                            <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#blogCarousel" data-slide-to="1"></li>
+                        </ol>
+
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-4 m-auto">
+                                        <a href="#">
+                                            <img src="storage/assets/ID2_PharmGKB_logo_2_A0_Rectangle_23_pattern.png" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 m-auto">
+                                        <a href="#">
+                                            <img src="storage/assets/ID8a068f_31efe77e736340339e450_A0_Rectangle_25_pattern.png" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 m-auto">
+                                        <a href="#">
+                                            <img src="storage/assets/ID1280px_Drugbank_logo_svg_A0_Rectangle_27_pattern.png" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--.row-->
+                            </div>
+                            <!--.item-->
+
+                        </div>
+                        <!--.carousel-inner-->
+                    </div>
+                    <!--.Carousel-->
+
+                </div>
+            </div>
+  </div>
+
+  </div>
+  <div id="Seccao_Last_News">
+<div id="Last_News">
+     <div id="Title__LastNews">
+        <h1><span>Last News</span></h1>
+        <svg class="Linha_3">
+			<path id="Linha_3" d="M 80 0 L 215 0">
+			</path>
+		</svg>
+</div>
+  <table id="tb_news">
+  <tr>
+     <th>
+    <u><h4><a class="new" href="#">Article about XPto</a></h4></u>
+    <h6>4 days ago, drugBank Web Site</h6>
+    </th>
+    <th>
+    <u><h4><a class="new" href="#">Article about pharmasusjdn</a></h4></u>
+    <h6>10 days ago, Pharmgkb Web Site</h6>
+    </th>
+  </tr>
+  <br>
+  <tr>
+     <th>
+    <u><h4><a class="new" href="#">Article GSJKJhAabout XPto</a></h4></u>
+    <h6>4 days ago, Pharmgkb Web Site</h6>
+    </th>
+    <th>
+    <u><h4><a class="new" href="#">Article about XPto</a></h4></u>
+    <h6>6 days ago, Pharmgkb Web Site</h6>
+    </th>
+  </tr>
+  <br>
+  <tr>
+    <th>
+    <u><h4><a class="new" href="#">Article about XPto</a></h4></u>
+    <h6>4 days ago, drugBank Web Site</h6>
+    </th>
+    <th>
+    <u><h4><a class="new" href="#">UgaSKVDNMas drticle about XPto</a></h4></u>
+    <h6>4 days ago, Pharmgkb Web Site</h6>
+    </th>
+  </tr>
+  <tr>
+    <th>
+    <u><h4><a class="new" href="#">Article about XPto hjsbm hbh</a></h4></u>
+    <h6>4 days ago,  Web Site</h6>
+    </th>
+     <th>
+    <u><h4><a class="new" href="#">Article about XPto</a></h4></u>
+    <h6>4 days ago, NCBI Web Site</h6>
+    </th>
+    
+  </tr>
+</table>
+
+</div>
+
+</div>
+
+<div id="footer">
+<div class="container mt-5 mb-5">
+<footer>
+    <table>
+      <tr>
+        <th><img src="storage/assets/logo.png"/></th>
+        <th>About</th>
+        <th>Suport</th>
+        <th>Contacts</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td>About BioMed Search</td>
+          <td>FAQS</td>
+          </tr>
+          <tr>
+            <td></td>
+           <td> Terms of Use </td>
+           <td>Email Suport</td>
+          </tr>
+          <tr>
+            <td></td>
+        <td> Privacy Policy</td>
+        <td></td>
+          </tr>
+    </table>
+  
+</footer>
+
+</div>
+<p class="container">Copyrigh © 2019. All rigths reserved. </p>
+</div>
+</div>
 
 
 </template>
 <script>
 export default {};
+
+var a = 0;
+$(window).scroll(function() {
+
+  var oTop = $('#counter').offset().top - window.innerHeight;
+  if (a == 0 && $(window).scrollTop() > oTop) {
+    $('.counter-value').each(function() {
+      var $this = $(this),
+        countTo = $this.attr('data-count');
+      $({
+        countNum: $this.text()
+      }).animate({
+          countNum: countTo
+        },
+
+        {
+
+          duration: 2000,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function() {
+            $this.text(this.countNum);
+            //alert('finished');
+          }
+
+        });
+    });
+    a = 1;
+  }
+
+});
 </script>
-
-<style>
-#search_container > h1 {
-  color: #0c5a89;
-}
-
-#btn-search {
-  width: 150px;
-}
-.input-group {
-  -webkit-box-shadow: 0px 9px 7px -2px rgba(171, 166, 171, 1);
-  -moz-box-shadow: 0px 9px 7px -2px rgba(171, 166, 171, 1);
-  box-shadow: 0px 9px 7px -2px rgba(171, 166, 171, 1);
-}
-
-
-</style>
-<style lang="scss">
-
-//styling
-$borderWidth: 7px;
-$animationTime: 1.5s;
-$border-color-default: #eee;
-$border-color-fill:#0083ff;
-$size: 150px;
-
-//Create how many steps
-$howManySteps: 10; //this needs to be even. 
-//for fun try using 20 and changine in the HTML the data-percentage to 15 or 85
-
-.progress {
-  width: $size;
-  height: $size;
-  line-height: $size;
-  background: none;
-  margin: 0 auto;
-  box-shadow: none;
-  position: relative;
-  &:after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: $borderWidth solid $border-color-default;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  > span {
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    z-index: 1;
-  }
-  .progress-left {
-    left: 0;
-  }
-  .progress-bar {
-    width: 100%;
-    height: 100%;
-    background: none;
-    border-width: $borderWidth;
-    border-style: solid;
-    position: absolute;
-    top: 0;
-    border-color: $border-color-fill;
-  }
-  .progress-left .progress-bar {
-    left: 100%;
-    border-top-right-radius: ($size/2);;
-    border-bottom-right-radius: ($size/2);;
-    border-left: 0;
-    -webkit-transform-origin: center left;
-    transform-origin: center left;
-    //animation: loading-2 1.5s linear forwards 1.8s;
-  }
-  .progress-right {
-    right: 0;
-    .progress-bar {
-      left: -100%;
-      border-top-left-radius: ($size/2);;
-      border-bottom-left-radius: ($size/2);;
-      border-right: 0;
-      -webkit-transform-origin: center right;
-      transform-origin: center right;
-      //animation: loading-1 1.8s linear forwards;
-    }
-  }
-  .progress-value {
-    display: flex;
-    border-radius: 50%;
-    font-size: 36px;
-    text-align: center;
-    line-height: 20px;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    //font-family: $work-sans;
-    font-weight: 300;
-    div {
-      margin-top: 10px;
-    }
-    span {
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-  }
-}
-
-/* This for loop creates the 	necessary css animation names 
-Due to the split circle of progress-left and progress right, we must use the animations on each side. 
-*/
-@for $i from 1 through $howManySteps {
-	$stepName: ($i*(100 / $howManySteps));
-
-	//animation only the left side if below 50%
-	@if $i <= ($howManySteps/2) { 
-		.progress[data-percentage="#{$stepName}"] {
-			.progress-right .progress-bar {
-				 animation: loading-#{$i} $animationTime linear forwards;
-			}
-			.progress-left .progress-bar {animation: 0;}
-		}
-	}
-	//animation only the right side if above 50%
-	@if $i > ($howManySteps/2)  {  
-		.progress[data-percentage="#{$stepName}"] {
-			.progress-right .progress-bar {
-				animation: loading-#{($howManySteps/2)} $animationTime linear forwards; //set the animation to longest animation
-			}
-			.progress-left .progress-bar {
-      animation: loading-#{$i - ($howManySteps/2)} $animationTime linear forwards $animationTime;
-    }
-		}
-	}
-}
-
-//animation
-@for $i from 1 through ($howManySteps/2) { 
-	$degrees: (180/($howManySteps/2));
-	$degrees: ($degrees*$i);
-	@keyframes loading-#{$i}{
-    0%{
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100%{
-        -webkit-transform: rotate($degrees);
-			transform: rotate(#{$degrees}deg);
-    }
-	}
-}
-//additional styling
-.progress {
-		margin-bottom: 1em;
-	}
-</style>
 

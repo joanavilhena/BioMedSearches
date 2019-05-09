@@ -56,24 +56,5 @@ export default {
 
     
 }
+
 </script>
- <style>
- .nav-link{
-   color:black;
-      
- }
- a.nav-link{
-   border-top-style:solid;
-   border-color: transparent;
- }
- a.nav-link:hover{
-   border-color: #4acaff;
-   border-radius: 5px;
- }
-  a.nav-link:focus{
-   border-color: #4acaff;
-   border-radius: 5px;
- }
-
-
- </style>

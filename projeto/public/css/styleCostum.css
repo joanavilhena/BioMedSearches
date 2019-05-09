@@ -1,0 +1,249 @@
+#search_container > h1 {
+    color: #0c5a89;
+  }
+  
+  .carousel-indicators{
+        margin-bottom: -3%;
+  }
+  
+  #btn-search {
+    width: 150px;
+  }
+  .input-group {
+    -webkit-box-shadow: 0px 9px 7px -2px rgba(171, 166, 171, 1);
+    -moz-box-shadow: 0px 9px 7px -2px rgba(171, 166, 171, 1);
+    box-shadow: 0px 9px 7px -2px rgba(171, 166, 171, 1);
+  }
+  
+  #counter > div:nth-child(1) > span {
+        left: -15%;
+      top: 56%;
+  }
+  
+  #counter > div:nth-child(2) > span{
+        left: 2%;
+      top: 53%;
+  }
+  
+  #counter > div:nth-child(3) > span{
+        left: 0%;
+      top: 52%;
+  }
+  
+  
+  .c-no{height:150px;}
+  .counter-Txt{text-align:center; font-size:20px; font-weight:bold; text-transform:uppercase; margin-top:20px;}
+  .counter-Txt span{display:block; font-size:36px}
+  @media(min-width:320px) and (max-width:767px){ 
+  .c-no{height:100%;}
+  .counter-Txt{margin-top:35px;}
+  .margin-bot-35{margin-bottom:35px;}
+  }
+  .counter-value{
+      position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    text-align:center;
+    transform:translateY(-50%); /* doesn't work in IE9 and older I'm affraid */
+    margin:0;
+  }
+  
+  
+  #counter > div > img{
+    width: 100%;
+      opacity: 0.4;
+  }
+  table{
+    width: 100%;
+  }
+  
+  
+      #Seccao_BioMedSearchText {
+          opacity: 1;
+          position: absolute;
+          width: 3277.085px;
+          height: 1594.85px;
+          left: -688.574px;
+          top: 1011.517px;
+          overflow: visible;
+      }
+      #Title__BioMed_Search {
+              text-align: center;
+      padding-top: 276px;
+      }
+      
+      #BioMed {
+          opacity: 1;
+          position: absolute;
+          left: 0px;
+          top: 14px;
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          overflow: visible;
+          width: 285px;
+          white-space: nowrap;
+          text-align: left;
+          font-family: Arial Rounded MT;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 78px;
+          color: rgba(0,117,189,1);
+    }
+      #Lorem_ipsum_dolor_sit_amet__co {
+          text-align: center;
+      font-family: Segoe UI;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      color: rgba(128,121,121,1);
+      }
+      #Linha_1 {
+          opacity: 1;
+          fill: transparent;
+          stroke: rgb(0, 123, 255);
+          stroke-width: 5px;
+          stroke-linejoin: miter;
+          stroke-linecap: round;
+          stroke-miterlimit: 4;
+          shape-rendering: auto;
+      }
+      .Linha_1 {
+          overflow: visible;
+      height: 30px;
+      }
+      #Seccao_estatistica {
+          background-color: white;
+  background-image: linear-gradient(whitesmoke 0%, white );
+      padding-bottom: 10%
+      }
+  
+    #Seccao_estatistica > div {
+          padding-top: 50px;
+    }
+  
+    #tb_news{
+      width: 100%;
+      color: gray;
+    }
+  
+  
+   #tb_news > tr > th > h6{
+      font-size:  xx-small;
+    }
+  
+     .new{
+      color: gray;
+    }
+  
+      #Seccao_Database {
+          opacity: 1;
+          position: absolute;
+          width: 2173.361px;
+          height: 769px;
+          left: -136.577px;
+          top: 2625.669px;
+          overflow: visible;
+      }
+      
+      #Databases_Explored {
+          background-color: rgb(234, 234, 234);
+      padding: 5%;
+      }
+  
+    #Title__DatabasesExplored{
+  text-align: center;
+  padding: unset;
+  
+    }
+  
+  #Linha_2 {
+          opacity: 1;
+          fill: transparent;
+          stroke: rgb(0, 123, 255);
+          stroke-width: 5px;
+          stroke-linejoin: miter;
+          stroke-linecap: round;
+          stroke-miterlimit: 4;
+          shape-rendering: auto;
+      }
+      .Linha_2 {
+          overflow: visible;
+      height: 30px;
+      }
+      #Seccao_Last_News {
+              background-color:white;
+      padding: 5%;
+      }
+      #Last_News {
+  text-align: center;
+  padding: unset;
+          color: rgba(0,123,255,1);
+      }
+  #Linha_3 {
+          opacity: 1;
+          fill: transparent;
+          stroke:#02284c;
+          stroke-width: 5px;
+          stroke-linejoin: miter;
+          stroke-linecap: round;
+          stroke-miterlimit: 4;
+          shape-rendering: auto;
+      }
+      .Linha_3 {
+          overflow: visible;
+      height: 30px;
+      }
+      .nav-link{
+        color:black;
+           
+      }
+      a.nav-link{
+        border-top-style:solid;
+        border-color: transparent;
+      }
+      a.nav-link:hover{
+        border-color: #4acaff;
+        border-radius: 5px;
+      }
+       a.nav-link:focus{
+        border-color: #4acaff;
+        border-radius: 5px;
+      }
+
+
+      .navbar-custom {
+        background-color: black;
+        
+        }
+        
+        .list-group{
+            width:25%;
+            height:50%;
+          
+        }
+        .box{
+          width:100%;
+          display:block;
+          padding:5px;
+          clear:both;
+        }
+        .innerBox{
+          width:33%;
+          height:200px;
+          background-color:#ccc;
+          border:1px solid #444;
+        }
+        .innerBox.left{
+          float:left;
+        }
+        .innerBox.center{
+          margin:auto;
+        }
+        .innerBox.right{
+          float:right;
+        }
+        
+        
+     
