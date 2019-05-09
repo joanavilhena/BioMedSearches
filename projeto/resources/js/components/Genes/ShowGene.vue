@@ -177,19 +177,9 @@ export default {
 
 
 }
-
-    
-
-//$( document ).ready(function() {
- //   $( "#app" ).addClass( "app2" )
- //   });
-
 </script>
 <style>
 
- .app2{
-            background-color: white;
-            background-image: none;
-        }
+
 
 </style>

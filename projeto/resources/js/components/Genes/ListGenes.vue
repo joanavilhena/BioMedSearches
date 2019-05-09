@@ -9,10 +9,19 @@
 </div>
 
 <div  v-if="!showGene">
-    <div class="input-group mb-3">
-        <input class="form-control"  placeholder="Search for name or PharmaGKB ID..." type="text" v-model="search">
-        <button class="btn btn-primary" @click="getSearchResults">Search</button>
+     <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search for gene, variant, drug, chemical..."
+        aria-label="Recipient's username"
+        aria-describedby="button-addon2"
+      >
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" id="btn-search" @click="getSearchResults">Search</button>
+      </div>
     </div>
+  
 
   <table class="table table-hover table-dark">
     <thead>
