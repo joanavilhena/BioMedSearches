@@ -77,7 +77,7 @@ export default {
             showingPub:false,
             showingChemicals:false,
             id: this.$route.params.id,
-            currentGene:[],
+            currentVariant:[],
         }
     },
     methods:
@@ -131,7 +131,7 @@ export default {
                
                 console.log(response.data);
                     
-                this.currentGene= response.data.data;
+                this.currentVariant= response.data.data;
     
               //  this.genericNames = this.currentDrug.genericNames;
 

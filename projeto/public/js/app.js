@@ -3052,9 +3052,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3153,7 +3150,7 @@ module.exports = {
       var _this = this;
 
       axios.get('api/variants?page=' + this.page).then(function (response) {
-        //console.log(response.data);
+        console.log(response.data);
         _this.variants = response.data.data;
         _this.last = response.data.meta.last_page;
         _this.total = response.data.meta.total; //console.log(this.drugs);
@@ -3164,7 +3161,7 @@ module.exports = {
     },
     showItem: function showItem(variant) {
       this.showVariant = true;
-      this.$router.push('/variant/' + variant.variantID); //  this.currentDrug = Object.assign({},drug);
+      this.$router.push('/variant/' + variant.idp); //  this.currentDrug = Object.assign({},drug);
     },
     getSearchResults: function getSearchResults() {
       var _this2 = this;
@@ -3188,6 +3185,7 @@ module.exports = {
   created: function created() {},
   mounted: function mounted() {
     this.getVariants();
+    console.log(this.variants);
     console.log("Criado");
   }
 };
@@ -3279,7 +3277,7 @@ __webpack_require__.r(__webpack_exports__);
       showingPub: false,
       showingChemicals: false,
       id: this.$route.params.id,
-      currentGene: []
+      currentVariant: []
     };
   },
   methods: {
@@ -3320,7 +3318,7 @@ __webpack_require__.r(__webpack_exports__);
     console.log(this.$route.params.id);
     axios.get('api/variant/' + this.$route.params.id).then(function (response) {
       console.log(response.data);
-      _this.currentGene = response.data.data; //  this.genericNames = this.currentDrug.genericNames;
+      _this.currentVariant = response.data.data; //  this.genericNames = this.currentDrug.genericNames;
       //console.log(this.drugs);
 
       /*   if(this.genericNames!=null)
@@ -68207,20 +68205,7 @@ var render = function() {
                 _c(
                   "router-link",
                   { staticClass: "nav-link", attrs: { to: "/aboutus" } },
-                  [_vm._v("AboustUs")]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item " },
-              [
-                _c(
-                  "router-link",
-                  { staticClass: "nav-link", attrs: { to: "/contacts" } },
-                  [_vm._v("Contacts")]
+                  [_vm._v("About Us")]
                 )
               ],
               1
@@ -68355,7 +68340,7 @@ var render = function() {
               "tbody",
               _vm._l(_vm.variants, function(variant, index) {
                 return _c("tr", { key: index }, [
-                  _c("td", [_vm._v(_vm._s(variant.variantName))]),
+                  _c("td", [_vm._v(_vm._s(variant.name))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(variant.variantSymbol))]),
                   _vm._v(" "),

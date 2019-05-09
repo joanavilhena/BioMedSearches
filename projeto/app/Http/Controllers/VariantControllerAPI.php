@@ -34,9 +34,9 @@ class VariantControllerAPI extends Controller
         $s=$request->search;
         $s = strtolower($s);
 
-        $result = DB::table('variants')->whereRaw('lower(variantName) like lower(?)', ["%{$s}%"])
+        $result = DB::table('variants')->whereRaw('lower(name) like lower(?)', ["%{$s}%"])
                                     ->orWhereRaw('lower(variantSymbol) like lower(?)', ["%{$s}%"])
-                                    ->orWhereRaw('lower(variantID) like lower(?)', ["%{$s}%"])
+                                    ->orWhereRaw('lower(idp) like lower(?)', ["%{$s}%"])
                                     ->orWhereRaw('lower(geneIDs) like lower(?)', ["%{$s}%"])
                                     ->orWhereRaw('lower(geneSymbols) like lower(?)', ["%{$s}%"])
                                     ->paginate(5);

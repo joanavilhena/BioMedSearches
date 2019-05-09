@@ -33,7 +33,7 @@
     <tbody>
        <tr v-for="(variant,index) in variants" :key="index">
           
-           <td>{{variant.variantName}}</td>
+           <td>{{variant.name}}</td>
            <td>{{variant.variantSymbol}}</td>
            <td>{{variant.geneIDs}}</td>
            <td>{{variant.geneSymbols}}</td>
@@ -85,7 +85,7 @@
                 .then((response) => {
 
                
-                //console.log(response.data);
+                console.log(response.data);
                     
                 this.variants= response.data.data;
                 this.last = response.data.meta.last_page;
@@ -106,7 +106,7 @@
             showItem(variant)
             {
                 this.showVariant=true;
-                this.$router.push('/variant/'+variant.variantID);
+                this.$router.push('/variant/'+variant.idp);
               //  this.currentDrug = Object.assign({},drug);
             },
 
@@ -139,13 +139,14 @@
         },
         created()
         {
-            
 
         },
         mounted()
         {
             this.getVariants();
+            console.log(this.variants);
             console.log("Criado");
+            
         }
     };
 </script>

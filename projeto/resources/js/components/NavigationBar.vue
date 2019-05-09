@@ -31,10 +31,7 @@
             <router-link class="nav-link" to="/publications">Publications</router-link>
           </li>
           <li class="nav-item ">
-            <router-link class="nav-link" to="/aboutus">AboustUs</router-link>
-          </li>
-            <li class="nav-item ">
-              <router-link class="nav-link" to="/contacts">Contacts</router-link>
+            <router-link class="nav-link" to="/aboutus">About Us</router-link>
           </li>
           <li>
             <button v-if="user=![]" type="button" class="btn btn-outline-info">Login</button>
