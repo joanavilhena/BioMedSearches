@@ -209,9 +209,17 @@
 
 </template>
 <script>
-export default {};
+export default {
 
-var a = 0;
+    data: function () {
+        return {
+        
+        }
+  },
+
+  created()
+  {
+          var a = 0;
 $(window).scroll(function() {
 
   var oTop = $('#counter').offset().top - window.innerHeight;
@@ -243,5 +251,10 @@ $(window).scroll(function() {
   }
 
 });
+  }
+  
+};
+
+
 </script>
 

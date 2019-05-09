@@ -34,7 +34,7 @@ class ChemicalControllerAPI extends Controller
         $s=$request->search;
         $s = strtolower($s);
 
-        $result = DB::table('drugs')->whereRaw('lower(name) like lower(?)', ["%{$s}%"])
+        $result = DB::table('chemicals')->whereRaw('lower(name) like lower(?)', ["%{$s}%"])
                                     ->orWhereRaw('lower(genericNames) like lower(?)', ["%{$s}%"])
                                     ->orWhereRaw('lower(idp) like lower(?)', ["%{$s}%"])
                                     ->orWhereRaw('lower(brandMixtures) like lower(?)', ["%{$s}%"])
@@ -43,6 +43,12 @@ class ChemicalControllerAPI extends Controller
         return $result;
         
 
+    }
+
+    public function countElem()
+    {
+        $num = DB::table('chemicals')->selectRaw('count(*) as num')->get();
+        return $num;
     }
 
 }

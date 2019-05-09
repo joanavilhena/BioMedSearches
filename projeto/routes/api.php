@@ -24,6 +24,7 @@ Route::get('search', 'HomeControllerAPI@searchResults');
 Route::get('drugs', 'DrugControllerAPI@index');
 Route::get('drug/{id}','DrugControllerAPI@showDrug');
 Route::get('drug/{id}/chemicals','DrugControllerAPI@getAssociatedChemicals');
+Route::get('numDrugs','DrugControllerAPI@countElem');
 
 Route::get('drugssearch','DrugControllerAPI@searchDrug');
 
@@ -35,6 +36,7 @@ Route::get('druglabel/{id}','DrugControllerAPI@showDrugLabel');
 Route::get('chemicals', 'ChemicalControllerAPI@index');
 Route::get('chemical/{id}','ChemicalControllerAPI@showChemical');
 Route::get('chemicalssearch','ChemicalControllerAPI@searchChemical');
+Route::get('numChemicals','ChemicalControllerAPI@countElem');
 
 
 
@@ -42,12 +44,14 @@ Route::get('chemicalssearch','ChemicalControllerAPI@searchChemical');
 Route::get('genes','GeneControllerAPI@index');
 Route::get('gene/{id}','GeneControllerAPI@showGene');
 Route::get('genessearch','GeneControllerAPI@searchGene');
+Route::get('numGenes','GeneControllerAPI@countElem');
 
 
 //Variants
 Route::get('variants', 'VariantControllerAPI@index');
 Route::get('variant/{id}','VariantControllerAPI@showVariant');
 Route::get('variantssearch','VariantControllerAPI@searchVariant');
+Route::get('numVariants','VariantControllerAPI@countElem');
 
 //Clinical Variants
 Route::get('clinicalvariants', 'ClinicalVariantControllerAPI@index');

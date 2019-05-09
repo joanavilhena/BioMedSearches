@@ -45,6 +45,12 @@ class GeneControllerAPI extends Controller
 
     }
 
+    public function countElem()
+    {
+        $num = DB::table('genes')->selectRaw('count(*) as num')->get();
+        return $num;
+    }
+
 
 
     

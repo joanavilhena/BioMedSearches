@@ -3021,31 +3021,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
-var a = 0;
-$(window).scroll(function () {
-  var oTop = $('#counter').offset().top - window.innerHeight;
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {};
+  },
+  created: function created() {
+    var a = 0;
+    $(window).scroll(function () {
+      var oTop = $('#counter').offset().top - window.innerHeight;
 
-  if (a == 0 && $(window).scrollTop() > oTop) {
-    $('.counter-value').each(function () {
-      var $this = $(this),
-          countTo = $this.attr('data-count');
-      $({
-        countNum: $this.text()
-      }).animate({
-        countNum: countTo
-      }, {
-        duration: 2000,
-        easing: 'swing',
-        step: function step() {
-          $this.text(Math.floor(this.countNum));
-        },
-        complete: function complete() {
-          $this.text(this.countNum); //alert('finished');
-        }
-      });
+      if (a == 0 && $(window).scrollTop() > oTop) {
+        $('.counter-value').each(function () {
+          var $this = $(this),
+              countTo = $this.attr('data-count');
+          $({
+            countNum: $this.text()
+          }).animate({
+            countNum: countTo
+          }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function step() {
+              $this.text(Math.floor(this.countNum));
+            },
+            complete: function complete() {
+              $this.text(this.countNum); //alert('finished');
+            }
+          });
+        });
+        a = 1;
+      }
     });
-    a = 1;
   }
 });
 
@@ -3131,6 +3137,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -68411,7 +68420,28 @@ var render = function() {
                 _c(
                   "router-link",
                   { staticClass: "nav-link", attrs: { to: "/aboutus" } },
-                  [_vm._v("About Us")]
+                  [
+                    _c("span", { on: { click: _vm.removeBackground } }, [
+                      _vm._v("AboustUs")
+                    ])
+                  ]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "nav-item " },
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "nav-link", attrs: { to: "/contacts" } },
+                  [
+                    _c("span", { on: { click: _vm.removeBackground } }, [
+                      _vm._v("Contacts")
+                    ])
+                  ]
                 )
               ],
               1
@@ -84936,8 +84966,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Projects\BioMedSearches\projeto\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Projects\BioMedSearches\projeto\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Joana\Web\BioMedSearches\BioMedSearches\projeto\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Joana\Web\BioMedSearches\BioMedSearches\projeto\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

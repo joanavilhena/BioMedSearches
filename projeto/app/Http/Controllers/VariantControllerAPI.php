@@ -46,4 +46,11 @@ class VariantControllerAPI extends Controller
 
     }
 
+
+    public function countElem()
+    {
+        $num = DB::table('variants')->selectRaw('count(*) as num')->get();
+        return $num;
+    }
+
 }

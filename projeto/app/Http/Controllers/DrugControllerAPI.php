@@ -48,6 +48,13 @@ class DrugControllerAPI extends Controller
 
     }
 
+
+    public function countElem()
+    {
+        $num = DB::table('drugs')->selectRaw('count(*) as num')->get();
+        return $num;
+    }
+
     
 
   
