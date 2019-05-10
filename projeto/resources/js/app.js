@@ -30,6 +30,7 @@ Vue.component('feed', require('./components/MainPage/FeedNews.vue').default);
 const mainPage = Vue.component('main', require('./components/MainPage/MainIndex.vue').default);
 
 
+
 const searchResult = Vue.component('searchResult', require('./components/MainPage/SearchResult.vue').default);
 
 
@@ -67,7 +68,7 @@ const routes = [
     {path:'/searchResult', component:searchResult},
 ];
 const router = new VueRouter({
-    mode:'history',
+    
     routes: routes 
   });
 

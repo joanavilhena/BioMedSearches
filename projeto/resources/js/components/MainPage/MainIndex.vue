@@ -39,20 +39,13 @@
 
 
  <div id="Seccao_estatistica">
-   <!--
-<img src="storage/assets/adenina_A0_Rectangle_9_pattern.png" alt="Snow" style="width:100%">
-<img src="storage/assets/citosina_A0_Rectangle_11_pattern.png" alt="Forest" style="width:100%">
- <img src="storage/assets/guanina_A0_Rectangle_13_pattern.png" alt="Mountains" style="width:100%">
-<img src="storage/assets/timina_A0_Rectangle_15_pattern.png" alt="Mountains" style="width:100%">
-
- -->
 
 	<div class="container">
     	<div class="row" id="counter">
-        	<div class="col-sm-3 counter-Txt"> Drugs <span class="counter-value" data-count="10">0</span><img src="storage/assets/adenina_A0_Rectangle_9_pattern.png"></div>
-            <div class="col-sm-3 counter-Txt">Chemicals<span class="counter-value" data-count="25">0</span><img src="storage/assets/citosina_A0_Rectangle_11_pattern.png"></div>
-            <div class="col-sm-3 counter-Txt"> Genes <span class="counter-value" data-count="150">0</span> <img src="storage/assets/guanina_A0_Rectangle_13_pattern.png" style="width:112%"></div>
-            <div class="col-sm-3 counter-Txt">Variants<span class="counter-value" data-count="150">0</span><img src="storage/assets/timina_A0_Rectangle_15_pattern.png"></div>
+        	<div class="col-sm-3 counter-Txt"> Drugs <span class="counter-value" :data-count="this.numDrugs">0</span><img src="storage/assets/adenina_A0_Rectangle_9_pattern.png"></div>
+            <div class="col-sm-3 counter-Txt">Chemicals<span class="counter-value" :data-count="this.numChemicals">0</span><img src="storage/assets/citosina_A0_Rectangle_11_pattern.png"></div>
+            <div class="col-sm-3 counter-Txt"> Genes <span class="counter-value" :data-count="this.numGenes">0</span> <img src="storage/assets/guanina_A0_Rectangle_13_pattern.png" style="width:112%"></div>
+            <div class="col-sm-3 counter-Txt">Variants<span class="counter-value" :data-count="this.numVariants">0</span><img src="storage/assets/timina_A0_Rectangle_15_pattern.png"></div>
         </div>
     </div>
 
@@ -213,47 +206,83 @@ export default {
 
     data: function () {
         return {
+          numGenes:0,
+          numVariants:0,
+          numDrugs:0,
+          numChemicals:0,
         
         }
+  },
+
+  mounted()
+  {
+    axios.get('api/numDrugs')
+      .then((response) => {
+      
+      console.log(response.data[0].num);
+      this.numDrugs= response.data[0].num;
+    })
+
+    axios.get('api/numChemicals')
+      .then((response) => {
+      
+      console.log(response.data[0].num);
+      this.numChemicals= response.data[0].num;
+    })
+
+    axios.get('api/numGenes')
+      .then((response) => {
+      
+      console.log(response.data[0].num);
+      this.numGenes= response.data[0].num;
+    })
+
+
+    axios.get('api/numVariants')
+      .then((response) => {
+      
+      console.log(response.data[0].num);
+      this.numVariants= response.data[0].num;
+    })
   },
 
   created()
   {
           var a = 0;
-$(window).scroll(function() {
+          $(window).scroll(function() {
 
-  var oTop = $('#counter').offset().top - window.innerHeight;
-  if (a == 0 && $(window).scrollTop() > oTop) {
-    $('.counter-value').each(function() {
-      var $this = $(this),
-        countTo = $this.attr('data-count');
-      $({
-        countNum: $this.text()
-      }).animate({
-          countNum: countTo
-        },
+            var oTop = $('#counter').offset().top - window.innerHeight;
+            if (a == 0 && $(window).scrollTop() > oTop) {
+              $('.counter-value').each(function() {
+                var $this = $(this),
+                countTo = $this.attr('data-count');
+                $({
+                  countNum: $this.text()
+                }).animate({
+                  countNum: countTo
+                },
 
-        {
+                {
 
-          duration: 2000,
-          easing: 'swing',
-          step: function() {
-            $this.text(Math.floor(this.countNum));
-          },
-          complete: function() {
-            $this.text(this.countNum);
-            //alert('finished');
-          }
+                  duration: 2000,
+                  easing: 'swing',
+                  step: function() {
+                    $this.text(Math.floor(this.countNum));
+                  },
+                  complete: function() {
+                    $this.text(this.countNum);
+                    //alert('finished');
+                  }
 
-        });
-    });
-    a = 1;
-  }
+                });
+              });
+              a = 1;
+            }
 
-});
-  }
+            });
+    }
   
-};
+}
 
 
 </script>

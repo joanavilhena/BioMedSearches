@@ -57,8 +57,47 @@
 </template>
 
 <script>
-export default {
+module.exports = {
+  data: function () {
+    return {
+
+      results:[],
+      page:1,
+      last:1,
+      total:1,
+        
+    }
+
+  },
+  methods: {
+
+     getResults(page)
+            {
+                axios.get('api/search?page='+page)
+                .then((response) => {
+
     
+                this.results= response.data.data;
+                this.last = response.data.last_page;
+                this.total = response.data.total;
+
+
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+               
+            },
+
+  },
+  created()
+  {
+    this.getResults(this.page);
+  }
+
+
+
 }
 </script>
 

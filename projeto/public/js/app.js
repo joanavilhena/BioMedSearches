@@ -3014,16 +3014,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {};
+    return {
+      numGenes: 0,
+      numVariants: 0,
+      numDrugs: 0,
+      numChemicals: 0
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('api/numDrugs').then(function (response) {
+      console.log(response.data[0].num);
+      _this.numDrugs = response.data[0].num;
+    });
+    axios.get('api/numChemicals').then(function (response) {
+      console.log(response.data[0].num);
+      _this.numChemicals = response.data[0].num;
+    });
+    axios.get('api/numGenes').then(function (response) {
+      console.log(response.data[0].num);
+      _this.numGenes = response.data[0].num;
+    });
+    axios.get('api/numVariants').then(function (response) {
+      console.log(response.data[0].num);
+      _this.numVariants = response.data[0].num;
+    });
   },
   created: function created() {
     var a = 0;
@@ -3061,11 +3079,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainPage/SearchResult.vue?vue&type=script&lang=js& ***!
   \********************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -3124,7 +3140,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+module.exports = {
+  data: function data() {
+    return {
+      results: [],
+      page: 1,
+      last: 1,
+      total: 1
+    };
+  },
+  methods: {
+    getResults: function getResults(page) {
+      var _this = this;
+
+      axios.get('api/search?page=' + page).then(function (response) {
+        _this.results = response.data.data;
+        _this.last = response.data.last_page;
+        _this.total = response.data.total;
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
+    }
+  },
+  created: function created() {
+    this.getResults(this.page);
+  }
+};
 
 /***/ }),
 
@@ -67605,35 +67647,109 @@ var render = function() {
       _vm._m(2)
     ]),
     _vm._v(" "),
-    _vm._m(3),
+    _c("div", { attrs: { id: "Seccao_estatistica" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row", attrs: { id: "counter" } }, [
+          _c("div", { staticClass: "col-sm-3 counter-Txt" }, [
+            _vm._v(" Drugs "),
+            _c(
+              "span",
+              {
+                staticClass: "counter-value",
+                attrs: { "data-count": this.numDrugs }
+              },
+              [_vm._v("0")]
+            ),
+            _c("img", {
+              attrs: {
+                src: "storage/assets/adenina_A0_Rectangle_9_pattern.png"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-3 counter-Txt" }, [
+            _vm._v("Chemicals"),
+            _c(
+              "span",
+              {
+                staticClass: "counter-value",
+                attrs: { "data-count": this.numChemicals }
+              },
+              [_vm._v("0")]
+            ),
+            _c("img", {
+              attrs: {
+                src: "storage/assets/citosina_A0_Rectangle_11_pattern.png"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-3 counter-Txt" }, [
+            _vm._v(" Genes "),
+            _c(
+              "span",
+              {
+                staticClass: "counter-value",
+                attrs: { "data-count": this.numGenes }
+              },
+              [_vm._v("0")]
+            ),
+            _vm._v(" "),
+            _c("img", {
+              staticStyle: { width: "112%" },
+              attrs: {
+                src: "storage/assets/guanina_A0_Rectangle_13_pattern.png"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-3 counter-Txt" }, [
+            _vm._v("Variants"),
+            _c(
+              "span",
+              {
+                staticClass: "counter-value",
+                attrs: { "data-count": this.numVariants }
+              },
+              [_vm._v("0")]
+            ),
+            _c("img", {
+              attrs: {
+                src: "storage/assets/timina_A0_Rectangle_15_pattern.png"
+              }
+            })
+          ])
+        ])
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { attrs: { id: "Databases_Explored" } }, [
       _c("div", { attrs: { id: "Title__DatabasesExplored" } }, [
-        _vm._m(4),
+        _vm._m(3),
         _vm._v(" "),
         _c("svg", { staticClass: "Linha_2" }, [
           _c("path", { attrs: { id: "Linha_2", d: "M 35 0 L 260 0" } })
         ])
       ]),
       _vm._v(" "),
-      _vm._m(5)
+      _vm._m(4)
     ]),
     _vm._v(" "),
     _c("div", { attrs: { id: "Seccao_Last_News" } }, [
       _c("div", { attrs: { id: "Last_News" } }, [
         _c("div", { attrs: { id: "Title__LastNews" } }, [
-          _vm._m(6),
+          _vm._m(5),
           _vm._v(" "),
           _c("svg", { staticClass: "Linha_3" }, [
             _c("path", { attrs: { id: "Linha_3", d: "M 80 0 L 215 0" } })
           ])
         ]),
         _vm._v(" "),
-        _vm._m(7)
+        _vm._m(6)
       ])
     ]),
     _vm._v(" "),
-    _vm._m(8)
+    _vm._m(7)
   ])
 }
 var staticRenderFns = [
@@ -67695,74 +67811,6 @@ var staticRenderFns = [
           ),
           _c("br"),
           _vm._v("rper trisit.")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "Seccao_estatistica" } }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row", attrs: { id: "counter" } }, [
-          _c("div", { staticClass: "col-sm-3 counter-Txt" }, [
-            _vm._v(" Drugs "),
-            _c(
-              "span",
-              { staticClass: "counter-value", attrs: { "data-count": "10" } },
-              [_vm._v("0")]
-            ),
-            _c("img", {
-              attrs: {
-                src: "storage/assets/adenina_A0_Rectangle_9_pattern.png"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-3 counter-Txt" }, [
-            _vm._v("Chemicals"),
-            _c(
-              "span",
-              { staticClass: "counter-value", attrs: { "data-count": "25" } },
-              [_vm._v("0")]
-            ),
-            _c("img", {
-              attrs: {
-                src: "storage/assets/citosina_A0_Rectangle_11_pattern.png"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-3 counter-Txt" }, [
-            _vm._v(" Genes "),
-            _c(
-              "span",
-              { staticClass: "counter-value", attrs: { "data-count": "150" } },
-              [_vm._v("0")]
-            ),
-            _vm._v(" "),
-            _c("img", {
-              staticStyle: { width: "112%" },
-              attrs: {
-                src: "storage/assets/guanina_A0_Rectangle_13_pattern.png"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-3 counter-Txt" }, [
-            _vm._v("Variants"),
-            _c(
-              "span",
-              { staticClass: "counter-value", attrs: { "data-count": "150" } },
-              [_vm._v("0")]
-            ),
-            _c("img", {
-              attrs: {
-                src: "storage/assets/timina_A0_Rectangle_15_pattern.png"
-              }
-            })
-          ])
         ])
       ])
     ])
@@ -83745,7 +83793,6 @@ var routes = [{
   component: searchResult
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  mode: 'history',
   routes: routes
 });
 /**
@@ -84637,14 +84684,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************************************!*\
   !*** ./resources/js/components/MainPage/SearchResult.vue ***!
   \***********************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SearchResult_vue_vue_type_template_id_c6be091e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchResult.vue?vue&type=template&id=c6be091e& */ "./resources/js/components/MainPage/SearchResult.vue?vue&type=template&id=c6be091e&");
 /* harmony import */ var _SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchResult.vue?vue&type=script&lang=js& */ "./resources/js/components/MainPage/SearchResult.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _SearchResult_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchResult.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/MainPage/SearchResult.vue?vue&type=style&index=0&lang=css&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _SearchResult_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchResult.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/MainPage/SearchResult.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -84676,13 +84724,15 @@ component.options.__file = "resources/js/components/MainPage/SearchResult.vue"
 /*!************************************************************************************!*\
   !*** ./resources/js/components/MainPage/SearchResult.vue?vue&type=script&lang=js& ***!
   \************************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SearchResult.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPage/SearchResult.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
