@@ -11,6 +11,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    protected $url = ['biomedsearch.me'];
     public function register()
     {
         //
@@ -27,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        $url = 'biomedsearch.me';
+        
         if(env('REDIRECT_HTTPS')) {
             $url->formatScheme('https');
         }
