@@ -27,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        $url = 'biomedsearch.me';
         if(env('REDIRECT_HTTPS')) {
             $url->formatScheme('https');
         }
