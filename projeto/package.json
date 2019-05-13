@@ -12,7 +12,7 @@
     "devDependencies": {
         "axios": "^0.18",
         "cross-env": "^5.1",
-        "jquery": "^3.2",
+        "jquery": "^3.4.1",
         "laravel-mix": "^4.0.15",
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
@@ -26,6 +26,7 @@
         "bootstrap-vue": "^2.0.0-rc.18",
         "vue": "^2.6.10",
         "vue-cli": "^2.9.6",
+        "vue-cool-select": "^2.10.2",
         "vue-paginate": "^3.6.0",
         "vue-router": "^3.0.3",
         "vuejs-paginate": "^2.1.0"

@@ -8,19 +8,24 @@
      <br>
     <br>  
     <h1>What are you loking for?</h1>
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search for gene, variant, drug, chemical..."
-        aria-label="Recipient's username"
-        aria-describedby="button-addon2"
-      >
-      <div class="input-group-append">
-        <button class="btn btn-primary" type="button" id="btn-search">Search</button>
-      </div>
+    
+   
+  <div>
+       <cool-select v-model="selected" :items="items" placeholder="Select name">
+      <!-- slot for each item in the menu -->
+      <template slot="item" slot-scope="{ item  }">
+        <div style="display: flex;">
+          <input v-if="editedItem === item.name" v-model="editedModel" @click.stop.prevent>
+          <div v-else>{{ item.name }}</div>
+
+         
+        </div>
+      </template>
+    </cool-select>
     </div>
-      <div id="Title__BioMed_Search">
+
+
+  <div id="Title__BioMed_Search">
         <h1><span>BioMed</span><span> Search</span></h1>
         <svg class="Linha_1">
 			<path id="Linha_1" d="M 35 0 L 260 0">
@@ -202,7 +207,10 @@
 
 </template>
 <script>
+import { CoolSelect } from 'vue-cool-select'
+
 export default {
+  components: { CoolSelect },
 
     data: function () {
         return {
@@ -210,8 +218,46 @@ export default {
           numVariants:0,
           numDrugs:0,
           numChemicals:0,
+          selected: null,
+          editedItem: null,
+          editedModel: null,
+          items: [
+     
+          ]
         
         }
+  },
+
+  methods:
+  {
+
+        onEdit(item) {
+      this.editedItem = item.name;
+      this.editedModel = item.name;
+      console.log("edit");
+    },
+    onSave(item) {
+      item.name = editedModel;
+      this.editedItem = null;
+      this.editedModel = null;
+      console.log("save");
+    },
+   
+    updateItems(item)
+    {
+       axios.get('api/search',item)
+      .then((response) => {
+      
+      console.log(response.data);
+
+     
+      this.items= response.data.data;
+
+     
+    })
+
+
+    }
   },
 
   beforeMount()
@@ -244,6 +290,30 @@ export default {
       console.log(response.data[0].num);
       this.numVariants= response.data[0].num;
     })
+
+     axios.get('api/search')
+      .then((response) => {
+      
+      console.log(response.data);
+      
+
+      var array = [];
+      array=response.data.data;
+      console.log(array);
+
+      array.forEach(element => {
+        console.log(element.name);
+        this.items.push({name:element.name, idp:element.idp});
+      });
+
+
+     
+      });
+
+
+    
+
+    
   },
 
   mounted()
@@ -280,6 +350,13 @@ export default {
             }
 
             });
+
+
+            //get items
+
+            console.log(this.items);
+
+
     }
   
 }

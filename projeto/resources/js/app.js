@@ -21,7 +21,11 @@ Vue.use(BootstrapVue);
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
+import VueSelect from 'vue-cool-select';
 
+Vue.use(VueSelect, {
+  theme: 'bootstrap' // or 'material-design'
+});
 
 
 //Home
