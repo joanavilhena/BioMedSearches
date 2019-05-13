@@ -214,7 +214,7 @@ export default {
         }
   },
 
-  mounted()
+  beforeMount()
   {
     axios.get('api/numDrugs')
       .then((response) => {
@@ -246,7 +246,7 @@ export default {
     })
   },
 
-  created()
+  mounted()
   {
           var a = 0;
           $(window).scroll(function() {
