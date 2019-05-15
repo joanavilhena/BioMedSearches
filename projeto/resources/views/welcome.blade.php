@@ -18,6 +18,8 @@
         <!-- Bootstrap core CSS -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
+        <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+
         <link rel="shortcut icon" href="storage/assets/logo.png">
         <link rel="stylesheet" type="text/css" href="/css/styleCostum.css">
     </head>

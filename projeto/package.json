@@ -29,6 +29,7 @@
         "vue-cool-select": "^2.10.2",
         "vue-paginate": "^3.6.0",
         "vue-router": "^3.0.3",
-        "vuejs-paginate": "^2.1.0"
+        "vuejs-paginate": "^2.1.0",
+        "vuetify": "^1.5.14"
     }
 }
