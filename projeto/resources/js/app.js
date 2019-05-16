@@ -40,7 +40,7 @@ Vue.use(Vuetify);
 Vue.component('navigation', require('./components/NavigationBar.vue').default);
 Vue.component('feed', require('./components/MainPage/FeedNews.vue').default);
 const mainPage = Vue.component('main', require('./components/MainPage/MainIndex.vue').default);
-
+const mainPages = Vue.component('main-results', require('./components/MainPage/SearchResults/MainResults.vue').default);
 
 
 const searchResult = Vue.component('searchResult', require('./components/MainPage/SearchResult.vue').default);
@@ -78,6 +78,7 @@ const routes = [
     {path:'/variant/:id', component:showVariant},
     {path:'/home', component:mainPage},
     {path:'/searchResult', component:searchResult},
+    {path:'/index', component:mainPages},
 ];
 const router = new VueRouter({
     

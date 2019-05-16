@@ -64,14 +64,15 @@ class HomeControllerAPI extends Controller
             $data = $chemicals->unionAll($drugs)
                     ->unionAll($genes) 
                     ->unionAll($variants)  
-                    ->orderBy('name')     
-                    ->paginate(5);
+                    ->orderBy('name')
+                    ->paginate(20);     
+                    
 
          
 
 
 
-        return $data;
+       return response()->json($data);
     }
 
 }
