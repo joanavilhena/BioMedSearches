@@ -11,7 +11,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected $url = ['biomedsearch.me'];
+    protected $url = 'biomedsearch.me';
     public function register()
     {
         //
