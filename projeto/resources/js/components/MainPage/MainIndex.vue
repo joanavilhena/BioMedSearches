@@ -11,10 +11,10 @@
     
    
  
-
+<searchbar></searchbar>
 
   <div id="Title__BioMed_Search">
-        <h1><span>BioMed</span><span> Search</span></h1>
+        <h1><span>BioMed Search </span></h1>
         <svg class="Linha_1">
 			<path id="Linha_1" d="M 35 0 L 260 0">
 			</path>

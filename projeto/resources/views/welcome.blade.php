@@ -23,6 +23,11 @@
 
         <link rel="shortcut icon" href="storage/assets/logo.png">
         <link rel="stylesheet" type="text/css" href="/css/styleCostum.css">
+
+        <!-- import CSS -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
     </head>
     <style>
         .app{

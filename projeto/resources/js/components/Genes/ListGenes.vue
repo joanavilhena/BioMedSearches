@@ -68,7 +68,7 @@
             last:1,
             total:1,
             i:0,
-            search:"oi",
+            search:"",
         }
 
         },

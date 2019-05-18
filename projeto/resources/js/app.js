@@ -25,6 +25,12 @@ import 'vuetify/dist/vuetify.min.css';
 // main.styl
 
 
+import VueBootstrapTypeahead from 'vue-bootstrap-typeahead';
+
+// Global registration
+Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead);
+
+
 import VueSelect from 'vue-cool-select';
 
 Vue.use(VueSelect, {
@@ -40,7 +46,7 @@ Vue.use(Vuetify);
 Vue.component('navigation', require('./components/NavigationBar.vue').default);
 Vue.component('feed', require('./components/MainPage/FeedNews.vue').default);
 const mainPage = Vue.component('main', require('./components/MainPage/MainIndex.vue').default);
-const mainPages = Vue.component('main-results', require('./components/MainPage/SearchResults/MainResults.vue').default);
+const searchbar = Vue.component('searchbar', require('./components/MainPage/SearchResults/SerachBar.vue').default);
 
 
 const searchResult = Vue.component('searchResult', require('./components/MainPage/SearchResult.vue').default);
@@ -78,7 +84,7 @@ const routes = [
     {path:'/variant/:id', component:showVariant},
     {path:'/home', component:mainPage},
     {path:'/searchResult', component:searchResult},
-    {path:'/index', component:mainPages},
+    {path:'/index', component:searchbar},
 ];
 const router = new VueRouter({
     
