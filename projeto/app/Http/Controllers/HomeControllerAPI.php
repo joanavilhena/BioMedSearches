@@ -65,7 +65,7 @@ class HomeControllerAPI extends Controller
                     ->unionAll($genes) 
                     ->unionAll($variants)  
                     ->orderBy('name')
-                    ->get();
+                    ->get(20);
                 
                          
                     
