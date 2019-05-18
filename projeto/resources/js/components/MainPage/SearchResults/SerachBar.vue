@@ -15,7 +15,7 @@
 <script>
 
 
-const API_URL = 'https://projeto.pi/api/search' //substituir pelo url do servidor
+const API_URL = 'https://biomedsearch.me/api/search' //substituir pelo url do servidor
 
 export default {
   name: 'TestComponent',
