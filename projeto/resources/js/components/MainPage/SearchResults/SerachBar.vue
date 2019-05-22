@@ -5,7 +5,7 @@
       :data="addresses"
       v-model="addressSearch"
       size="lg"
-      :serializer="s => s.name"
+      :serializer="s => s.name +' || ' + s.tableName"
       placeholder="Type a name ..."
       @hit="selectedAddress = $event"
     >
@@ -41,8 +41,7 @@ export default {
       const suggestions = await res.json()
       console.log(suggestions);
       this.addresses = suggestions;
-      console.log(this.addresses.idp);
-      console.log(this.addresses.name);
+     
     
     }
     

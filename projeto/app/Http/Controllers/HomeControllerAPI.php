@@ -46,17 +46,17 @@ class HomeControllerAPI extends Controller
         
         $drugs = DB::table('drugs')
                // ->select('idp','name');
-                ->selectRaw('idp, name, \'drugs\' as tableName');
+                ->selectRaw('idp, name, \'Drug\' as tableName');
                 
 
         $chemicals = DB::table('chemicals')
-        ->selectRaw('idp, name, \'chemicals\' as tableName');
+        ->selectRaw('idp, name, \'Chemical\' as tableName');
 
         $genes = DB::table('genes')
-        ->selectRaw('idp, name, \'genes\' as tableName');
+        ->selectRaw('idp, name, \'Gene\' as tableName');
 
         $variants = DB::table('variants')
-        ->selectRaw('idp, name, \'variants\' as tableName');
+        ->selectRaw('idp, name, \'Variant\' as tableName');
 
          
       
