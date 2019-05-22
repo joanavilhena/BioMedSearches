@@ -210,62 +210,14 @@ export default {
           entries: [],
           isLoading: false,
           model: null,
-          search: null,
+          
             
         
         }
   },
 
-   computed: {
-     fields () {
-      if (!this.model) return []
-
-      return Object.keys(this.model).map(key => {
-        return {
-          key,
-          value: this.model[key] || 'n/a'
-        }
-      })
-    },
-    items () {
-      return this.entries.map(entry => {
-       // console.log(this.entries.map);
-        const Name = entry.name.length > this.nameLimit
-          ? entry.name.slice(0, this.nameLimit) + '...'
-          : entry.name
-        console.log(Name);
-        return Object.assign({}, entry, { Name })
-      })
-    }
-    },
-
-    watch: {
-      search (val) {
-      // Items have already been loaded
-      if (this.items.length > 0) return
-
-      // Items have already been requested
-      if (this.isLoading) return
-
-      this.isLoading = true
-
-      // Lazily load input items
-      fetch('https://projeto.pi/api/search')
-        .then(res => res.json())
-        .then(res => {
-          console.log(res);
-          const {  data } = res
-        //  this.count = count
-          this.entries = data
-          console.log(data);
-          console.log(data);
-        })
-        .catch(err => {
-          console.log(err)
-        })
-        .finally(() => (this.isLoading = false))
-    }
-    },
+   
+   
 
   methods:
   {

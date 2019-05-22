@@ -45,16 +45,18 @@ class HomeControllerAPI extends Controller
       //      ->get();
         
         $drugs = DB::table('drugs')
-                ->select('idp','name');
+               // ->select('idp','name');
+                ->selectRaw('idp, name, \'Drug\' as tableName');
                 
 
         $chemicals = DB::table('chemicals')
-                    ->select('idp','name');
+        ->selectRaw('idp, name, \'Chemical\' as tableName');
 
         $genes = DB::table('genes')
-                ->select('idp','name');
+        ->selectRaw('idp, name, \'Gene\' as tableName');
+
         $variants = DB::table('variants')
-                    ->select('idp','name');   
+        ->selectRaw('idp, name, \'Variant\' as tableName');
 
          
       
@@ -66,6 +68,7 @@ class HomeControllerAPI extends Controller
                     ->unionAll($variants)  
                     ->orderBy('name')
                     ->get(20);
+                    //->paginate(10);
                 
                          
                     
@@ -73,7 +76,7 @@ class HomeControllerAPI extends Controller
          
 
 
-
+       // return $data;
        return response()->json($data);
     }
 

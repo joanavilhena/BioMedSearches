@@ -1,6 +1,7 @@
 <template>
+
 <div class = "container">
-    
+
 <div  opcity="0.8">
     <h1>Genes</h1>
     <br>
@@ -65,6 +66,7 @@
             total:1,
             i:0,
             search:"",
+            image: '/storage/assets/background.png',
         }
 
         },
@@ -145,7 +147,6 @@
     };
     
 </script>
-<style>
 
-</style>
+
 
