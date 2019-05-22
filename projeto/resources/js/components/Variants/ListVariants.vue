@@ -16,16 +16,16 @@
     </div>
 
 
-  <table class="table table-hover table-dark">
+  <table class="table">
     <thead>
         <tr table-light>
            
-            <th>Name</th>
-            <th>Symbol</th>
-            <th>Gene IDs</th>
-            <th>Gene Symbols</th>
-            <th>Synonyms</th>
-            <th>Actions</th>
+            <th scope="col">Name</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Gene IDs</th>
+            <th scope="col">Gene Symbols</th>
+            <th scope="col">Synonyms</th>
+            <th scope="col">Actions</th>
       
         </tr>
     </thead>
@@ -38,7 +38,7 @@
            <td>{{variant.geneIDs}}</td>
            <td>{{variant.geneSymbols}}</td>
            <td>{{variant.synonyms}}</td>
-           <td><button v-on:click.prevent="showItem(variant)" class="btn btn-xs btn-light"><i class="fas fa-eye"></i></button></td>
+           <td><button v-on:click.prevent="showItem(variant)" class="btn btn-xs btn-light">Details <i class="fas fa-eye"></i></button></td>
 
 
 

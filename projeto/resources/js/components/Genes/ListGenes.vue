@@ -2,8 +2,6 @@
 <div class = "container">
     
 <div  opcity="0.8">
-    <br>
-    <br>
     <h1>Genes</h1>
     <br>
 </div>
@@ -15,17 +13,15 @@
     </div>
       
 
-  <table class="table table-hover table-dark">
+  <table class="table">
     <thead>
         <tr table-light>
            
-            <th>Name</th>
-            <th>Symbol</th>
-            <th>Chromosome</th>
-            <th>Actions</th>
-      
-
-            
+            <th scope="col">Name</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Chromosome</th>
+            <th scope="col">Actions</th>
+                 
         </tr>
     </thead>
 
@@ -35,7 +31,7 @@
            <td>{{gene.name}}</td>
            <td>{{gene.symbol}}</td>
            <td>{{gene.chromosome}}</td>
-           <td><button v-on:click.prevent="showItem(gene)" class="btn btn-xs btn-light"><i class="fas fa-eye"></i></button></td>
+           <td><button v-on:click.prevent="showItem(gene)" class="btn btn-xs btn-light">Details <i class="fas fa-eye"></i></button></td>
 
 
 

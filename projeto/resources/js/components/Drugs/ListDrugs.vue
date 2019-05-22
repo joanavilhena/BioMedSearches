@@ -19,14 +19,14 @@
 
 
 
-  <table class="table table-hover table-dark">
+  <table class="table">
     <thead>
         <tr table-light>
            
-            <th>Name</th>
-            <th>Generic Names</th>
-            <th>Type</th>
-            <th>Actions</th>
+            <th scope="col">Name</th>
+            <th scope="col">Generic Names</th>
+            <th scope="col">Type</th>
+            <th scope="col">Actions</th>
       
 
             
@@ -40,7 +40,7 @@
            
            <td>{{drug.genericNames}}</td>
            <td>{{drug.type}}</td>
-           <td><button v-on:click.prevent="showItem(drug)" class="btn btn-xs btn-light"><i class="fas fa-eye"></i></button></td>
+           <td><button v-on:click.prevent="showItem(drug)" class="btn btn-xs btn-light">Details <i class="fas fa-eye"></i></button></td>
 
 
 
