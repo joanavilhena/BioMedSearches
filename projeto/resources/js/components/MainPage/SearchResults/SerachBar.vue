@@ -1,6 +1,6 @@
 <template>
-<div class="container">
-  <div >
+<div class="container row">
+  <div class=" col-md-11" style="margin: 0; padding: 0;">
     <vue-bootstrap-typeahead 
       :data="addresses"
       v-model="addressSearch"
@@ -9,12 +9,11 @@
       placeholder="Type a name ..."
       @hit="selectedAddress = $event"
     >
-    </vue-bootstrap-typeahead>
-
-    <span class="input-group-btn">
-      <button type="button" class="btn btn-primary">Search</button>
-    </span>
+    </vue-bootstrap-typeahead>    
   </div>
+  <div class="col-md-1" style="margin: 0; padding: 0;">
+      <button type="button" class="btn btn-primary" style="width: 100%; height: 100%;">Search</button>
+    </div>
 </div>
 </template>
 

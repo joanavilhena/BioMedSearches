@@ -24,6 +24,7 @@
       <p><strong> ID: </strong>{{currentGene.idp}}</p>
       <p><strong>Ensembl ID:  </strong>{{currentGene.ensemblId}} </p>
       <p><strong>Name: </strong>{{currentGene.name}}</p> 
+      
       <span><strong>Generic Names: </strong></span>
       <ul style="list-style-type:none;" v-for="(name,index) in genericNames" :key="index">
                     <li>{{name}}</li>        
@@ -39,17 +40,8 @@
   <div class="tab-pane fade" id="variant-annotations" role="tabpanel" aria-labelledby="nav-variant-annotations">...</div>
   <div class="tab-pane fade" id="label-annotations" role="tabpanel" aria-labelledby="nav-label-annotations">...</div>
 </div>
-
-
-    
-
-    <div v-if="showingDetails" >           
+    </div>      
             
-
-    </div>
-    
-        <button class="btn btn-warning" @click="atum()" >Back</button>
-    </div>
 </template>
 <script>
 
@@ -59,53 +51,13 @@ export default {
         return {
             genericNames: [],
             references: [],
-            showingDetails:true,
-            showingDosingInfo:false,
-            showingPub:false,
-            showingChemicals:false,
             id: this.$route.params.id,
             currentGene:[],
         }
     },
     methods:
     {
-        atum()
-        {
-            console.log("atum");
-            this.$router.push('/genes');
-            this.$emit('show-drug',false);
-        },
-
-        showDoseInfo()
-        {
-            this.showingDetails=false;
-            this.showingDosingInfo=true;
-            this.showingPub=false;
-            this.showingChemicals=false;
-        },
-
-        showPub()
-        {
-            this.showingDetails=false;
-            this.showingDosingInfo=false;
-            this.showingPub=true;
-            this.showingChemicals=false;
-        },
-        showDetails()
-        {
-            this.showingDetails=true;
-            this.showingDosingInfo=false;
-            this.showingPub=false;
-            this.showingChemicals=false;
-        },
-        showChemicals()
-        {
-            this.showingDetails=false;
-            this.showingDosingInfo=false;
-            this.showingPub=false;
-            this.showingChemicals=true;
-        }
-        
+               
     },
     created()
     {
@@ -119,19 +71,7 @@ export default {
                
                 console.log(response.data);
                     
-                this.currentGene= response.data.data;
-    
-              //  this.genericNames = this.currentDrug.genericNames;
-
-                //console.log(this.drugs);
-           /*   if(this.genericNames!=null)
-      {
-           let res = this.genericNames.split(",");
-           this.genericNames=res;
-           console.log(this.genericNames);
-     
-      }*/
-                
+                this.currentGene= response.data.data;                
         
                 })
                 .catch(function (error) {
@@ -146,8 +86,3 @@ export default {
 
 }
 </script>
-<style>
-
-
-
-</style>

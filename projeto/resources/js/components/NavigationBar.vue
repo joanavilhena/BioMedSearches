@@ -1,8 +1,8 @@
 <template>
-<div class ='container'>
-<nav class="navbar navbar-expand-sm justify-content-end">
+<div id="containerNavbar">
+<nav class="navbar navbar-expand-sm justify-content-end" id="global-nav">
      <a class="navbar-brand" href="/#/home">
-    <img src="storage/assets/logo.png" alt="">
+    <img src="storage/assets/logo.png" alt="" id="logo">
   </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>

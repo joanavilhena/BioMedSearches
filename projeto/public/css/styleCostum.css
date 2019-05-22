@@ -245,5 +245,15 @@
           float:right;
         }
         
-        
+        .scrolled-nav {
+          position: fixed !important;
+          top:0;
+          background-color: #ececec;
+          width: 100% !important;
+        }
+
+      #containerNavbar{
+        padding-right: 10%;
+        padding-left: 10%;
+        }
      

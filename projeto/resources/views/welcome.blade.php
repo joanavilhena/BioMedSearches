@@ -61,5 +61,23 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
         <!-- Bootstrap core JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+         
+        <script>
+/*$(document).ready(function(){
+  var scrollTop = 0;
+  $(window).scroll(function(){
+    scrollTop = $(window).scrollTop();
+     //$('.navbar').html(scrollTop);
+    
+    if (scrollTop >= 100) {
+      $('#containerNavbar').addClass('scrolled-nav');
+    } else if (scrollTop < 100) {
+      $('#containerNavbar').removeClass('scrolled-nav');
+    } 
+    
+  }); 
+  
+});*/
+</script>
           </body>
 </html>
