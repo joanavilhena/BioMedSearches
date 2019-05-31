@@ -1,6 +1,6 @@
 <template>
 <div id="containerNavbar">
-<nav class="navbar navbar-expand-lg navbar-light  justify-content-end" id="global-nav">
+<nav class="navbar navbar-expand-lg navbar-light   justify-content-end" id="global-nav">
      <a class="navbar-brand"  href="/#/home">
     <img src="storage/assets/logo.png" alt="" width="100%" height="auto" float="left" id="logo">
   </a>

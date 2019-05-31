@@ -47,6 +47,7 @@
 
     </tbody>    
   </table>
+  </div>
 
   <div class="overflow-auto">
    <b-pagination  align="center" size="md-c"  v-model="page" :limit="5" :total-rows="this.total"  :per-page="5" @input="getVariants(page)"></b-pagination>
