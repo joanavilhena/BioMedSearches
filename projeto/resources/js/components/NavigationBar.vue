@@ -1,12 +1,13 @@
 <template>
 <div id="containerNavbar">
 <nav class="navbar navbar-expand-lg navbar-light  justify-content-end" id="global-nav">
-     <a class="navbar-brand" href="/#/home">
-    <img src="storage/assets/logo.png" alt="" id="logo">
+     <a class="navbar-brand"  href="/#/home">
+    <img src="storage/assets/logo.png" alt="" width="100%" height="auto" float="left" id="logo">
   </a>
+  
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
-    </button>
+    </button>   
     <div class="collapse navbar-collapse flex-grow-0 ml-auto mr-1" id="navbarSupportedContent">
         <ul class="navbar-nav text-right ">
           <li class="nav-item active">
@@ -48,7 +49,6 @@
 
 
 
-
 </div>
 
 </template>
@@ -73,4 +73,15 @@ export default {
 }
 
 </script>
+
+<style>
+.img-responsive
+{
+  max-width: 100%;
+   height: auto;
+    display: block;
+    position: fixed;
+}
+</style>
+
 
