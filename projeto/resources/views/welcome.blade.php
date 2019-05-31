@@ -34,13 +34,12 @@
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     </head>
     <style>
-        .app{
+        body{
             background-image: url('/storage/assets/background.png');
-            background-size: auto;
-            width: 100%;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-size: contain;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
 
         }
     </style>
