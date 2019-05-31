@@ -19,7 +19,7 @@
 
 
 
-  <table class="table">
+  <table class=".table-responsive">
     <thead>
         <tr table-light>
            
