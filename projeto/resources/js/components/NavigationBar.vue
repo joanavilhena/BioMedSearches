@@ -1,6 +1,6 @@
 <template>
 <div id="containerNavbar">
-<nav class="navbar navbar-expand-sm justify-content-end" id="global-nav">
+<nav class="navbar navbar-expand-lg navbar-light  justify-content-end" id="global-nav">
      <a class="navbar-brand" href="/#/home">
     <img src="storage/assets/logo.png" alt="" id="logo">
   </a>
@@ -45,6 +45,10 @@
         </ul>
     </div>
 </nav>
+
+
+
+
 </div>
 
 </template>

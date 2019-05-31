@@ -24,6 +24,10 @@
         <link rel="shortcut icon" href="storage/assets/logo.png">
         <link rel="stylesheet" type="text/css" href="/css/styleCostum.css">
 
+
+        <link href="https://unpkg.com/vue-bootstrap-typeahead/dist/VueBootstrapTypeahead.css" rel="stylesheet">
+<script src="https://unpkg.com/vue-bootstrap-typeahead"></script>
+
         <!-- import CSS -->
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 <!-- import JavaScript -->
