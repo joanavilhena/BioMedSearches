@@ -1,9 +1,10 @@
 <template>
 <div id="containerNavbar">
-<nav class="navbar navbar-expand-lg navbar-light   justify-content-end" id="global-nav">
+<nav class="navbar navbar-expand-lg navbar-light  justify-content-end" id="global-nav">
      <a class="navbar-brand"  href="/#/home">
     <img src="storage/assets/logo.png" alt="" width="100%" height="auto" float="left" id="logo">
   </a>
+  
   
     <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
@@ -38,19 +39,13 @@
             <li class="nav-item ">
               <router-link class="nav-link" to="/contacts"><span v-on:click="removeBackground">Contacts</span></router-link>
           </li>
-          <li>
-            <button v-if="user=![]" type="button" class="btn btn-outline-info">Login</button>
-          </li>
-          <li>
-            <button v-if="user=![]" type="button" class="btn btn-outline-info">Sign Up</button>
-          </li>
+        
         </ul>
     </div>
 </nav>
 
-
-
 </div>
+
 
 </template>
 

@@ -1,5 +1,8 @@
--Search all Results
--About us
--Query pubmeds
--Query News
--AutoComplete
+Requisitos:
+
+Search Pagina inicial:
+    -Pesquisar em Genes;
+    -Pesquisar em Drugs;
+    -Pesquisar em Annotations;
+    -Pesquisar em Chemicals;
+

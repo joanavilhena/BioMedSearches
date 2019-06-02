@@ -16,7 +16,7 @@
     </div>
 
 
-  <table class=".table-responsive">
+  <table class="table table-striped .table-responsive ">
     <thead>
         <tr table-light>
            
@@ -49,9 +49,9 @@
    <b-pagination  align="center" size="md-c"  v-model="page" :limit="5" :total-rows="this.total"  :per-page="5" @input="getChemicals(page)"></b-pagination>
   </div>
 
-</div>
 
-  
+
+</div>
 
 
   </div>
