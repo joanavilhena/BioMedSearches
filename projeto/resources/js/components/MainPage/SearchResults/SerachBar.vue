@@ -2,12 +2,15 @@
 
 
 <div class="mb-3">
+
+
+
   
     <vue-bootstrap-typeahead 
       
       :data="addresses"
       v-model="addressSearch"
-    
+    class="mb-3"
       size="lg"
       :serializer="s => s.name +' || ' + s.tableName"
       placeholder="Type a name ..."
@@ -17,8 +20,10 @@
       
       
     </vue-bootstrap-typeahead>  
-    <button class="btn btn-primary">Search</button>  
-  
+    
+  <div>
+    <b-button block variant="primary">Search</b-button>
+  </div>
   
 
      

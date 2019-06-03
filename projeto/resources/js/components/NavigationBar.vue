@@ -19,15 +19,6 @@
     </b-collapse>
   </b-navbar>
 </div>
-
-
-
-
-
-
-
- 
-
 </div>
 
 
