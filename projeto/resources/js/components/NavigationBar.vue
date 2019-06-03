@@ -19,9 +19,6 @@
              <router-link  class="nav-link" to="/genes"><span v-on:click="removeBackground">Genes</span></router-link>
           </li>
           <li class="nav-item ">
-            <router-link class="nav-link" to="/variants"><span v-on:click="removeBackground">Variants</span></router-link>
-          </li>
-          <li class="nav-item ">
             <router-link class="nav-link" to="/drugs"><span v-on:click="removeBackground">Drugs</span></router-link>
           </li>
           <li class="nav-item ">
@@ -33,13 +30,10 @@
           <li class="nav-item ">
             <router-link class="nav-link" to="/publications"><span v-on:click="removeBackground">Publications</span></router-link>
           </li>
-          <li class="nav-item ">
-            <router-link class="nav-link" to="/aboutus"><span v-on:click="removeBackground">AboustUs</span></router-link>
-          </li>
-            <li class="nav-item ">
-              <router-link class="nav-link" to="/contacts"><span v-on:click="removeBackground">Contacts</span></router-link>
-          </li>
-        
+      <!--    <li class="nav-item ">
+            <router-link class="nav-link" to="/aboutus"><span v-on:click="removeBackground">AboutUs</span></router-link>
+          </li>      
+      -->
         </ul>
     </div>
 </nav>
