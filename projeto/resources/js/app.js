@@ -20,6 +20,9 @@ import BootstrapVue from 'bootstrap-vue';
 Vue.use(BootstrapVue);
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+
+
 // index.js or main.js
 import 'vuetify/dist/vuetify.min.css';
 // main.styl

@@ -1,42 +1,32 @@
 <template>
 <div id="containerNavbar">
-<nav class="navbar navbar-expand-lg navbar-light  justify-content-end" id="global-nav">
-     <a class="navbar-brand"  href="/#/home">
-    <img src="storage/assets/logo.png" alt="" width="100%" height="auto" float="left" id="logo">
-  </a>
-  
-  
-    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-        <span class="navbar-toggler-icon"></span>
-    </button>   
+<div>
+  <b-navbar toggleable="lg" type="light" variant="">
+    <b-navbar-brand href="/#/home"><a><img src="storage/assets/logo.png"  id="logo"></a></b-navbar-brand>
 
-    <div class="collapse navbar-collapse flex-grow-0 ml-auto mr-1" id="navbarSupportedContent">
-        <ul class="navbar-nav text-right ">
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/home"><span v-on:click="addBackground">Home</span></router-link>
-          </li>
-          <li class="nav-item ">
-             <router-link  class="nav-link" to="/genes"><span v-on:click="removeBackground">Genes</span></router-link>
-          </li>
-          <li class="nav-item ">
-            <router-link class="nav-link" to="/drugs"><span v-on:click="removeBackground">Drugs</span></router-link>
-          </li>
-          <li class="nav-item ">
-            <router-link class="nav-link" to="/chemicals"><span v-on:click="removeBackground">Chemicals</span></router-link>
-          </li>
-          <li class="nav-item ">
-            <router-link class="nav-link" to="/news"><span v-on:click="removeBackground">News</span></router-link>
-          </li>
-          <li class="nav-item ">
-            <router-link class="nav-link" to="/publications"><span v-on:click="removeBackground">Publications</span></router-link>
-          </li>
-      <!--    <li class="nav-item ">
-            <router-link class="nav-link" to="/aboutus"><span v-on:click="removeBackground">AboutUs</span></router-link>
-          </li>      
-      -->
-        </ul>
-    </div>
-</nav>
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+    <b-collapse id="nav-collapse"  is-nav>
+      <b-navbar-nav class="ml-auto" >
+        <b-nav-item  to="/genes">Genes</b-nav-item>
+        <b-nav-item  to="/drugs">Drugs</b-nav-item>
+         <b-nav-item  to="/diseases">Diseases</b-nav-item>
+         <b-nav-item  to="/news">News</b-nav-item>
+         <b-nav-item  to="/aboutus">AboutUs</b-nav-item>
+      </b-navbar-nav>
+
+     
+    </b-collapse>
+  </b-navbar>
+</div>
+
+
+
+
+
+
+
+ 
 
 </div>
 
