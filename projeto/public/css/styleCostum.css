@@ -4,6 +4,12 @@
   background-size: contain;
 }
 
+.bg-fundo-lists { 
+  background: url('/storage/assets/background.png'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 #search_container > h1 {
     color: #0c5a89;
@@ -63,6 +69,13 @@
   }
   table{
     width: 100%;
+  }
+  .table{
+    background-color: #eeeeefc9;
+  }
+
+  .nav-tabs .nav-link.active{
+    background-color: transparent !important;
   }
   
   

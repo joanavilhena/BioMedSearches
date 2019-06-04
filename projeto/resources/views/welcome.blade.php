@@ -72,13 +72,13 @@
 $('#fundo').addClass('bg-fundo');
 
 $('.navbar .navbar-brand a').on('click', function(){
+    $('#fundo').removeClass('bg-fundo-lists');
     $('#fundo').addClass('bg-fundo');
 });
 
-
-
 $('#menu li a').on('click', function(){
     $('#fundo').removeClass('bg-fundo');
+    $('#fundo').addClass('bg-fundo-lists');
 });
 
 
