@@ -29,9 +29,6 @@
             <th scope="col">PubChem</th>
             <th scope="col">Actions</th>
             
-      
-
-            
         </tr>
     </thead>
 
@@ -44,11 +41,8 @@
            <td><a :href="'https://pubchem.ncbi.nlm.nih.gov/compound/' + drug.pubChemCompoundIdentifiers">{{drug.pubChemCompoundIdentifiers}}</a></td>
            <td><button v-on:click.prevent="showItem(drug)" class="btn btn-xs btn-light">Details <i class="fas fa-eye"></i></button></td>
 
-
-
        </tr>
-         
-
+        
     </tbody>    
   </table>
 

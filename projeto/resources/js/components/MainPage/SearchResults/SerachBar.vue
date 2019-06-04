@@ -22,7 +22,7 @@
     </vue-bootstrap-typeahead>  
     
   <div>
-    <b-button block variant="primary">Search</b-button>
+    <b-button @click="irPara" variant="primary">Search</b-button>
   </div>
   
 
@@ -51,12 +51,22 @@ export default {
   methods: {
     async getAddresses(query) {
       const res = await fetch(API_URL.replace(':query', query),{ timeout: 1000})
-      console.log(res);
+     // console.log(res);
       const suggestions = await res.json()
-      console.log(suggestions);
+     // console.log(suggestions);
       this.addresses = suggestions;
      
     
+    },
+
+    irPara()
+    {
+     this.$router.push('/' + this.selectedAddress.tableName + '/' + this.selectedAddress.idp);
+    //this.$router.push('/drug/'+drug.idp);
+     
+     //console.log(this.selectedAddress);
+    
+
     }
     
   },
