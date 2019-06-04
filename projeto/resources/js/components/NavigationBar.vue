@@ -10,7 +10,7 @@
       <b-navbar-nav class="ml-auto" >
         <b-nav-item  to="/genes">Genes</b-nav-item>
         <b-nav-item  to="/drugs">Drugs</b-nav-item>
-         <b-nav-item  to="/diseases">Diseases</b-nav-item>
+         <b-nav-item  to="/phenotypes">Phenotypes</b-nav-item>
          <b-nav-item  to="/news">News</b-nav-item>
          <b-nav-item  to="/aboutus">AboutUs</b-nav-item>
       </b-navbar-nav>
