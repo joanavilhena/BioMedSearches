@@ -58,6 +58,12 @@ class HomeControllerAPI extends Controller
         $variants = DB::table('variants')
         ->selectRaw('idp, name, \'Variant\' as tableName');
 
+        $phenotypes = DB::table('phenotypes')
+        ->selectRaw('idp, name, \'Phenotype\' as tableName');
+
+        
+        
+
          
       
             
@@ -65,9 +71,10 @@ class HomeControllerAPI extends Controller
             $paginate=5;
             $data = $chemicals->unionAll($drugs)
                     ->unionAll($genes) 
-                    ->unionAll($variants)  
+                    ->unionAll($variants) 
+                    ->unionAll($phenotypes) 
                     ->orderBy('name')
-                    ->get(20);
+                    ->get(10);
                     //->paginate(10);
                 
                          
@@ -76,7 +83,7 @@ class HomeControllerAPI extends Controller
          
 
 
-       // return $data;
+        //return $phenotypes;
        return response()->json($data);
     }
 

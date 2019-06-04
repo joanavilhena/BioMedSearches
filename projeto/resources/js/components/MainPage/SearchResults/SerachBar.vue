@@ -36,7 +36,7 @@
 import { timeout } from 'q';
 
 
-const API_URL = 'https://biomedsearch.me/api/search' //substituir pelo url do servidor
+const API_URL = 'https://biomedseatch.me/api/search' //substituir pelo url do servidor
 
 export default {
 
@@ -52,7 +52,7 @@ export default {
     async getAddresses(query) {
       const res = await fetch(API_URL.replace(':query', query),{ timeout: 1000})
      // console.log(res);
-      const suggestions = await res.json()
+      const suggestions = await res.json();
      // console.log(suggestions);
       this.addresses = suggestions;
      
