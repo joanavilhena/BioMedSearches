@@ -1,3 +1,16 @@
+.bg-fundo { 
+  background: url('/storage/assets/background.png'); 
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bg-fundo-lists { 
+  background: url('/storage/assets/background.png'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 #search_container > h1 {
     color: #0c5a89;
   }
@@ -56,6 +69,13 @@
   }
   table{
     width: 100%;
+  }
+  .table{
+    background-color: #eeeeefc9;
+  }
+
+  .nav-tabs .nav-link.active{
+    background-color: transparent !important;
   }
   
   
@@ -195,23 +215,7 @@
           overflow: visible;
       height: 30px;
       }
-      .nav-link{
-        color:black;
-           
-      }
-      a.nav-link{
-        border-top-style:solid;
-        border-color: transparent;
-      }
-      a.nav-link:hover{
-        border-color: #4acaff;
-        border-radius: 5px;
-      }
-       a.nav-link:focus{
-        border-color: #4acaff;
-        border-radius: 5px;
-      }
-
+      
 
       .navbar-custom {
         background-color: black;
@@ -257,3 +261,57 @@
         padding-left: 10%;
         }
      
+
+        .snip1168 * {
+          box-sizing: border-box;
+        }
+        .snip1168 li {
+          display: inline-block;
+          list-style: outside none none;
+          margin: 0 1.5em;
+          padding: 0;
+        }
+        .snip1168 a {
+          padding: 0.5em 0;
+          color: rgba(255, 255, 255, 0.5);
+          position: relative;
+          letter-spacing: 1px;
+          text-decoration: none;
+        }
+        .snip1168 a:before,
+        .snip1168 a:after {
+          position: absolute;
+          -webkit-transition: all 0.35s ease;
+          transition: all 0.35s ease;
+        }
+        .snip1168 a:before{
+          top: 0;
+          display: block;
+          height: 3px;
+          width: 0%;
+          content: "";
+          background-color: #4acaff;
+        }
+       
+        .snip1168 a:after {
+          left: 0;
+          top: 0;
+          padding: 0.5em 0;
+          position: absolute;
+          content: attr(data-hover);
+          color: #ffffff;
+          white-space: nowrap;
+          max-width: 0%;
+          overflow: hidden;
+        }
+        .snip1168 a:hover:before,
+        .snip1168 .current a:before {
+          opacity: 1;
+          width: 100%;
+        }
+        .snip1168 a:hover:after,
+        .snip1168 .current a:after {
+          max-width: 100%;
+        }
+        
+       
