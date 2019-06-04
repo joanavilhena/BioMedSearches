@@ -32,16 +32,10 @@
         <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     </head>
     <style>
-        body{
-            background-image: url('/storage/assets/background.png');
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-
-        }
+       
     </style>
     <body>
+        <div id="fundo">
         <div id="app" class="app">
             
         
@@ -69,6 +63,25 @@
         <!-- Bootstrap core JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
+<div>
           </body>
 </html>
+<script>
+
+
+$('#fundo').addClass('bg-fundo');
+
+$('.navbar .navbar-brand a').on('click', function(){
+    $('#fundo').addClass('bg-fundo');
+});
+
+
+
+$('#menu li a').on('click', function(){
+    $('#fundo').removeClass('bg-fundo');
+});
+
+
+
+
+</script>

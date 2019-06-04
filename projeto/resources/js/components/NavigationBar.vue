@@ -6,8 +6,8 @@
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-    <b-collapse id="nav-collapse"  is-nav>
-      <b-navbar-nav class="ml-auto" >
+    <b-collapse id="nav-collapse" class="snip1168" is-nav>
+      <b-navbar-nav class="ml-auto" id="menu" >
         <b-nav-item  to="/genes">Genes</b-nav-item>
         <b-nav-item  to="/drugs">Drugs</b-nav-item>
          <b-nav-item  to="/diseases">Diseases</b-nav-item>
@@ -32,16 +32,12 @@ export default {
         }
   },
   methods:{
-    removeBackground(){
-      $( "#app" ).removeClass( "app" );
-    },
-    addBackground(){
-      $( "#app" ).addClass( "app" );
-    }
-  }
+
+   }
 
     
 }
+
 
 
 </script>
