@@ -10,6 +10,8 @@
     <h1>What are you loking for?</h1>
     
    
+ <br>
+ <br>
  
 <searchbar></searchbar>
 
@@ -25,7 +27,7 @@
 <div>
 	
 		<div id="Lorem_ipsum_dolor_sit_amet__co">
-			<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. I<br/>nteger ut tincidunt ipsum, a ornare ante. Suspendisse id facilisis dui. <br/>Nam euismod molestie ex e<br/>u blandit. Integer maximus, dui sed volutpat gravida, nisi <br/>tpat vestibulum pharetra. Sed porta augue quis ullamcojasnkssk<br/>rper trisit.</span>
+			<span>BioMed Search is an online platform.<br/>nteger ut tincidunt ipsum, a ornare ante. Suspendisse id facilisis dui. <br/>Nam euismod molestie ex e<br/>u blandit. Integer maximus, dui sed volutpat gravida, nisi <br/>tpat vestibulum pharetra. Sed porta augue quis ullamcojasnkssk<br/>rper trisit.</span>
 		</div>		
 	</div>
   </div>

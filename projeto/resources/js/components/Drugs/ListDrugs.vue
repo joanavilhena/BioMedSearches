@@ -26,7 +26,9 @@
             <th scope="col">Name</th>
             <th scope="col">Generic Names</th>
             <th scope="col">Type</th>
+            <th scope="col">PubChem</th>
             <th scope="col">Actions</th>
+            
       
 
             
@@ -37,9 +39,9 @@
        <tr v-for="(drug,index) in drugs" :key="index">
           
            <td>{{drug.name}}</td>
-           
            <td>{{drug.genericNames}}</td>
            <td>{{drug.type}}</td>
+           <td><a :href="'https://pubchem.ncbi.nlm.nih.gov/compound/' + drug.pubChemCompoundIdentifiers">{{drug.pubChemCompoundIdentifiers}}</a></td>
            <td><button v-on:click.prevent="showItem(drug)" class="btn btn-xs btn-light">Details <i class="fas fa-eye"></i></button></td>
 
 
