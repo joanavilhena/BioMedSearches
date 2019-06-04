@@ -32,12 +32,7 @@ export default {
         }
   },
   methods:{
-    removeBackground(){
-      $( "#app" ).removeClass( "app" );
-    },
-    addBackground(){
-      $( "#app" ).addClass( "app" );
-    }
+  
   }
 
     

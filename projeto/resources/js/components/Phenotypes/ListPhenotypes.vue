@@ -13,7 +13,7 @@
     </div>
 
 
-       <b-table responsive :fields="fields" :items="items" striped>
+    <b-table responsive :fields="fields" :items="items" striped fixed>
 
       <template slot="show_details" slot-scope="row">
         <b-button  size="sm" @click="row.toggleDetails" class="btn btn-xs btn-light">
