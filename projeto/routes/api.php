@@ -66,7 +66,7 @@ Route::get('occurence/{id}','OccurrenceControllerAPI@showOccurence');
 
 //Phenotypes
 Route::get('phenotypes','PhenotypeControllerAPI@index');
-
+Route::get('phenotypessearch','PhenotypeControllerAPI@searchPhenotype');
 
 Route::get('relationships','RelationshipControllerAPI@index');
 Route::get('studyparameters','StudyParameterControllerAPI@index');

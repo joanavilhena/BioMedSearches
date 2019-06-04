@@ -75,6 +75,10 @@ const showGene=Vue.component('show-gene', require('./components/Genes/ShowGene.v
 const listVariants=Vue.component('list-variants', require('./components/Variants/ListVariants.vue').default);
 const showVariant=Vue.component('show-variant', require('./components/Variants/ShowVariant.vue').default);
 
+//Phenotypes
+const listPhenotypes=Vue.component('list-phenotypes', require('./components/Phenotypes/ListPhenotypes.vue').default);
+
+
 const routes = [
     {path:'/', redirect:'/home'},
     {path:'/drugs', component:listdrugs},
@@ -88,6 +92,7 @@ const routes = [
     {path:'/home', component:mainPage},
     {path:'/searchResult', component:searchResult},
     {path:'/index', component:searchbar},
+    {path:'/phenotypes', component:listPhenotypes},
 ];
 const router = new VueRouter({
     
