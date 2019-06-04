@@ -36,7 +36,7 @@
 import { timeout } from 'q';
 
 
-const API_URL = 'https://biomedseatch.me/api/search' //substituir pelo url do servidor
+const API_URL = 'https://biomedsearch.me/api/search' //substituir pelo url do servidor
 
 export default {
 
