@@ -36,13 +36,33 @@
 export default {
 
   data: function () {
+
+    
+
         return {
           items:[],
           total:1,
           last:1,
           page:1,
-          fields:['PharmGKB Accession Id','Name','show_details'],
-          search:'',
+         // fields:['PharmGKB Accession Id','Name','show_details'],
+
+           fields: [
+          // A virtual column that doesn't exist in items
+          
+          // A column that needs custom formatting
+          { key: 'idp', label: 'IDP' },
+          { key: 'name', label: 'Full Name' },
+          'show_details',
+          
+          // A regular column
+          //'age',
+          // A regular column
+         // 'sex',
+          // A virtual column made up from two fields
+         // { key: 'nameage', label: 'First name and age' }
+        ],
+
+
         }
   },
   methods:{

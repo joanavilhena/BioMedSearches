@@ -32,8 +32,14 @@
         <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     </head>
     <style>
-       
-    </style>
+ body { 
+    background-image: url('/storage/assets/background.png');
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+}
+</style>
     <body>
         <div id="fundo">
         <div id="app" class="app">
@@ -69,7 +75,7 @@
 <script>
 
 
-$('#fundo').addClass('bg-fundo');
+/*$('#fundo').addClass('bg-fundo');
 
 $('.navbar .navbar-brand a').on('click', function(){
     $('#fundo').removeClass('bg-fundo-lists');
@@ -80,8 +86,9 @@ $('#menu li a').on('click', function(){
     $('#fundo').removeClass('bg-fundo');
     $('#fundo').addClass('bg-fundo-lists');
 });
-
+*/
 
 
 
 </script>
+
