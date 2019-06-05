@@ -16,7 +16,7 @@
     <b-table responsive :fields="fields" :items="items" striped fixed>
 
       <template slot="show_details" slot-scope="row">
-        <b-button  size="sm" @click="row.toggleDetails" class="btn btn-xs btn-light">
+        <b-button  size="sm" @click="go(row)" class="btn btn-xs btn-light">
           Details  <i class="fas fa-eye"></i>
          
         </b-button>
@@ -44,23 +44,12 @@ export default {
           total:1,
           last:1,
           page:1,
-         // fields:['PharmGKB Accession Id','Name','show_details'],
-
-           fields: [
-          // A virtual column that doesn't exist in items
-          
-          // A column that needs custom formatting
-          { key: 'idp', label: 'IDP' },
-          { key: 'name', label: 'Full Name' },
+          search:'',
+          fields: [
+          { key: 'idp', label: 'ID' },
+          { key: 'name', label: 'Name' },
           'show_details',
-          
-          // A regular column
-          //'age',
-          // A regular column
-         // 'sex',
-          // A virtual column made up from two fields
-         // { key: 'nameage', label: 'First name and age' }
-        ],
+          ],
 
 
         }
@@ -85,7 +74,7 @@ export default {
           
       },
       getPhenotypes(page)
-            {
+      {
                 axios.get('api/phenotypes?page='+this.page)
                 .then((response) => {
                     
@@ -99,7 +88,12 @@ export default {
                  
                     console.log(error);
                 })
-            },
+      },
+      go(row)  
+      {
+          this.$router.push('/phenotype/'+row.item.idp);
+         //console.log(row.item.idp);
+      }
    
   },
   beforeMount()

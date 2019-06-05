@@ -45,7 +45,7 @@ Route::get('genes','GeneControllerAPI@index');
 Route::get('gene/{id}','GeneControllerAPI@showGene');
 Route::get('genessearch','GeneControllerAPI@searchGene');
 Route::get('numGenes','GeneControllerAPI@countElem');
-
+Route::get('getID','GeneControllerAPI@getID');
 
 //Variants
 Route::get('variants', 'VariantControllerAPI@index');
@@ -67,6 +67,10 @@ Route::get('occurence/{id}','OccurrenceControllerAPI@showOccurence');
 //Phenotypes
 Route::get('phenotypes','PhenotypeControllerAPI@index');
 Route::get('phenotypessearch','PhenotypeControllerAPI@searchPhenotype');
+Route::get('phenotype/{id}','PhenotypeControllerAPI@showPhenotype');
+Route::get('phenotype/{id}/clinicalVariants','PhenotypeControllerAPI@showClinicalVariants');
+
+
 
 Route::get('relationships','RelationshipControllerAPI@index');
 Route::get('studyparameters','StudyParameterControllerAPI@index');

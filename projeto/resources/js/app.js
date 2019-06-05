@@ -77,6 +77,8 @@ const showVariant=Vue.component('show-variant', require('./components/Variants/S
 
 //Phenotypes
 const listPhenotypes=Vue.component('list-phenotypes', require('./components/Phenotypes/ListPhenotypes.vue').default);
+const ShowPhenotype=Vue.component('show-phenotype', require('./components/Phenotypes/ShowPhenotype.vue').default);
+const tableClinicalVariants = Vue.component('showclinicalvariants', require('./components/Phenotypes/ShowClinicalVariants.vue').default);
 
 
 const routes = [
@@ -89,6 +91,7 @@ const routes = [
     {path:'/gene/:id', component:showGene},
     {path:'/variants', component:listVariants},
     {path:'/variant/:id', component:showVariant},
+    {path:'/phenotype/:id', component:ShowPhenotype},
     {path:'/home', component:mainPage},
     {path:'/searchResult', component:searchResult},
     {path:'/index', component:searchbar},
