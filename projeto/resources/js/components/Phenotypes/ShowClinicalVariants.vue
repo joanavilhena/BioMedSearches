@@ -1,8 +1,9 @@
 <template>
-  <b-container fluid>
+<div>
+  <b-container fluid >
     <!-- User Interface controls -->
 
-   
+   <div v-if="!showClinnical">
     <br>
 
     <b-row>
@@ -23,7 +24,7 @@
     <br>
 
     <!-- Main table element -->
-    <b-table
+    <b-table class=".table-responsive"
       show-empty
       striped 
       fixed
@@ -81,7 +82,11 @@
           :total-rows="totalRows"
           :per-page="perPage"
           class="my-0"
-        ></b-pagination>
+        >
+        </b-pagination>
+
+
+
       </b-col>
     </b-row>
 
@@ -89,7 +94,31 @@
     <b-modal :id="infoModal.id" :title="infoModal.title" ok-only @hide="resetInfoModal">
       <pre>{{ infoModal.content }}</pre>
     </b-modal>
+    </div>
+
+    <div v-if="showClinnical">
+      <h1>Clinical Annotations</h1>
+
+   <b-table
+      bordered stacked="md" fixed
+      class=".table-responsive"
+      :items="ca"
+      :fields="fieldsCA"
+    >
+      <template slot="PMIDs" slot-scope="row">
+          {{ split(row.item.PMIDs)}}
+
+          <div v-for="(i,index) in PMIDs" :key="index">
+          <a :href="'https://www.ncbi.nlm.nih.gov/pubmed/'+i">{{i}}</a>
+          </div>
+        </template>
+    
+    </b-table>
+  <b-button @click="back">Back</b-button>
+
+    </div>
   </b-container>
+  </div>
 </template>
 
 <script>
@@ -98,6 +127,7 @@ import { constants } from 'crypto';
     data() {
       return {
         items: [],
+        ca:[],
         fields: [
           { key: 'variant', label: 'Variant' },
           { key: 'gene', label: 'Gene'},
@@ -106,6 +136,16 @@ import { constants } from 'crypto';
           { key: 'chemicals', label: 'Chemicals' },
           'Actions',
         ],
+        fieldsCA:
+        [
+          { key: 'AnnotationText', label: 'Annotation Text' },
+          { key: 'Variant', label: 'Location' },
+          { key: 'Gene', label: 'Gene' },
+          { key: 'RelatedChemicals', label: 'RelatedChemicals' },
+          { key: 'RelatedDrugs', label: 'RelatedDrugs' },
+          { key: 'PMIDs', label: 'PMIDs' },
+        ],
+
         totalRows: 1,
         currentPage: 1,
         perPage: 5,
@@ -122,6 +162,8 @@ import { constants } from 'crypto';
         idVariant:0,
         isVariant:false,
         phenotype :'',
+        showClinnical: true,
+        PMIDs: '',
       }
     },
     computed: {
@@ -184,6 +226,10 @@ import { constants } from 'crypto';
 
 
       },
+      back()
+      {
+        this.showClinnical = false;
+      },
 
       showStudyParams(item)
       {
@@ -198,12 +244,22 @@ import { constants } from 'crypto';
           type: item.type, variant: item.variant } })
                 .then((response) => {
                     console.log(response.data);
+                    this.ca = response.data;
+                    this.showClinnical = true;
                     //this.$router.push('/clinicalAnnotation/'+response.ClinicalAnnotationID);
 
                 });
+
+              
     
 
 
+      },
+      split(string)
+      {
+        console.log('estou aqui!')
+        this.PMIDs = string.split(",");
+        console.log(this.PMDIs);
       }
     },
     mounted()
@@ -228,6 +284,8 @@ import { constants } from 'crypto';
             console.log(this.phenotype);
         });
 
+
+      this.showClinnical = false;
         
         
     }
