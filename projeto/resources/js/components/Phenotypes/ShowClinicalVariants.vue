@@ -2,7 +2,7 @@
   <b-container fluid>
     <!-- User Interface controls -->
 
-    <h2>Clinical Variants</h2>
+   
     <br>
 
     <b-row>
@@ -44,12 +44,26 @@
       <template slot="variant" slot-scope="row">
         <a :href="'#/variant/' + row.item.variant">{{ row.item.variant}}</a> 
       </template>
+
        <template slot="gene" slot-scope="row">
-           {{getGeneID(row.item.gene)}}
-        <a :href="'#/gene/' + geneID">{{ row.item.gene}}</a>
+           
+        <a @click="getGeneID(row.item.gene)">{{ row.item.gene}}</a>
       </template>
+
       <template slot="chemicals" slot-scope="row">
         {{ row.item.chemicals}}
+      </template>
+
+      <template slot="Actions" slot-scope="row">
+        <b-button  size="sm" @click="showClinnicalAnn(row.item)" class="btn btn-xs btn-light">
+          Clinical Annotations  <i class="fas fa-eye"></i>
+        </b-button>
+
+        <br>
+
+         <b-button  size="sm" @click="showStudyParams(row.item)" class="btn btn-xs btn-light">
+          Study Parameters  <i class="fas fa-eye"></i>
+        </b-button>
       </template>
       
     
@@ -79,6 +93,7 @@
 </template>
 
 <script>
+import { constants } from 'crypto';
   export default {
     data() {
       return {
@@ -87,8 +102,9 @@
           { key: 'variant', label: 'Variant' },
           { key: 'gene', label: 'Gene'},
           { key: 'type', label: 'Type' },
-          { key: 'level of evidence', label: 'Level of Evidence', class: 'text-center' },
-          { key: 'chemicals', label: 'Chemicals' }
+          { key: 'levelofevidence', label: 'Level of Evidence', class: 'text-center' },
+          { key: 'chemicals', label: 'Chemicals' },
+          'Actions',
         ],
         totalRows: 1,
         currentPage: 1,
@@ -104,7 +120,8 @@
         },
         geneID:0,
         idVariant:0,
-        isVariant:false
+        isVariant:false,
+        phenotype :'',
       }
     },
     computed: {
@@ -166,9 +183,30 @@
 
 
 
+      },
+
+      showStudyParams(item)
+      {
+
+      },
+
+      showClinnicalAnn(item)
+      {
+        console.log(item);
+        var jsonString = JSON.stringify(item);
+         axios.get('api/clinicalAnn',{ params: { gene: item.gene, chemicals: item.chemicals, le: item.level_of_evidence, phenotypes: this.phenotype,
+          type: item.type, variant: item.variant } })
+                .then((response) => {
+                    console.log(response.data);
+                    //this.$router.push('/clinicalAnnotation/'+response.ClinicalAnnotationID);
+
+                });
+    
+
+
       }
     },
-    created()
+    mounted()
     {
         
         axios.get('api/phenotype/'+this.$route.params.id+'/clinicalVariants')
@@ -182,6 +220,13 @@
                 .catch(function (error) {     
                     console.log(error);
                 });
+      axios.get('api/phenotype/'+this.$route.params.id)
+        .then((response)=>
+        {
+            console.log(response.data.data.name);
+           this.phenotype = response.data.data.name;
+            console.log(this.phenotype);
+        });
 
         
         

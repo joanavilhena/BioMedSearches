@@ -69,8 +69,12 @@ Route::get('phenotypes','PhenotypeControllerAPI@index');
 Route::get('phenotypessearch','PhenotypeControllerAPI@searchPhenotype');
 Route::get('phenotype/{id}','PhenotypeControllerAPI@showPhenotype');
 Route::get('phenotype/{id}/clinicalVariants','PhenotypeControllerAPI@showClinicalVariants');
+Route::get('phenotypes/PMIDs','PhenotypeControllerAPI@getPMIDs');
+
+//ClinicalAnnotation
 
 
+Route::get('clinicalAnn','ClinicalAnnotationControllerAPI@showClinicalAnnotation');
 
 Route::get('relationships','RelationshipControllerAPI@index');
 Route::get('studyparameters','StudyParameterControllerAPI@index');

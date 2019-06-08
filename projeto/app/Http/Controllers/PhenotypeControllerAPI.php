@@ -45,7 +45,7 @@ class PhenotypeControllerAPI extends Controller
     public function showClinicalVariants($id)
     {
 
-         $result = DB::table('phenotypes')->whereRaw('lower(idp) like lower(?)', ["%{$id}%"])
+        $result = DB::table('phenotypes')->whereRaw('lower(idp) like lower(?)', ["%{$id}%"])
                     ->first();
 
         $name = $result->name;
@@ -58,6 +58,51 @@ class PhenotypeControllerAPI extends Controller
        // return $result;
         
        
+    }
+
+    public function getPMIDs(Request $request)
+    {
+        $gene = $request->gene;
+        $disease = $request->disease;
+        $variant = $request->location;
+        $levelofevidence = $request->le;
+        $type = $request->type;
+
+        if($request->gene==null)
+        {
+            $gene = ' ';
+        }
+
+        if($request->disease==null)
+        {
+            $disease = ' ';
+        }
+
+        if($request->variant==null)
+        {
+            $variant = ' ';
+        }
+        if($request->le ==null)
+        {
+            $levelofevidence = ' ';
+        }
+            
+    
+        $gene = 'UGT1A1';
+        $disease ='HIV';
+        $variant ='rs887829';
+        $levelofevidence ='1A';
+        $type = 'Other';
+        $result = DB::table('clinical_ann_metadata')->whereRaw('lower(Gene) like lower(?)', ["%{$gene}%"])
+                                                    ->whereRaw('lower(RelatedDiseases) like lower(?)', ["%{$disease}%"])
+                                                    ->whereRaw('lower(Location) like lower(?)', ["%{$variant}%"])
+                                                    ->whereRaw('lower(LevelofEvidence) like lower(?)', ["%{$levelofevidence}%"])
+                                                    ->whereRaw('lower(ClinicalAnnotationTypes) like lower(?)', ["%{$type}%"])
+                    
+                                                    ->get();
+        
+
+        return response()->json($result);
     }
 
 
