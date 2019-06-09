@@ -97,30 +97,51 @@
       <pre>{{ infoModal.content }}</pre>
     </b-modal>
     </div>
-
+  
+    <!-- Clinical Annotations-->
     <div v-if="showClinnical">
       <h1>Clinical Annotations</h1>
+        <br>
+        <br>
+        <br>
 
-   <b-table
-      bordered stacked="md" fixed
-      class=".table-responsive"
-      :items="ca"
-      :fields="fieldsCA"
-    >
-      <template slot="PMIDs" slot-scope="row">
-          {{ split(row.item.PMIDs)}}
+        <div v-if="ca">
 
-          <div v-for="(i,index) in PMIDs" :key="index">
-          <a :href="'https://www.ncbi.nlm.nih.gov/pubmed/'+i">{{i}}</a>
+        <div v-for="(i,index) in ca" :key="index">
+          <h3>Clinical Annotation ID: {{i.ClinicalAnnotationID}}</h3>
+          <br>
+          <h5>AnnotationText </h5> <span>{{i.AnnotationText}}</span>
+
+          {{split(i.PMIDs)}}
+          <h5>PMIDs:</h5>
+          <div id="pmids" v-for="(a,index) in PMIDs" :key="index">
+            
+          <a :href="'https://www.ncbi.nlm.nih.gov/pubmed/'+a">{{  a }} | </a> 
+
           </div>
-        </template>
-    
-    </b-table>
+          <br>
+          <br>
+          <br>
+          
+
+        </div>
+
+      </div>
+    </div>
+
+    <div v-if="ca.data.length=0"> <!-- Falta validar isto  -->
+
+      <h5>No data found</h5>
+    </div>
+
+
+      
+
+   
   <b-button @click="back">Back</b-button>
 
     </div>
-  </b-container>
-  </div>
+  
 </template>
 
 <script>
@@ -138,15 +159,7 @@ import { constants } from 'crypto';
           { key: 'chemicals', label: 'Chemicals' },
           'Actions',
         ],
-        fieldsCA:
-        [
-          { key: 'AnnotationText', label: 'Annotation Text' },
-          { key: 'Variant', label: 'Location' },
-          { key: 'Gene', label: 'Gene' },
-          { key: 'RelatedChemicals', label: 'RelatedChemicals' },
-          { key: 'RelatedDrugs', label: 'RelatedDrugs' },
-          { key: 'PMIDs', label: 'PMIDs' },
-        ],
+        
 
         totalRows: 1,
         currentPage: 1,
@@ -192,16 +205,7 @@ import { constants } from 'crypto';
         axios.get('api/getGeneID',{ params: { search: name } })
                 .then((response) => {
 
-               
-           //console.log(response.data.data[0].idp);
-                    
-              // this.geneID= response.data.data[0].idp;
-                //this.last = response.data.last_page;
-                //this.total = response.data.total;
-
-                //console.log(this.drugs);
-              
-             id    = response.data.data[0].idp;
+             id= response.data.data[0].idp;
                this.$router.push('/gene/'+id);
             // console.log(id);
                 })
@@ -221,24 +225,13 @@ import { constants } from 'crypto';
         let id;
         axios.get('api/getVariantID',{ params: { search: name } })
                 .then((response) => {
-
-               
-           console.log(response.data.data[0].idp);
-                    
-              // this.geneID= response.data.data[0].idp;
-                //this.last = response.data.last_page;
-                //this.total = response.data.total;
-
-                //console.log(this.drugs);
-              
-             id    = response.data.data[0].idp;
+        
+             id  = response.data.data[0].idp;
                this.$router.push('/variant/'+id);
-            // console.log(id);
+     
                 })
                 .catch(function (error) {
-                    // handle error
-                    console.log(error);
-                    console.log("Not Found");
+                 
 
                 })
 
@@ -263,29 +256,19 @@ import { constants } from 'crypto';
       },
       getGeneID(name)
       {
-         // this.idGene=1;
-        
-         console.log("Hello")
-         console.log(name);
+
 
            axios.get('api/getGeneID',{ params: { search: name } })
                 .then((response) => {
 
                
-           // console.log(response.data.data[0].idp);
+         
                     
                this.geneID= response.data.data[0].idp;
-                //this.last = response.data.last_page;
-                //this.total = response.data.total;
 
-                //console.log(this.drugs);
-              
-                
-        
                 })
                 .catch(function (error) {
-                    // handle error
-                    console.log(error);
+                 
                 })
 
 
@@ -355,3 +338,9 @@ import { constants } from 'crypto';
 
   }
 </script>
+<style>
+#pmids
+{
+  display: inline-block;
+}
+</style>
