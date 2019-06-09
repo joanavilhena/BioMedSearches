@@ -45,13 +45,14 @@ Route::get('genes','GeneControllerAPI@index');
 Route::get('gene/{id}','GeneControllerAPI@showGene');
 Route::get('genessearch','GeneControllerAPI@searchGene');
 Route::get('numGenes','GeneControllerAPI@countElem');
-Route::get('getID','GeneControllerAPI@getID');
+Route::get('getGeneID','GeneControllerAPI@getID');
 
 //Variants
 Route::get('variants', 'VariantControllerAPI@index');
 Route::get('variant/{id}','VariantControllerAPI@showVariant');
 Route::get('variantssearch','VariantControllerAPI@searchVariant');
 Route::get('numVariants','VariantControllerAPI@countElem');
+Route::get('getVariantID','VariantControllerAPI@getID');
 
 //Clinical Variants
 Route::get('clinicalvariants', 'ClinicalVariantControllerAPI@index');

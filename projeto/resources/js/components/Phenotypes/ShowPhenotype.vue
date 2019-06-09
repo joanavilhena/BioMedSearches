@@ -8,16 +8,11 @@
         
 
 
-        <nav>
- 
-</nav>
-
 
         <showclinicalvariants></showclinicalvariants>
-
-    </div>
-  
-            
+        <br>
+        <b-button  @click="back">Back</b-button>  
+    </div>      
 </template>
 <script>
 
@@ -33,7 +28,10 @@ export default {
     },
     methods:
     {
-               
+              back()
+              {
+                  this.$router.push('/phenotypes');
+              }   
     },
     created()
     {

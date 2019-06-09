@@ -5,7 +5,8 @@
 
    <div v-if="!showClinnical">
     <br>
-
+    <h3>Clinical Variations</h3>
+    <br>
     <b-row>
       <b-col md="6" class="my-1">
         <b-form-group>
@@ -25,6 +26,7 @@
 
     <!-- Main table element -->
     <b-table class=".table-responsive"
+   
       show-empty
       striped 
       fixed
@@ -43,12 +45,12 @@
    
         
       <template slot="variant" slot-scope="row">
-        <a :href="'#/variant/' + row.item.variant">{{ row.item.variant}}</a> 
+       <a @click="goVariant(row.item.variant)" >{{ row.item.variant}}</a>
       </template>
 
        <template slot="gene" slot-scope="row">
            
-        <a @click="getGeneID(row.item.gene)">{{ row.item.gene}}</a>
+        <a @click="goGene(row.item.gene)" >{{ row.item.gene}}</a>
       </template>
 
       <template slot="chemicals" slot-scope="row">
@@ -63,7 +65,7 @@
         <br>
 
          <b-button  size="sm" @click="showStudyParams(row.item)" class="btn btn-xs btn-light">
-          Study Parameters  <i class="fas fa-eye"></i>
+          Variant Annotations <i class="fas fa-eye"></i>
         </b-button>
       </template>
       
@@ -181,6 +183,70 @@ import { constants } from 'crypto';
       this.totalRows = this.items.length
     },
     methods: {
+    
+      goGene(name)
+      {
+        //console.log(name);
+
+        let id;
+        axios.get('api/getGeneID',{ params: { search: name } })
+                .then((response) => {
+
+               
+           //console.log(response.data.data[0].idp);
+                    
+              // this.geneID= response.data.data[0].idp;
+                //this.last = response.data.last_page;
+                //this.total = response.data.total;
+
+                //console.log(this.drugs);
+              
+             id    = response.data.data[0].idp;
+               this.$router.push('/gene/'+id);
+            // console.log(id);
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+
+        
+
+             
+      },
+    goVariant(name)
+      {
+        console.log(name);
+
+        let id;
+        axios.get('api/getVariantID',{ params: { search: name } })
+                .then((response) => {
+
+               
+           console.log(response.data.data[0].idp);
+                    
+              // this.geneID= response.data.data[0].idp;
+                //this.last = response.data.last_page;
+                //this.total = response.data.total;
+
+                //console.log(this.drugs);
+              
+             id    = response.data.data[0].idp;
+               this.$router.push('/variant/'+id);
+            // console.log(id);
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                    console.log("Not Found");
+
+                })
+
+        
+
+             
+      },
+
       info(item, index, button) {
         this.infoModal.title = `Row index: ${index}`
         this.infoModal.content = JSON.stringify(item, null, 2)
@@ -199,10 +265,10 @@ import { constants } from 'crypto';
       {
          // this.idGene=1;
         
-         //console.log("Hello")
-        // console.log(name);
+         console.log("Hello")
+         console.log(name);
 
-           axios.get('api/getID',{ params: { search: name } })
+           axios.get('api/getGeneID',{ params: { search: name } })
                 .then((response) => {
 
                
@@ -231,11 +297,7 @@ import { constants } from 'crypto';
         this.showClinnical = false;
       },
 
-      showStudyParams(item)
-      {
-
-      },
-
+   
       showClinnicalAnn(item)
       {
         console.log(item);
@@ -257,9 +319,9 @@ import { constants } from 'crypto';
       },
       split(string)
       {
-        console.log('estou aqui!')
+       
         this.PMIDs = string.split(",");
-        console.log(this.PMDIs);
+      
       }
     },
     mounted()

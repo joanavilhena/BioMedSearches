@@ -13,11 +13,11 @@
     </div>
 
 
-    <b-table responsive :fields="fields" :items="items" striped fixed>
+    <b-table responsive :fields="fields" :items="items"  fixed class=".table-responsive">
 
       <template slot="show_details" slot-scope="row">
         <b-button  size="sm" @click="go(row)" class="btn btn-xs btn-light">
-          Details  <i class="fas fa-eye"></i>
+          Clinical Variations  <i class="fas fa-eye"></i>
          
         </b-button>
       </template>
