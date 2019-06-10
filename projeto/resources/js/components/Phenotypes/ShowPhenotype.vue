@@ -1,7 +1,7 @@
 <template>
     <div class="container">
 
-       <b-jumbotron bg-variant="info">
+       <b-jumbotron bg-variant="">
         <template slot="header">Phenotype: {{currentPhenotype.name}}</template>
         <h3>PharmGKB ID: {{currentPhenotype.idp}}</h3>
        </b-jumbotron>

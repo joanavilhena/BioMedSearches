@@ -99,7 +99,8 @@
     </div>
   
     <!-- Clinical Annotations-->
-    <div v-if="showClinnical">
+    <div v-if="showClinnical" >
+      <b-container>
       <h1>Clinical Annotations</h1>
         <br>
         <br>
@@ -127,9 +128,12 @@
         </div>
 
       </div>
+
+        <b-button @click="back">Back</b-button>
+      </b-container>
     </div>
 
-    <div v-if="ca.data.length=0"> <!-- Falta validar isto  -->
+    <div v-if="!ca" > <!-- Falta validar isto  -->
 
       <h5>No data found</h5>
     </div>
@@ -138,8 +142,8 @@
       
 
    
-  <b-button @click="back">Back</b-button>
 
+  </b-container>
     </div>
   
 </template>
