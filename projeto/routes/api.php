@@ -71,7 +71,7 @@ Route::get('phenotypessearch','PhenotypeControllerAPI@searchPhenotype');
 Route::get('phenotype/{id}','PhenotypeControllerAPI@showPhenotype');
 Route::get('phenotype/{id}/clinicalVariants','PhenotypeControllerAPI@showClinicalVariants');
 Route::get('phenotypes/PMIDs','PhenotypeControllerAPI@getPMIDs');
-
+Route::get('phenoVariations','VarPhenoAnnotationControllerAPI@showPhenoVariations');
 //ClinicalAnnotation
 
 
@@ -82,3 +82,4 @@ Route::get('studyparameters','StudyParameterControllerAPI@index');
 Route::get('drugannotations','VarDrugAnnotationControllerAPI@index');
 Route::get('pharmannotations','VarFaAnnotationControllerAPI@index');
 Route::get('phenoannotations','VarPhenoAnnotationControllerAPI@index');
+

@@ -7,9 +7,8 @@
        </b-jumbotron>
         
 
-
-
         <showclinicalvariants></showclinicalvariants>
+
         <br>
         <b-button  @click="back">Back</b-button>  
     </div>      
@@ -24,6 +23,7 @@ export default {
             references: [],
             id: this.$route.params.id,
             currentPhenotype:[],
+            
         }
     },
     methods:

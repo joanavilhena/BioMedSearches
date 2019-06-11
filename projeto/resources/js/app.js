@@ -79,9 +79,10 @@ const showVariant=Vue.component('show-variant', require('./components/Variants/S
 const listPhenotypes=Vue.component('list-phenotypes', require('./components/Phenotypes/ListPhenotypes.vue').default);
 const ShowPhenotype=Vue.component('show-phenotype', require('./components/Phenotypes/ShowPhenotype.vue').default);
 const tableClinicalVariants = Vue.component('showclinicalvariants', require('./components/Phenotypes/ShowClinicalVariants.vue').default);
+const phenotypeVariantAnnotations = Vue.component('show-variant-annotations', require('./components/Phenotypes/VariantAnnotations.vue').default);
+const phenotypeClinicalVariantions = Vue.component('show-clinical-annotations', require('./components/Phenotypes/showClinicalAnnotations.vue').default);
 
-//Clinical Annotations
-const showClinicalAnnotations=Vue.component('show-ca', require('./components/ClinicalAnnotations/ShowCAnn.vue').default);
+
 
 const routes = [
     {path:'/', redirect:'/home'},
@@ -98,7 +99,7 @@ const routes = [
     {path:'/searchResult', component:searchResult},
     {path:'/index', component:searchbar},
     {path:'/phenotypes', component:listPhenotypes},
-    {path:'/clinicalAnnotation/:id', component:showClinicalAnnotations},
+    {path:'/clinicalAnnotation/:id', component:phenotypeClinicalVariantions},
 ];
 const router = new VueRouter({
     

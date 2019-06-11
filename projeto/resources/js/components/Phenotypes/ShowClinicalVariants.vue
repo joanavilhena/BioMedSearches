@@ -1,9 +1,9 @@
 <template>
 <div>
-  <b-container fluid >
+  <b-container fluid>
     <!-- User Interface controls -->
 
-   <div v-if="!showClinnical">
+   <div v-if="showClinicalVariations">
     <br>
     <h3>Clinical Variations</h3>
     <br>
@@ -24,9 +24,12 @@
     </b-row>
     <br>
 
+     <div >
+        
+      </div>
+
     <!-- Main table element -->
     <b-table class=".table-responsive"
-   
       show-empty
       striped 
       fixed
@@ -98,48 +101,23 @@
     </b-modal>
     </div>
   
-    <!-- Clinical Annotations-->
-    <div v-if="showClinnical" >
-      <b-container>
-      <h1>Clinical Annotations</h1>
-        <br>
-        <br>
-        <br>
+    
 
-        <div v-if="ca">
 
-        <div v-for="(i,index) in ca" :key="index">
-          <h3>Clinical Annotation ID: {{i.ClinicalAnnotationID}}</h3>
-          <br>
-          <h5>AnnotationText </h5> <span>{{i.AnnotationText}}</span>
+    <div  > <!-- Falta validar isto (No Data found)  -->
 
-          {{split(i.PMIDs)}}
-          <h5>PMIDs:</h5>
-          <div id="pmids" v-for="(a,index) in PMIDs" :key="index">
-            
-          <a :href="'https://www.ncbi.nlm.nih.gov/pubmed/'+a">{{  a }} | </a> 
-
-          </div>
-          <br>
-          <br>
-          <br>
-          
-
-        </div>
-
-      </div>
-
-        <b-button @click="back">Back</b-button>
-      </b-container>
+      <h5></h5>
     </div>
 
-    <div v-if="!ca" > <!-- Falta validar isto  -->
-
-      <h5>No data found</h5>
+ <!-- Clinical Annotations-->
+    <div v-if="showClinicalAnnotations">
+      <show-clinical-annotations :ca="ca"  @backToggle="backToggle"></show-clinical-annotations>
     </div>
 
-
-      
+     <!-- Variant Annotations-->
+    <div v-if="showVariantAnnotations">
+      <show-variant-annotations :ca="ca"  @backToggle="backToggle"></show-variant-annotations>
+    </div>
 
    
 
@@ -183,6 +161,9 @@ import { constants } from 'crypto';
         phenotype :'',
         showClinnical: true,
         PMIDs: '',
+        showClinicalVariations:true,
+        showVariantAnnotations:false,
+        showClinicalAnnotations:false,
       }
     },
     computed: {
@@ -283,6 +264,14 @@ import { constants } from 'crypto';
       {
         this.showClinnical = false;
       },
+      backToggle()
+      {
+       
+        this.showClinicalVariations = true;
+        this.showClinicalAnnotations = false;
+        this.showVariantAnnotations = false;
+        console.log("estou no backToggle ");
+      },
 
    
       showClinnicalAnn(item)
@@ -294,8 +283,12 @@ import { constants } from 'crypto';
                 .then((response) => {
                     console.log(response.data);
                     this.ca = response.data;
-                    this.showClinnical = true;
+
+                    this.showClinicalVariations = false;
+                    this.showClinicalAnnotations = true;
+                    this.showVariantAnnotations = false;
                     //this.$router.push('/clinicalAnnotation/'+response.ClinicalAnnotationID);
+                    
 
                 });
 
@@ -304,17 +297,39 @@ import { constants } from 'crypto';
 
 
       },
-      split(string)
+      showStudyParams(item)
       {
-       
-        this.PMIDs = string.split(",");
-      
-      }
+        
+         console.log(item.chemicals);
+         let chemicals = item.chemicals.replace(',','%');
+         console.log(chemicals);
+        var jsonString = JSON.stringify(item.chemicals);
+         axios.get('api/phenoVariations',{ params: { gene: item.gene, chemicals: chemicals, variant: item.variant } })
+                .then((response) => {
+                    //console.log(response.data);
+                    this.ca = response.data;
+                    console.log(this.ca);
+                    this.showClinicalVariations = false;
+                    this.showClinicalAnnotations = false;
+                    this.showVariantAnnotations = true;
+                    //this.$router.push('/clinicalAnnotation/'+response.ClinicalAnnotationID);
+                    
+
+                });
+
+   
+ 
+
+     
+            
+
+      },
+     
     },
     mounted()
     {
         
-        axios.get('api/phenotype/'+this.$route.params.id+'/clinicalVariants')
+      axios.get('api/phenotype/'+this.$route.params.id+'/clinicalVariants')
                 .then((response) => {        
                     this.items= response.data;  
                     this.totalRows = response.data.length;

@@ -4,6 +4,7 @@
         <br>
         <br>
         <h1>Phenotypes</h1>
+        
     <br>
     </div>
 
@@ -11,6 +12,9 @@
         <input class="form-control"  placeholder="Search for name or PharmaGKB ID..." type="text" v-model="search">
         <button class="btn btn-primary" @click="getSearchResults">Search</button>
     </div>
+
+    <br>
+        <br>
 
 
     <b-table responsive :fields="fields" :items="items"  fixed class=".table-responsive">

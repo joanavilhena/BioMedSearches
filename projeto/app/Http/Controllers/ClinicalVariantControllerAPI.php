@@ -19,5 +19,8 @@ class ClinicalVariantControllerAPI extends Controller
         return ClinicalVariantResource::collection(ClinicalVariant::paginate(5));
     }
 
+
+    
+
     
 }
