@@ -70,8 +70,8 @@ const showChemical=Vue.component('show-chemical', require('./components/Chemical
 const listgenes=Vue.component('list-genes', require('./components/Genes/ListGenes.vue').default);
 const showGene=Vue.component('show-gene', require('./components/Genes/ShowGene.vue').default);
 const tableClinicalVariantsGenes = Vue.component('showclinicalvariantsGene', require('./components/Genes/ShowClinicalVariants.vue').default);
-const geneVariantAnnotations = Vue.component('show-variant-annotations', require('./components/Genes/VariantAnnotations.vue').default);
-const geneClinicalVariantions = Vue.component('show-clinical-annotations', require('./components/Genes/showClinicalAnnotations.vue').default);
+//const geneVariantAnnotations = Vue.component('show-variant-annotations', require('./components/Genes/VariantAnnotations.vue').default);
+//const geneClinicalVariantions = Vue.component('show-clinical-annotations', require('./components/Genes/showClinicalAnnotations.vue').default);
 
 
 //Variants
