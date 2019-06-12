@@ -106,6 +106,22 @@ class PhenotypeControllerAPI extends Controller
     }
 
 
+    public function getID(Request $request)
+    {
+
+        $s=$request->search;
+        //dd($request);
+        $s = strtolower($s);
+
+        //return $s;
+
+        $result = DB::table('phenotypes')->whereRaw('lower(name) like lower(?)', ["{$s}"])->paginate(1);
+
+       // dd($result->idp);
+        //return $result;
+        return response()->json($result);
+       
+    }
 
    
 }

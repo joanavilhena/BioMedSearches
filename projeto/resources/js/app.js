@@ -48,7 +48,7 @@ Vue.use(Vuetify);
 //Home
 Vue.component('navigation', require('./components/NavigationBar.vue').default);
 Vue.component('feed', require('./components/MainPage/FeedNews.vue').default);
-const mainPage = Vue.component('main', require('./components/MainPage/MainIndex.vue').default);
+const mainPage = Vue.component('mainPage', require('./components/MainPage/MainIndex.vue').default);
 const searchbar = Vue.component('searchbar', require('./components/MainPage/SearchResults/SerachBar.vue').default);
 
 
@@ -69,6 +69,10 @@ const showChemical=Vue.component('show-chemical', require('./components/Chemical
 //Genes
 const listgenes=Vue.component('list-genes', require('./components/Genes/ListGenes.vue').default);
 const showGene=Vue.component('show-gene', require('./components/Genes/ShowGene.vue').default);
+const tableClinicalVariantsGenes = Vue.component('showclinicalvariantsGene', require('./components/Genes/ShowClinicalVariants.vue').default);
+const geneVariantAnnotations = Vue.component('show-variant-annotations', require('./components/Genes/VariantAnnotations.vue').default);
+const geneClinicalVariantions = Vue.component('show-clinical-annotations', require('./components/Genes/showClinicalAnnotations.vue').default);
+
 
 //Variants
 

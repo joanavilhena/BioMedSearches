@@ -42,6 +42,27 @@ class GeneControllerAPI extends Controller
        
     }
 
+
+    public function showClinicalVariantsGene($id)
+    {
+
+        $result = DB::table('genes')->whereRaw('lower(idp) like lower(?)', ["%{$id}%"])
+                    ->first();
+
+        $name = $result->name;
+
+        $result = DB::table('clinicalvariants')->whereRaw('lower(genes) like lower(?)', ["%{$name}%"])
+        ->get();
+        
+
+        return response()->json($result);
+       // return $result;
+        
+       
+    }
+
+
+
     public function searchGene(Request $request)
     {
         $s=$request->search;
@@ -60,7 +81,11 @@ class GeneControllerAPI extends Controller
         return $result;
         
 
+        
     }
+
+
+    
 
     public function countElem()
     {

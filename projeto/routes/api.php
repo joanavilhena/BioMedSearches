@@ -40,12 +40,6 @@ Route::get('numChemicals','ChemicalControllerAPI@countElem');
 
 
 
-//Genes
-Route::get('genes','GeneControllerAPI@index');
-Route::get('gene/{id}','GeneControllerAPI@showGene');
-Route::get('genessearch','GeneControllerAPI@searchGene');
-Route::get('numGenes','GeneControllerAPI@countElem');
-Route::get('getGeneID','GeneControllerAPI@getID');
 
 //Variants
 Route::get('variants', 'VariantControllerAPI@index');
@@ -65,6 +59,16 @@ Route::get('clinicalannotations','ClinicalAnnotationControllerAPI@index');
 Route::get('occurences','OccurrenceControllerAPI@index');
 Route::get('occurence/{id}','OccurrenceControllerAPI@showOccurence');
 
+//Genes
+Route::get('genes','GeneControllerAPI@index');
+Route::get('gene/{id}','GeneControllerAPI@showGene');
+Route::get('genessearch','GeneControllerAPI@searchGene');
+Route::get('numGenes','GeneControllerAPI@countElem');
+Route::get('getGeneID','GeneControllerAPI@getID');
+Route::get('geneVariations','VarGeneAnnotationControllerAPI@showGeneVariations');
+Route::get('gene/{id}/clinicalVariants','GeneControllerAPI@showClinicalVariantsGene');
+
+
 //Phenotypes
 Route::get('phenotypes','PhenotypeControllerAPI@index');
 Route::get('phenotypessearch','PhenotypeControllerAPI@searchPhenotype');
@@ -72,6 +76,7 @@ Route::get('phenotype/{id}','PhenotypeControllerAPI@showPhenotype');
 Route::get('phenotype/{id}/clinicalVariants','PhenotypeControllerAPI@showClinicalVariants');
 Route::get('phenotypes/PMIDs','PhenotypeControllerAPI@getPMIDs');
 Route::get('phenoVariations','VarPhenoAnnotationControllerAPI@showPhenoVariations');
+Route::get('getPhenoID','PhenotypeControllerAPI@getID');
 //ClinicalAnnotation
 
 
@@ -82,4 +87,4 @@ Route::get('studyparameters','StudyParameterControllerAPI@index');
 Route::get('drugannotations','VarDrugAnnotationControllerAPI@index');
 Route::get('pharmannotations','VarFaAnnotationControllerAPI@index');
 Route::get('phenoannotations','VarPhenoAnnotationControllerAPI@index');
-
+Route::get('geneannotations','VarGeneAnnotationControllerAPI@index');
