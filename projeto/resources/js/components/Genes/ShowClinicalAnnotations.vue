@@ -1,4 +1,4 @@
-<template>
+<!--<template>
         <div>
             <h1>Clinical Annotations</h1>
         <br>
@@ -69,3 +69,4 @@ props:["ca"],
 <style>
 
 </style>
+-->
