@@ -60,8 +60,7 @@ props:["ca"],
     },
     mounted()
     {
-        console.log("ShowClinicalAnnotations");
-        console.log(this.ca);
+        
     }
 }
 </script>
