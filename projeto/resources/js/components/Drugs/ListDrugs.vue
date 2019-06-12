@@ -1,54 +1,66 @@
 <template>
 <div class = "container">
     
-<div  opcity="0.8">
+ <div  opcity="0.8">
+        <br>
+        <br>
+        <h1>Drugs</h1>
     <br>
-    <br>
-    <h1>Drugs</h1>
-    <br>
-</div>
-
-<div  v-if="!showDrug">
-
-    <div class="input-group mb-3">
-        <input class="form-control"  placeholder="Search for name or PharmaGKB ID..." type="text" v-model="search">
-        <button class="btn btn-primary" @click="getSearchResults">Search</button>
     </div>
 
+<div  v-if="!showDrug">
+    
 
 
+ <b-container fluid>
+    <!-- User Interface controls -->
+    <b-row>
+      <b-col md="6" class="my-1">
+        <b-form-group >
+          <b-input-group>
+            <b-form-input v-model="filter" placeholder="Type to Search"></b-form-input>
+            <b-input-group-append>
+              <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+            </b-input-group-append>
+          </b-input-group>
+        </b-form-group>
+      </b-col>
 
+    </b-row>
+    <br>
+    <!-- Main table element -->
+    <b-table 
+      
+      responsive
+      fixed
+      :fields="fields"
+      :items="items"
+      :current-page="currentPage"
+      :per-page="perPage"
+      :filter="filter"
+      @filtered="onFiltered"
+    >
+       <template slot="Actions" slot-scope="row">
+        <b-button  size="sm" @click="go(row.item.idp)" class="btn btn-xs btn-light">
+            Detaills  <i class="fas fa-eye"></i>
+         
+        </b-button>
+      </template>
+    </b-table>
 
-  <table class="table table-striped .table-responsive">
-    <thead>
-        <tr table-light>
-           
-            <th scope="col">Name</th>
-            <th scope="col">Generic Names</th>
-            <th scope="col">Type</th>
-            <th scope="col">PubChem</th>
-            <th scope="col">Actions</th>
-            
-        </tr>
-    </thead>
+    <b-row>
+      <b-col md="6" class="my-1">
+        <b-pagination
+          v-model="currentPage"
+          :total-rows="totalRows"
+          :per-page="perPage"
+          class="my-0"
+        ></b-pagination>
+      </b-col>
+    </b-row>
 
-    <tbody>
-       <tr v-for="(drug,index) in drugs" :key="index">
-          
-           <td>{{drug.name}}</td>
-           <td>{{drug.genericNames}}</td>
-           <td>{{drug.type}}</td>
-           <td><a :href="'https://pubchem.ncbi.nlm.nih.gov/compound/' + drug.pubChemCompoundIdentifiers">{{drug.pubChemCompoundIdentifiers}}</a></td>
-           <td><button v-on:click.prevent="showItem(drug)" class="btn btn-xs btn-light">Details <i class="fas fa-eye"></i></button></td>
+  </b-container>
 
-       </tr>
-        
-    </tbody>    
-  </table>
-
-  <div class="overflow-auto">
-   <b-pagination  align="center" size="md-c"  v-model="page" :limit="5" :total-rows="this.total"  :per-page="5" @input="getDrugs(page)"></b-pagination>
-  </div>
 
 </div>
 
@@ -64,13 +76,31 @@
         data: function () {
         return {
             showDrug:false,
-            drugs: [],
+            items: [],
+            fields:
+            [
+                { key: 'idp', label: 'ID' },
+                { key: 'name', label: 'Name' },
+                { key: 'genericNames', label: 'Generic Names',  },
+                { key: 'topFDALabelTestingLevel', label: 'Top FDA TL' },
+                { key: 'pubChemCompoundIdentifiers', label: 'Pubchem ID' },
+                { key: 'type', label: 'Type' },
+                'Actions',
+            ],
             page:1,
             last:1,
             total:1,
             i:0,
             search:'',
             results:[],
+            totalRows: 1,
+            currentPage: 1,
+            perPage: 5,
+            pageOptions: [5, 10, 15],
+            sortBy: null,
+            sortDesc: false,
+            sortDirection: 'asc',
+            filter: null,
         }
 
         },
@@ -85,11 +115,10 @@
                 .then((response) => {
 
                
-                //console.log(response.data);
+               
                     
-                this.drugs= response.data.data;
-                this.last = response.data.meta.last_page;
-                this.total = response.data.meta.total;
+                this.items= response.data;
+                this.totalRows = response.data.length;
                  
 
                 //console.log(this.drugs);
@@ -110,11 +139,11 @@
                 .then((response) => {
 
                
-            console.log(response);
+            
                     
-               this.drugs= response.data.data;
+               this.items= response.data;
                 this.last = response.data.last_page;
-                this.total = response.data.total;
+                this.totalRows = response.data.total;
 
                 //console.log(this.drugs);
               
@@ -128,12 +157,26 @@
 
             },
 
-            showItem(drug)
+            go(drug)
             {
-                this.showDrug=true;
-                this.$router.push('/drug/'+drug.idp);
+               // this.showDrug=true;
+                this.$router.push('/drug/'+drug);
     
             },
+             info(item, index, button) {
+        this.infoModal.title = `Row index: ${index}`
+        this.infoModal.content = JSON.stringify(item, null, 2)
+        this.$root.$emit('bv::show::modal', this.infoModal.id, button)
+      },
+      resetInfoModal() {
+        this.infoModal.title = ''
+        this.infoModal.content = ''
+      },
+      onFiltered(filteredItems) {
+        // Trigger pagination to update the number of buttons/pages due to filtering
+        this.totalRows = filteredItems.length
+        this.currentPage = 1
+      }
 
            
            
@@ -152,11 +195,19 @@
         mounted()
         {
             this.getDrugs();
-            console.log("Criado");
-        }
+           
+            this.totalRows = this.items.length;
+        },
+
+         computed: {
+      sortOptions() {
+        // Create an options list from our fields
+       
+      }
+    },
     };
 </script>
 <style>
-
+.my-class { max-width: 100px; }
 </style>
 

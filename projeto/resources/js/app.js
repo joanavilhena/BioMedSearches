@@ -60,7 +60,7 @@ const listdrugs=Vue.component('list-drugs', require('./components/Drugs/ListDrug
 const showDrug=Vue.component('show-drug', require('./components/Drugs/ShowDrug.vue').default);
 const showDrugRefs=Vue.component('show-drug-dose', require('./components/Drugs/Nav/DrugDose.vue').default);
 const showDrugPubs=Vue.component('show-drug-pubs', require('./components/Drugs/Nav/DrugPubs.vue').default);
-const showAssociatedChemicals=Vue.component('show-drug-chemicals', require('./components/Drugs/Nav/AssociatedChemicals.vue').default);
+const showRelatedChemicals=Vue.component('show-drug-chemicals', require('./components/Drugs/Nav/RelatedChemicals.vue').default);
 
 //Chemicals
 const listchemicals=Vue.component('list-chemicals', require('./components/Chemicals/ListChemicals.vue').default);

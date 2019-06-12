@@ -340,6 +340,7 @@ import { constants } from 'crypto';
                 .catch(function (error) {     
                     console.log(error);
                 });
+                
       axios.get('api/phenotype/'+this.$route.params.id)
         .then((response)=>
         {

@@ -18,7 +18,11 @@ class DrugControllerAPI extends Controller
 {
     public function index()
     {
-        return DrugResource::collection(Drug::paginate(5));
+        $result = DB::table('drugs')
+        ->get();
+        
+
+        return response()->json($result);
     }
 
     public function showDrug($id)
