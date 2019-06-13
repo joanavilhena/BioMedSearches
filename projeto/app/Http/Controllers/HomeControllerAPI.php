@@ -55,8 +55,8 @@ class HomeControllerAPI extends Controller
         $genes = DB::table('genes')
         ->selectRaw('idp, name, \'Gene\' as tableName');
 
-        $variants = DB::table('variants')
-        ->selectRaw('idp, name, \'Variant\' as tableName');
+//        $variants = DB::table('variants')
+  //      ->selectRaw('idp, name, \'Variant\' as tableName');
 
         $phenotypes = DB::table('phenotypes')
         ->selectRaw('idp, name, \'Phenotype\' as tableName');
