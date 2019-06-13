@@ -32,7 +32,7 @@
     <b-table 
       
       responsive
-      fixed
+      
       :fields="fields"
       :items="items"
       :current-page="currentPage"
