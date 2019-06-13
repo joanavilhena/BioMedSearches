@@ -84,7 +84,7 @@ const listPhenotypes=Vue.component('list-phenotypes', require('./components/Phen
 const ShowPhenotype=Vue.component('show-phenotype', require('./components/Phenotypes/ShowPhenotype.vue').default);
 const tableClinicalVariants = Vue.component('showclinicalvariants', require('./components/Phenotypes/ShowClinicalVariants.vue').default);
 const phenotypeVariantAnnotations = Vue.component('show-variant-annotations', require('./components/Phenotypes/VariantAnnotations.vue').default);
-const phenotypeClinicalVariantions = Vue.component('show-clinical-annotations', require('./components/Phenotypes/showClinicalAnnotations.vue').default);
+const phenotypeClinicalVariantions = Vue.component('show-clinical-annotations', require('./components/Phenotypes/ShowClinicalAnnotations.vue').default);
 
 
 
