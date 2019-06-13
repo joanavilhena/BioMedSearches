@@ -7,7 +7,7 @@
 
         <div>
             <b-tabs content-class="mt-3" fill>
-                <b-tab title="Related Diseases"><p>Related Diseases</p><show-chemical-diseases></show-chemical-diseases></b-tab>
+                <b-tab title="Related Diseases"><show-chemical-diseases></show-chemical-diseases></b-tab>
                 <b-tab title="Clinical Annotatios"><p>Clinical Annotatios</p></b-tab>
                 <b-tab title="Drug Labels"><p>Drug Labels</p></b-tab>
             </b-tabs>

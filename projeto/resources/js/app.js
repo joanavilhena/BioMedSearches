@@ -50,6 +50,7 @@ Vue.component('navigation', require('./components/NavigationBar.vue').default);
 Vue.component('feed', require('./components/MainPage/FeedNews.vue').default);
 const mainPage = Vue.component('mainPage', require('./components/MainPage/MainIndex.vue').default);
 const searchbar = Vue.component('searchbar', require('./components/MainPage/SearchResults/SerachBar.vue').default);
+const aboutUs = Vue.component('aboutus', require('./components/AboutUs.vue').default);
 
 
 const searchResult = Vue.component('searchResult', require('./components/MainPage/SearchResult.vue').default);
@@ -94,7 +95,7 @@ const phenotypeClinicalVariantions = Vue.component('show-clinical-annotations', 
 const routes = [
     {path:'/', redirect:'/home'},
     //{path:'/chemicals', component:listdrugs},
-   // {path:'/drug/:id', component:showDrug},
+    {path:'/aboutus', component:aboutUs},
     {path:'/chemicals', component:listchemicals},
     {path:'/chemical/:id', component:showChemical},
     {path:'/genes', component:listgenes},
