@@ -71,7 +71,7 @@ class HomeControllerAPI extends Controller
             $paginate=5;
             $data = $chemicals->unionAll($drugs)
                     ->unionAll($genes) 
-                    ->unionAll($variants) 
+                   // ->unionAll($variants) 
                     ->unionAll($phenotypes) 
                     ->orderBy('name')
                     ->get(10);
