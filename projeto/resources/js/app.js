@@ -56,15 +56,18 @@ const searchResult = Vue.component('searchResult', require('./components/MainPag
 
 
 //Drugs
-const listdrugs=Vue.component('list-drugs', require('./components/Drugs/ListDrugs.vue').default);
-const showDrug=Vue.component('show-drug', require('./components/Drugs/ShowDrug.vue').default);
-const showDrugRefs=Vue.component('show-drug-dose', require('./components/Drugs/Nav/DrugDose.vue').default);
-const showDrugPubs=Vue.component('show-drug-pubs', require('./components/Drugs/Nav/DrugPubs.vue').default);
-const showRelatedChemicals=Vue.component('show-drug-chemicals', require('./components/Drugs/Nav/RelatedChemicals.vue').default);
+//const listdrugs=Vue.component('list-drugs', require('./components/Drugs/ListDrugs.vue').default);
+//const showDrug=Vue.component('show-drug', require('./components/Drugs/ShowDrug.vue').default);
+//const showDrugRefs=Vue.component('show-drug-dose', require('./components/Drugs/Nav/DrugDose.vue').default);
+//const showDrugPubs=Vue.component('show-drug-pubs', require('./components/Drugs/Nav/DrugPubs.vue').default);
+//const showRelatedDiseases=Vue.component('show-drug-diseases', require('./components/Drugs/Nav/RelatedDiseases.vue').default);
 
 //Chemicals
 const listchemicals=Vue.component('list-chemicals', require('./components/Chemicals/ListChemicals.vue').default);
 const showChemical=Vue.component('show-chemical', require('./components/Chemicals/ShowChemical.vue').default);
+const showDrugRefs=Vue.component('show-chemical-dose', require('./components/Chemicals/Nav/DrugDose.vue').default);
+const showDrugPubs=Vue.component('show-chemical-pubs', require('./components/Chemicals/Nav/DrugPubs.vue').default);
+const showRelatedDiseases=Vue.component('show-chemical-diseases', require('./components/Chemicals/Nav/RelatedDiseases.vue').default);
 
 //Genes
 const listgenes=Vue.component('list-genes', require('./components/Genes/ListGenes.vue').default);
@@ -90,8 +93,8 @@ const phenotypeClinicalVariantions = Vue.component('show-clinical-annotations', 
 
 const routes = [
     {path:'/', redirect:'/home'},
-    {path:'/drugs', component:listdrugs},
-    {path:'/drug/:id', component:showDrug},
+    //{path:'/chemicals', component:listdrugs},
+   // {path:'/drug/:id', component:showDrug},
     {path:'/chemicals', component:listchemicals},
     {path:'/chemical/:id', component:showChemical},
     {path:'/genes', component:listgenes},

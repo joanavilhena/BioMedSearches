@@ -9,7 +9,7 @@
     <b-collapse id="nav-collapse" class="snip1168" is-nav>
       <b-navbar-nav class="ml-auto" id="menu" >
         <b-nav-item  to="/genes">Genes</b-nav-item>
-        <b-nav-item  to="/drugs">Drugs</b-nav-item>
+        <b-nav-item  to="/chemicals">Drugs</b-nav-item>
          <b-nav-item  to="/phenotypes">Phenotypes</b-nav-item>
          <b-nav-item  to="/news">News</b-nav-item>
          <b-nav-item  to="/aboutus">AboutUs</b-nav-item>

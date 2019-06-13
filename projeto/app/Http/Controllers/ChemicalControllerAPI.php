@@ -20,7 +20,11 @@ class ChemicalControllerAPI extends Controller
 
     public function index()
     {
-        return ChemicalResource::collection(Chemical::paginate(5));
+        $result = DB::table('chemicals')
+        ->get();
+        
+
+        return response()->json($result);
     }
 
     public function showChemical($id)
@@ -42,6 +46,17 @@ class ChemicalControllerAPI extends Controller
 
         return $result;
         
+
+    }
+
+    public function getRelatedDiseases(Request $request)
+    {
+        
+        $s=$request->search;
+        $s = strtolower($s);
+        $result = DB::table('clinical_ann_metadata')->whereRaw('lower(RelatedChemicals) like lower(?)', ["%{$s}%"])->distinct('RelatedChemicals')->get();
+
+        return response()->json($result);
 
     }
 

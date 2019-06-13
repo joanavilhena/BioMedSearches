@@ -44,9 +44,9 @@ class HomeControllerAPI extends Controller
             //->select('idp','name')
       //      ->get();
         
-        $drugs = DB::table('drugs')
+      //  $drugs = DB::table('drugs')
                // ->select('idp','name');
-                ->selectRaw('idp, name, \'Drug\' as tableName');
+        //        ->selectRaw('idp, name, \'Drug\' as tableName');
                 
 
         $chemicals = DB::table('chemicals')
@@ -69,8 +69,8 @@ class HomeControllerAPI extends Controller
             
             $page = 1;
             $paginate=5;
-            $data = $chemicals->unionAll($drugs)
-                    ->unionAll($genes) 
+            $data = $genes->unionAll($chemicals)
+                   // ->unionAll($genes) 
                    // ->unionAll($variants) 
                     ->unionAll($phenotypes) 
                     ->orderBy('name')

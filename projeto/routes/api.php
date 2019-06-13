@@ -25,6 +25,7 @@ Route::get('drugs', 'DrugControllerAPI@index');
 Route::get('drug/{id}','DrugControllerAPI@showDrug');
 Route::get('drug/{id}/chemicals','DrugControllerAPI@getAssociatedChemicals');
 Route::get('numDrugs','DrugControllerAPI@countElem');
+Route::get('drugs/relatedDiseases', 'DrugControllerAPI@getRelatedDiseases');
 
 Route::get('drugssearch','DrugControllerAPI@searchDrug');
 
@@ -37,6 +38,7 @@ Route::get('chemicals', 'ChemicalControllerAPI@index');
 Route::get('chemical/{id}','ChemicalControllerAPI@showChemical');
 Route::get('chemicalssearch','ChemicalControllerAPI@searchChemical');
 Route::get('numChemicals','ChemicalControllerAPI@countElem');
+Route::get('chemicals/relatedDiseases', 'ChemicalControllerAPI@getRelatedDiseases');
 
 
 
@@ -69,7 +71,7 @@ Route::get('geneVariations','VarGeneAnnotationControllerAPI@showGeneVariations')
 Route::get('gene/{id}/clinicalVariants','GeneControllerAPI@showClinicalVariantsGene');
 
 
-//Phenotypes
+//Phenotypes    
 Route::get('phenotypes','PhenotypeControllerAPI@index');
 Route::get('phenotypessearch','PhenotypeControllerAPI@searchPhenotype');
 Route::get('phenotype/{id}','PhenotypeControllerAPI@showPhenotype');
