@@ -17,7 +17,11 @@ class GeneControllerAPI extends Controller
      */
     public function index()
     {
-        return GeneResource::collection(Gene::paginate(5));
+        $result = DB::table('genes')
+        ->get();
+        
+
+        return response()->json($result);
 
     }
 
@@ -82,6 +86,52 @@ class GeneControllerAPI extends Controller
         
 
         
+    }
+
+    public function getRelatedDiseases(Request $request)
+    {
+        
+        $s=$request->search;
+        $s = strtolower($s);
+        $result = DB::table('clinical_ann_metadata')->whereRaw('lower(Gene) like lower(?)', ["%{$s}%"])
+                                                    ->whereRaw('lower(RelatedDiseases) not like lower(?)', ["NULL"])
+                                                    ->distinct('RelatedDiseases')->paginate(5);
+
+        return response()->json($result);
+
+    }
+
+
+    public function getVarDrugAnn(Request $request)
+    {
+        
+        $s=$request->search;
+        $s = strtolower($s);
+        $result = DB::table('var_drug_ann')->whereRaw('lower(Gene) like lower(?)', ["%{$s}%"])->paginate(5);
+
+        return response()->json($result);
+
+    }
+
+    public function getVarPhenoAnn(Request $request)
+    {
+        
+        $s=$request->search;
+        $s = strtolower($s);
+        $result = DB::table('var_pheno_ann')->whereRaw('lower(Gene) like lower(?)', ["%{$s}%"])->paginate(5);
+
+        return response()->json($result);
+
+    }
+    public function getVarFaAnn(Request $request)
+    {
+        
+        $s=$request->search;
+        $s = strtolower($s);
+        $result = DB::table('var_fa_ann')->whereRaw('lower(Chemical) like lower(?)', ["%{$s}%"])->paginate(5);
+
+        return response()->json($result);
+
     }
 
 

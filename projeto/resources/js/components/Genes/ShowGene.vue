@@ -1,18 +1,22 @@
 <template>
     <div class="container">
+        <b-jumbotron bg-variant="dark" text-variant="white">
+            <template slot="header">Gene: {{currentGene.name}}</template>
+            <h3>PharmGKB ID: {{currentGene.idp}}</h3>
+        </b-jumbotron>
 
-       <b-jumbotron bg-variant="">
-        <template slot="header">Gene: {{currentGene.name}}</template>
-        <h3>PharmGKB ID: {{currentGene.idp}}</h3>
-       </b-jumbotron>
-        
+        <div>
+            <b-tabs class="tab" content-class="mt-3" fill>
+                <b-tab  title="Variants"><show-gene-variants></show-gene-variants></b-tab>
+                <b-tab title="Related Diseases"><show-gene-diseases></show-gene-diseases></b-tab>
+                <b-tab title="Var_Drug Annotations"><show-vardrug-ann-gene></show-vardrug-ann-gene></b-tab>
+                <b-tab title="Var_Fa Annotations"><show-varfa-ann-gene></show-varfa-ann-gene></b-tab>
+                <b-tab title="Var_Phenno Associations"><show-varpheno-ann-gene></show-varpheno-ann-gene></b-tab>
+            </b-tabs>
+        </div>
 
-
-
-        <showclinicalvariantsGene></showclinicalvariantsGene>
-        <br>
-        <b-button  @click="back">Back</b-button>  
-    </div>      
+<b-button @click="back">Back</b-button>
+    </div>        
 </template>
 <script>
 
@@ -28,54 +32,40 @@ export default {
     },
     methods:
     {
-              back()
-              {
-                  this.$router.push('/genes');
-              }   
+        back()
+        {
+            this.$router.push('/genes');
+        }
+               
     },
-    created()
+    mounted()
     {
      
      /* */
 
-      console.log(this.$route.params.id);
+     
       axios.get('api/gene/'+this.$route.params.id)
-                .then((response) => {        
-                    this.currentGene= response.data.data;               
+                .then((response) => {
+               
+                console.log(response.data);
+                    
+                this.currentGene= response.data.data;                
         
                 })
-                .catch(function (error) {     
+                .catch(function (error) {
+                    // handle error
                     console.log(error);
                 })
-    
-    },
+      
 
-
+    }
     
 
 
 }
 </script>
-
 <style>
-a:link {
-  text-decoration: none;
-  color: gray;
-}
 
-a:visited {
-  text-decoration: none;
-  color: gray;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: gray;
-}
-
-a:active {
-  text-decoration: underline;
-  color: gray;
-}
 </style>
+
 

@@ -71,6 +71,12 @@ Route::get('numGenes','GeneControllerAPI@countElem');
 Route::get('getGeneID','GeneControllerAPI@getID');
 Route::get('geneVariations','VarGeneAnnotationControllerAPI@showGeneVariations');
 Route::get('gene/{id}/clinicalVariants','GeneControllerAPI@showClinicalVariantsGene');
+Route::get('genes/relatedDiseases', 'GeneControllerAPI@getRelatedDiseases');
+Route::get('genes/varphennoann', 'GeneControllerAPI@getVarPhenoAnn');
+Route::get('genes/varfaann', 'GeneControllerAPI@getVarFaAnn');
+Route::get('genes/vardrugann', 'GeneControllerAPI@getVarDrugAnn');
+Route::get('genes/druglabels', 'GeneControllerAPI@getDrugLabels');
+Route::get('genes/clinicalann', 'GeneControllerAPI@getClinicalANnotations');
 
 
 //Phenotypes    

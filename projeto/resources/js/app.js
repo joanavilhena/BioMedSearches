@@ -76,10 +76,13 @@ const showVarFaAnn =Vue.component('show-varfa-ann', require('./components/Chemic
 //Genes
 const listgenes=Vue.component('list-genes', require('./components/Genes/ListGenes.vue').default);
 const showGene=Vue.component('show-gene', require('./components/Genes/ShowGene.vue').default);
-const tableClinicalVariantsGenes = Vue.component('showclinicalvariantsGene', require('./components/Genes/ShowClinicalVariants.vue').default);
+//const tableClinicalVariantsGenes = Vue.component('showclinicalvariantsGene', require('./components/Genes/ShowClinicalVariants.vue').default);
 //const geneVariantAnnotations = Vue.component('show-variant-annotations', require('./components/Genes/VariantAnnotations.vue').default);
 //const geneClinicalVariantions = Vue.component('show-clinical-annotations', require('./components/Genes/showClinicalAnnotations.vue').default);
-
+const showRelatedDiseasesGene=Vue.component('show-gene-diseases', require('./components/Genes/Nav/RelatedDiseases.vue').default);
+const showVarDrugAnnGene =Vue.component('show-vardrug-ann-gene', require('./components/Genes/Nav/Var_Drug_Annotations.vue').default);
+const showVarPhennoAnnGene =Vue.component('show-varpheno-ann-gene', require('./components/Genes/Nav/Var_Pheno_Ann.vue').default);
+const showVarFaAnnGene =Vue.component('show-varfa-ann-gene', require('./components/Genes/Nav/Var_Fa_Ann.vue').default);
 
 //Variants
 
@@ -117,27 +120,6 @@ const router = new VueRouter({
     routes: routes 
   });
 
-
-
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 
 const app = new Vue({
     el: '#app',
