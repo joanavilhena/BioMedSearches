@@ -54,7 +54,50 @@ class ChemicalControllerAPI extends Controller
         
         $s=$request->search;
         $s = strtolower($s);
-        $result = DB::table('clinical_ann_metadata')->whereRaw('lower(RelatedChemicals) like lower(?)', ["%{$s}%"])->distinct('RelatedChemicals')->get();
+        $result = DB::table('clinical_ann_metadata')->whereRaw('lower(RelatedChemicals) like lower(?)', ["%{$s}%"])->distinct('RelatedChemicals')->paginate(5);
+
+        return response()->json($result);
+
+    }
+
+    public function getDrugLabels(Request $request)
+    {
+        
+        $s=$request->search;
+        $s = strtolower($s);
+        $result = DB::table('druglabels')->whereRaw('lower(Name) like lower(?)', ["%{$s}%"])->paginate(5);
+
+        return response()->json($result);
+
+    }
+
+    public function getVarDrugAnn(Request $request)
+    {
+        
+        $s=$request->search;
+        $s = strtolower($s);
+        $result = DB::table('var_drug_ann')->whereRaw('lower(Chemical) like lower(?)', ["%{$s}%"])->paginate(5);
+
+        return response()->json($result);
+
+    }
+
+    public function getVarPhenoAnn(Request $request)
+    {
+        
+        $s=$request->search;
+        $s = strtolower($s);
+        $result = DB::table('var_pheno_ann')->whereRaw('lower(Chemical) like lower(?)', ["%{$s}%"])->paginate(5);
+
+        return response()->json($result);
+
+    }
+    public function getVarFaAnn(Request $request)
+    {
+        
+        $s=$request->search;
+        $s = strtolower($s);
+        $result = DB::table('var_fa_ann')->whereRaw('lower(Chemical) like lower(?)', ["%{$s}%"])->paginate(5);
 
         return response()->json($result);
 

@@ -14,7 +14,7 @@
     </div>
 
     <br>
-        <br>
+
 
 
     <b-table responsive :fields="fields" :items="items"  fixed class=".table-responsive">

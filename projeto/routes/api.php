@@ -39,9 +39,11 @@ Route::get('chemical/{id}','ChemicalControllerAPI@showChemical');
 Route::get('chemicalssearch','ChemicalControllerAPI@searchChemical');
 Route::get('numChemicals','ChemicalControllerAPI@countElem');
 Route::get('chemicals/relatedDiseases', 'ChemicalControllerAPI@getRelatedDiseases');
-
-
-
+Route::get('chemicals/varphennoann', 'ChemicalControllerAPI@getVarPhenoAnn');
+Route::get('chemicals/varfaann', 'ChemicalControllerAPI@getVarFaAnn');
+Route::get('chemicals/vardrugann', 'ChemicalControllerAPI@getVarDrugAnn');
+Route::get('chemicals/druglabels', 'ChemicalControllerAPI@getDrugLabels');
+Route::get('chemicals/clinicalann', 'ChemicalControllerAPI@getClinicalANnotations');
 
 //Variants
 Route::get('variants', 'VariantControllerAPI@index');

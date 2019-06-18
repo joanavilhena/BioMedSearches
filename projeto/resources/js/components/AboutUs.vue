@@ -1,5 +1,7 @@
 <template>
     <div class="container">
+      <br>
+      <br>
     <b-jumbotron>
     <template slot="header">About Us</template>
 

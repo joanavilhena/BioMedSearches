@@ -51,7 +51,7 @@ export default {
     {
         getRelatedDiseases(page)
         {
-            axios.get('/api/chemicals/relatedDiseases?page='+this.page,{params: {search:this.id}})
+            axios.get('/api/chemicals/varfaann?page='+this.page,{params: {search:this.id}})
                 .then((response) => {
                this.diseases = response.data.data;
                this.total = response.data.total;

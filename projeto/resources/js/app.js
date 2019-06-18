@@ -66,9 +66,12 @@ const searchResult = Vue.component('searchResult', require('./components/MainPag
 //Chemicals
 const listchemicals=Vue.component('list-chemicals', require('./components/Chemicals/ListChemicals.vue').default);
 const showChemical=Vue.component('show-chemical', require('./components/Chemicals/ShowChemical.vue').default);
-const showDrugRefs=Vue.component('show-chemical-dose', require('./components/Chemicals/Nav/DrugDose.vue').default);
-const showDrugPubs=Vue.component('show-chemical-pubs', require('./components/Chemicals/Nav/DrugPubs.vue').default);
+const showDrugRefs=Vue.component('show-chemical-labels', require('./components/Chemicals/Nav/DrugLabels.vue').default);
+//const showChemicalClinicalAnnotations=Vue.component('show-chemical-clinical-annotations', require('./components/Chemicals/Nav/ClinicalAnnotations.vue').default);
 const showRelatedDiseases=Vue.component('show-chemical-diseases', require('./components/Chemicals/Nav/RelatedDiseases.vue').default);
+const showVarDrugAnn =Vue.component('show-vardrug-ann', require('./components/Chemicals/Nav/Var_Drug_Annotations.vue').default);
+const showVarPhennoAnn =Vue.component('show-varpheno-ann', require('./components/Chemicals/Nav/Var_Pheno_Ann.vue').default);
+const showVarFaAnn =Vue.component('show-varfa-ann', require('./components/Chemicals/Nav/Var_Fa_Ann.vue').default);
 
 //Genes
 const listgenes=Vue.component('list-genes', require('./components/Genes/ListGenes.vue').default);
