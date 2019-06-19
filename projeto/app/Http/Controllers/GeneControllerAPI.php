@@ -31,6 +31,18 @@ class GeneControllerAPI extends Controller
        
     }
 
+    public function getVariants(Request $request)
+    {
+        $s=$request->search;
+        $s = strtolower($s);
+
+        $result = DB::table('variants')->whereRaw('lower(geneIDs) like lower(?)', ["{$s}"])->paginate(5);
+
+       // dd($result->idp);
+        //return $result;
+        return response()->json($result);
+    }
+
     public function getID(Request $request)
     {
 

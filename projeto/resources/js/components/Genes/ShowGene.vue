@@ -7,7 +7,7 @@
 
         <div>
             <b-tabs class="tab" content-class="mt-3" fill>
-                <b-tab  title="Variants"><show-gene-variants></show-gene-variants></b-tab>
+                <b-tab  title="Variants"><show-var-gene></show-var-gene></b-tab>
                 <b-tab title="Related Diseases"><show-gene-diseases></show-gene-diseases></b-tab>
                 <b-tab title="Var_Drug Annotations"><show-vardrug-ann-gene></show-vardrug-ann-gene></b-tab>
                 <b-tab title="Var_Fa Annotations"><show-varfa-ann-gene></show-varfa-ann-gene></b-tab>

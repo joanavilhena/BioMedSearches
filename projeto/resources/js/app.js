@@ -83,6 +83,8 @@ const showRelatedDiseasesGene=Vue.component('show-gene-diseases', require('./com
 const showVarDrugAnnGene =Vue.component('show-vardrug-ann-gene', require('./components/Genes/Nav/Var_Drug_Annotations.vue').default);
 const showVarPhennoAnnGene =Vue.component('show-varpheno-ann-gene', require('./components/Genes/Nav/Var_Pheno_Ann.vue').default);
 const showVarFaAnnGene =Vue.component('show-varfa-ann-gene', require('./components/Genes/Nav/Var_Fa_Ann.vue').default);
+const showVariants =Vue.component('show-var-gene', require('./components/Genes/Nav/Variants.vue').default);
+
 
 //Variants
 

@@ -77,6 +77,8 @@ Route::get('genes/varfaann', 'GeneControllerAPI@getVarFaAnn');
 Route::get('genes/vardrugann', 'GeneControllerAPI@getVarDrugAnn');
 Route::get('genes/druglabels', 'GeneControllerAPI@getDrugLabels');
 Route::get('genes/clinicalann', 'GeneControllerAPI@getClinicalANnotations');
+Route::get('genes/variants', 'GeneControllerAPI@getVariants');
+
 
 
 //Phenotypes    
