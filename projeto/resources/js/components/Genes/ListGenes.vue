@@ -155,12 +155,12 @@
     
         created()
         {
-            
+            this.getChemicals();
 
         },
         mounted()
         {
-            this.getChemicals();
+            
            
             this.totalRows = this.items.length;
         },
