@@ -30,16 +30,18 @@
     <!--    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
         <!-- import JavaScript -->
         <!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+
+        <style>
+            body { 
+                background-image: url('/storage/assets/background.png');
+                        -webkit-background-size: cover;
+                        -moz-background-size: cover;
+                        -o-background-size: cover;
+                        background-size: cover;
+            }
+        </style>
     </head>
-    <style>
- body { 
-    background-image: url('/storage/assets/background.png');
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-}
-</style>
+   
     <body>
         <div id="fundo">
         <div id="app" class="app">
