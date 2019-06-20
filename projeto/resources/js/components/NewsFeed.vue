@@ -44,7 +44,8 @@ export default {
   {
       getData()
       {
-           axios.get('https://newsapi.org/v2/everything?q=pharmacogenetics&apiKey=2792461d8d5145bd84197285c6b1d202')
+           axios.get('https://newsapi.org/v2/everything?q=pharmacogenetics&apiKey=2792461d8d5145bd84197285c6b1d202', {headers: {'X-CSRF-Token': undefined}}
+           )
                 .then((response) => {
                
                 console.log(response.data);
