@@ -5,25 +5,27 @@
     <h2>Feed News</h2>
     <br>
     <div class="columns medium-3" v-for="(result,index) in results" :key="index"> 
-    <div class="card">
-        <div class="card-divider">
-        {{ result.title }}
-        </div>
-        <div class="card-section">
-        <img :src="result.urlToImage"></img>
-        </div>
-        <div class="card-section">
-        {{ result.description }}
-        </div>
-        <div class="card-section">
-        <a :href="result.url">{{ result.source.name }}</a>
-        </div>
-        <div class="card-section">
-        {{ result.author }}
-        </div>
-        
+        <b-card
+        :title="result.title"
+        :img-src="result.urlToImage"
+        img-alt="Image"
+        img-top
+        tag="article"
+        style="max-width: 20rem;"
+        class="mb-2"
+        >
+            <b-card-text>
+            {{ result.description }}
+            </b-card-text>
+            <b-card-text>
+            {{  result.author  }}
+            </b-card-text>
+
+    <b-button :href="result.source.name" variant="primary">Go somewhere</b-button>
+  </b-card>
+    
     </div>
-    </div>
+    
 </div>
 
 </template>
