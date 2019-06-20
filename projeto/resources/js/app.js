@@ -10,6 +10,7 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 
+
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
@@ -98,6 +99,8 @@ const tableClinicalVariants = Vue.component('showclinicalvariants', require('./c
 const phenotypeVariantAnnotations = Vue.component('show-variant-annotations', require('./components/Phenotypes/VariantAnnotations.vue').default);
 const phenotypeClinicalVariantions = Vue.component('show-clinical-annotations', require('./components/Phenotypes/ShowClinicalAnnotations.vue').default);
 
+//Feed
+const feed=Vue.component('feed-news', require('./components/NewsFeed.vue').default);
 
 
 const routes = [
@@ -116,6 +119,7 @@ const routes = [
     {path:'/index', component:searchbar},
     {path:'/phenotypes', component:listPhenotypes},
     {path:'/clinicalAnnotation/:id', component:phenotypeClinicalVariantions},
+    {path:'/news', component:feed},
 ];
 const router = new VueRouter({
     
