@@ -134,8 +134,8 @@ import { constants } from 'crypto';
         items: [],
         ca:[],
         fields: [
-          { key: 'variant', label: 'Variant' },
           { key: 'gene', label: 'Gene'},
+          { key: 'variant', label: 'Variant' },
           { key: 'type', label: 'Type' },
           { key: 'levelofevidence', label: 'Level of Evidence', class: 'text-center' },
           { key: 'chemicals', label: 'Chemicals' },
