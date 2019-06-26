@@ -14,7 +14,7 @@
 
  <b-container fluid>
     <!-- User Interface controls -->
-    <b-row>
+     <b-row>
       <b-col md="6" class="my-1">
         <b-form-group >
           <b-input-group>
@@ -27,6 +27,9 @@
       </b-col>
 
     </b-row>
+
+  
+    
     <br>
     <!-- Main table element -->
     <b-table 
@@ -96,7 +99,6 @@
             totalRows: 1,
             currentPage: 1,
             perPage: 5,
-            pageOptions: [5, 10, 15],
             sortBy: null,
             sortDesc: false,
             sortDirection: 'asc',
@@ -163,10 +165,10 @@
                 this.$router.push('/chemical/'+chemical);
     
             },
-             info(item, index, button) {
-        this.infoModal.title = `Row index: ${index}`
-        this.infoModal.content = JSON.stringify(item, null, 2)
-        this.$root.$emit('bv::show::modal', this.infoModal.id, button)
+      info(item, index, button) {
+              this.infoModal.title = `Row index: ${index}`
+              this.infoModal.content = JSON.stringify(item, null, 2)
+              this.$root.$emit('bv::show::modal', this.infoModal.id, button)
       },
       resetInfoModal() {
         this.infoModal.title = ''

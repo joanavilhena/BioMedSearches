@@ -8,16 +8,32 @@
     <br>
     </div>
 
-     <div class="input-group mb-3">
-        <input class="form-control"  placeholder="Search for name or PharmaGKB ID..." type="text" v-model="search">
-        <button class="btn btn-primary" @click="getSearchResults">Search</button>
-    </div>
+  <b-row>
+      <b-col md="6" class="my-1">
+        <b-form-group >
+          <b-input-group>
+            <b-form-input v-model="filter" placeholder="Type to Search"></b-form-input>
+            <b-input-group-append>
+              <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+            </b-input-group-append>
+          </b-input-group>
+        </b-form-group>
+      </b-col>
+
+    </b-row>
 
     <br>
 
 
 
-    <b-table responsive :fields="fields" :items="items"  fixed class=".table-responsive">
+    <b-table responsive
+      
+      :fields="fields"
+      :items="items"
+      :current-page="currentPage"
+      :per-page="perPage"
+      :filter="filter"
+      @filtered="onFiltered">
 
       <template slot="show_details" slot-scope="row">
         <b-button  size="sm" @click="go(row)" class="btn btn-xs btn-light">
@@ -28,9 +44,17 @@
     </b-table>
 
 
-    <div class="overflow-auto">
-   <b-pagination  align="center" size="md-c"  v-model="page" :limit="5" :total-rows="this.total"  :per-page="5" @input="getPhenotypes(page)"></b-pagination>
-  </div>
+     <b-row>
+      <b-col md="6" class="my-1">
+        <b-pagination
+          allign="center"
+          v-model="currentPage"
+          :total-rows="totalRows"
+          :per-page="perPage"
+          class="my-0"
+        ></b-pagination>
+      </b-col>
+    </b-row>
 
    
   </div>
@@ -48,7 +72,10 @@ export default {
           total:1,
           last:1,
           page:1,
+          perPage: 5,
+          currentPage:1,
           search:'',
+          filter:null,
           fields: [
           { key: 'idp', label: 'ID' },
           { key: 'name', label: 'Name' },
@@ -59,6 +86,20 @@ export default {
         }
   },
   methods:{
+     resetInfoModal() {
+        this.infoModal.title = ''
+        this.infoModal.content = ''
+      },
+      onFiltered(filteredItems) {
+        // Trigger pagination to update the number of buttons/pages due to filtering
+        this.totalRows = filteredItems.length
+        this.currentPage = 1
+      },
+      info(item, index, button) {
+              this.infoModal.title = `Row index: ${index}`
+              this.infoModal.content = JSON.stringify(item, null, 2)
+              this.$root.$emit('bv::show::modal', this.infoModal.id, button)
+      },
       getSearchResults(){
            axios.get('api/phenotypessearch',{ params: { search: this.search } })
                 .then((response) => {
@@ -77,15 +118,13 @@ export default {
                 })
           
       },
-      getPhenotypes(page)
+      getPhenotypes()
       {
-                axios.get('api/phenotypes?page='+this.page)
+                axios.get('api/phenotypes')
                 .then((response) => {
                     
-                this.items= response.data.data;
-                this.last = response.data.meta.last_page;
-                this.total = response.data.meta.total;
-
+                this.items= response.data;
+                this.totalRows = response.data.length;
         
                 })
                 .catch(function (error) {
@@ -102,7 +141,7 @@ export default {
   },
   beforeMount()
   {
-      this.getPhenotypes(1);
+      this.getPhenotypes();
   }
 
   

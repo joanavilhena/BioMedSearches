@@ -18,9 +18,12 @@ class PhenotypeControllerAPI extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
-        return PhenotypeResource::collection(Phenotype::paginate(5));
+        $result = DB::table('phenotypes')
+        ->get();
+        return response()->json($result);
     }
 
     
