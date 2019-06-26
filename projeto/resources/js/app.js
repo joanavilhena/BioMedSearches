@@ -22,28 +22,13 @@ Vue.use(BootstrapVue);
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
-
-
-// index.js or main.js
-import 'vuetify/dist/vuetify.min.css';
-// main.styl
-
-
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead';
 
 // Global registration
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead);
 
 
-import VueSelect from 'vue-cool-select';
 
-Vue.use(VueSelect, {
-  theme: 'bootstrap' // or 'material-design'
-});
-
-import Vuetify from 'vuetify';
-
-Vue.use(Vuetify);
 
 
 //Home
