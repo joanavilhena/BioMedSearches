@@ -12,7 +12,7 @@
       v-model="addressSearch"
     class="mb-3"
       size="lg"
-      :serializer="s => s.name +' || ' + s.tableName"
+      :serializer="s => s.name +' | ' + s.tableName"
       placeholder="Type a name ..."
       @hit="selectedAddress = $event"
       
@@ -36,7 +36,7 @@
 import { timeout } from 'q';
 
 
-const API_URL = 'https://biomedsearch.me/api/search' //substituir pelo url do servidor
+const API_URL = '/api/search' //substituir pelo url do servidor
 
 export default {
 
