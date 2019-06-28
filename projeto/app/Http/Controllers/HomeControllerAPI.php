@@ -84,7 +84,7 @@ class HomeControllerAPI extends Controller
       ]);
 
     $response = $client->request(
-        'GET',
+        'GET'
        
         
     );
