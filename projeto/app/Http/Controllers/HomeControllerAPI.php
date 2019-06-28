@@ -63,11 +63,10 @@ class HomeControllerAPI extends Controller
         'timeout' => 2.0,
       ]);
 
-    $response = $client->request(
-        'GET',
+    $response = $client->$response = $client->request('GET');
        
         
-    );
+
     $devices = json_decode($response->getBody()->getContents());
     //dd($devices);
     return response()->json($devices);
