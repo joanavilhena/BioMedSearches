@@ -2,23 +2,25 @@
 <div class="container">
     <br>
     <br>
-    <b-jumbotron bg-variant="">
+    <b-jumbotron bg-variant="dark" text-variant="white">
         <template slot="header">News Feed</template>
         
        </b-jumbotron>
     <br>
-    <div class="col-sm-8" id="feed" v-for="(result,index) in results" :key="index"> 
-<b-card-group deck>
+    <div  id="feed" v-for="(result,index) in results" :key="index"> 
+<b-card-group align="center">
  
-    <b-card :title="result.title" :img-src="result.urlToImage" img-alt="Image" img-top>
-      <b-card-text>
+    <b-card :title="result.title" :img-src="result.urlToImage" img-alt="Image" img-top  align="center" class="col-md-8">
+      <b-card-text >
             {{ result.description }}
             </b-card-text>
             <b-card-text>
             {{  result.author  }}
+
+            
             </b-card-text>
 
-    <b-button text-variant="white" :href="result.source.name" variant="info">Read Original Post</b-button>
+    <b-button text-variant="white" :href="result.url" variant="info">Read Original Post</b-button>
       <div slot="footer"><small class="text-muted"></small></div>
     </b-card>
 
