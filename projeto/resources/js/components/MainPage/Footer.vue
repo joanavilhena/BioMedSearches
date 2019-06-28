@@ -1,5 +1,6 @@
 <template>
-<div>
+<div class="footcontainer">
+  <br>
     <div id="footer">
 <div class="container mt-5 mb-5">
 <footer>
@@ -30,6 +31,7 @@
 
 </div>
 <p class="container">Copyrigh © 2019. All rigths reserved. </p>
+<br>
 </div>
 </div>
 </template>
@@ -41,7 +43,8 @@ export default {
 </script>
 
 <style>
-.footer {
-  position: fixed;
+.footcontainer {
+  
+  background: rgb(238, 238, 238);
 }
 </style>

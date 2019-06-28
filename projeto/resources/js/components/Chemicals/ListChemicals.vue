@@ -72,7 +72,12 @@
     <show-chemical v-on:show-chemical="closeShowChemical" v-bind:currentChemical="currentChemical" v-if="showChemical"></show-chemical>
 
 
-
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   </div>
 </template>
 <script>
