@@ -63,11 +63,14 @@ class HomeControllerAPI extends Controller
         'timeout' => 2.0,
       ]);
 
-    $response = $client->request(
+      $response = $client
+        ->get('https://newsapi.org/v2/everything?q=pharmacogenetics&apiKey=2792461d8d5145bd84197285c6b1d202');
+
+    /*$response = $client->request(
         'GET',
        
         
-    );
+    );*/
     $devices = json_decode($response->getBody()->getContents());
     //dd($devices);
     return response()->json($devices);
