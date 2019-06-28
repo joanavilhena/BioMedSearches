@@ -46,12 +46,13 @@
     >
        <template slot="Actions" slot-scope="row">
         <b-button  size="sm" @click="go(row.item.idp)" class="btn btn-xs btn-light">
-            Detaills  <i class="fas fa-eye"></i>
+            <i class="fas fa-eye"></i>
          
         </b-button>
       </template>
     </b-table>
     </div>
+    <br>
 
     <b-row>
       <b-col md="6" class="my-1">
@@ -89,13 +90,14 @@
             items: [],
             fields:
             [
-                { key: 'idp', label: 'ID' },
+                'Actions',
+                { key: 'idp', label: 'PharmGKB ID' },
                 { key: 'name', label: 'Name' },
                 { key: 'genericNames', label: 'Generic Names',  },
                 { key: 'topFDALabelTestingLevel', label: 'Top FDA TL' },
                 { key: 'pubChemCompoundIdentifiers', label: 'Pubchem ID' },
                 { key: 'type', label: 'Type' },
-                'Actions',
+                
             ],
             page:1,
             last:1,

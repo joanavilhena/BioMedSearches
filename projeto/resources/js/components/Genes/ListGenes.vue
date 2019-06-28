@@ -48,7 +48,7 @@
       
     </b-table>
     </div>
-
+<br>
     <b-row>
       <b-col md="6" class="my-1">
         <b-pagination
@@ -61,7 +61,12 @@
     </b-row>
 
   </b-container>
-
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
 </div>
 

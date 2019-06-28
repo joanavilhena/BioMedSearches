@@ -35,7 +35,7 @@
       :filter="filter"
       @filtered="onFiltered">
 
-      <template slot="show_details" slot-scope="row">
+      <template slot="Actions" slot-scope="row">
         <b-button  size="sm" @click="go(row)" class="btn btn-xs btn-light">
           Clinical Variations  <i class="fas fa-eye"></i>
          
@@ -43,6 +43,7 @@
       </template>
     </b-table>
 </div>
+<br>
 
 
      <b-row>
@@ -55,7 +56,12 @@
         ></b-pagination>
       </b-col>
     </b-row>
-
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
    
   </div>
 </template>
@@ -77,9 +83,10 @@ export default {
           search:'',
           filter:null,
           fields: [
-          { key: 'idp', label: 'ID' },
+            'Actions',
+          { key: 'idp', label: 'PharmGKB ID' },
           { key: 'name', label: 'Name' },
-          'show_details',
+          
           ],
 
 

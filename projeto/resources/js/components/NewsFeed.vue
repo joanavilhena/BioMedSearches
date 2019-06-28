@@ -2,29 +2,32 @@
 <div class="container">
     <br>
     <br>
-    <h2>Feed News</h2>
+    <b-jumbotron bg-variant="">
+        <template slot="header">News Feed</template>
+        
+       </b-jumbotron>
     <br>
-    <div class="columns medium-3" v-for="(result,index) in results" :key="index"> 
-        <b-card
-        :title="result.title"
-        :img-src="result.urlToImage"
-        img-alt="Image"
-        img-top
-        tag="article"
-        style="max-width: 20rem;"
-        class="mb-2"
-        >
-            <b-card-text>
+    <div class="col-sm-8" id="feed" v-for="(result,index) in results" :key="index"> 
+<b-card-group deck>
+ 
+    <b-card :title="result.title" :img-src="result.urlToImage" img-alt="Image" img-top>
+      <b-card-text>
             {{ result.description }}
             </b-card-text>
             <b-card-text>
             {{  result.author  }}
             </b-card-text>
 
-    <b-button :href="result.source.name" variant="primary">Go somewhere</b-button>
-  </b-card>
-    
+    <b-button text-variant="white" :href="result.source.name" variant="info">Read Original Post</b-button>
+      <div slot="footer"><small class="text-muted"></small></div>
+    </b-card>
+
+     
+
+</b-card-group>
     </div>
+
+
     
 </div>
 
@@ -46,7 +49,7 @@ export default {
   {
       getData()
       {
-           axios.get('https://newsapi.org/v2/everything?q=pharmacogenetics&apiKey=2792461d8d5145bd84197285c6b1d202', {headers: {'X-CSRF-Token': undefined}}
+           axios.get('api/news' 
            )
                 .then((response) => {
                
@@ -75,5 +78,10 @@ export default {
 </script>
 
 <style>
-
+.feed{
+  align-content: center;
+}
+.btn{
+  color: white;
+}
 </style>
