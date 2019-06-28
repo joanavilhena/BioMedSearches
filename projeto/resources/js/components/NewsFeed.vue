@@ -7,6 +7,20 @@
         
        </b-jumbotron>
     <br>
+
+       <b-row>
+      <b-col md="6" class="my-1">
+        <b-form-group >
+          <b-input-group>
+            <b-form-input v-model="s" placeholder="Type to Search"></b-form-input>
+            <b-input-group-append>
+              <b-button  @click="search">Search</b-button>
+            </b-input-group-append>
+          </b-input-group>
+        </b-form-group>
+      </b-col>
+
+    </b-row>
     <div  id="feed" v-for="(result,index) in results" :key="index"> 
 <b-card-group align="center">
  
@@ -43,7 +57,8 @@ export default {
        
             results: [
                 
-            ]
+            ],
+            s:'',
             
     }
   },
@@ -68,6 +83,16 @@ export default {
           
       
 
+      },
+      search()
+      {
+        console.log(this.s);
+        axios.get('api/searchnews',{ params: { search: this.s } })
+        .then((response)=>
+        {
+          this.results=response.data.articles;
+          console.log(this.results);
+        });
       }
   },
   mounted()

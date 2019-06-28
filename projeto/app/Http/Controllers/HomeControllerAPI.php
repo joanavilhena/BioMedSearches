@@ -78,18 +78,25 @@ class HomeControllerAPI extends Controller
 
     public function getNewsBySearch(Request $request)
     {
-      $s = $request->search;
-
+      $s=$request->search;
+      $s = strtolower($s);
+      
+      
       $client = new Client([
         // Base URI is used with relative requests
-        'base_uri' => 'https://newsapi.org/v2/everything?q='+$s+'&apiKey=2792461d8d5145bd84197285c6b1d202',
+        'base_uri' => 'https://newsapi.org/v2/everything?q=pharmacogenetics&apiKey=2792461d8d5145bd84197285c6b1d202',
         // You can set any number of default request options.
         'timeout' => 2.0,
       ]);
 
       $response = $client
-      ->get('https://newsapi.org/v2/everything?q=pharmacogenetics&apiKey=2792461d8d5145bd84197285c6b1d202');
+        ->get('https://newsapi.org/v2/everything?q='.$s.'&apiKey=2792461d8d5145bd84197285c6b1d202');
 
+    /*$response = $client->request(
+        'GET',
+       
+        
+    );*/
     $devices = json_decode($response->getBody()->getContents());
     //dd($devices);
     return response()->json($devices);

@@ -20,6 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Home Controller
 Route::get('search', 'HomeControllerAPI@searchResults');
 Route::get('news', 'HomeControllerAPI@getNews');
+Route::get('searchnews', 'HomeControllerAPI@getNewsBySearch');
+
 
 //Drugs
 Route::get('drugs', 'DrugControllerAPI@index');
