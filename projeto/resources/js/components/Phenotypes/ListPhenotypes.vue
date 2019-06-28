@@ -25,7 +25,7 @@
     <br>
 
 
-
+<div class="table-responsive table-hover" >
     <b-table responsive
       
       :fields="fields"
@@ -42,12 +42,12 @@
         </b-button>
       </template>
     </b-table>
+</div>
 
 
      <b-row>
       <b-col md="6" class="my-1">
         <b-pagination
-          allign="center"
           v-model="currentPage"
           :total-rows="totalRows"
           :per-page="perPage"

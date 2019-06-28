@@ -47,6 +47,7 @@
             
                 <navigation></navigation>
                 <router-view></router-view>
+                <footer-c></footer-c>
                 
             
             </div>

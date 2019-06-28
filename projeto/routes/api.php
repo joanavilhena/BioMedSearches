@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Home Controller
 Route::get('search', 'HomeControllerAPI@searchResults');
+Route::get('news', 'HomeControllerAPI@getNews');
 
 //Drugs
 Route::get('drugs', 'DrugControllerAPI@index');
@@ -79,7 +80,7 @@ Route::get('genes/druglabels', 'GeneControllerAPI@getDrugLabels');
 Route::get('genes/clinicalann', 'GeneControllerAPI@getClinicalANnotations');
 Route::get('genes/variants', 'GeneControllerAPI@getVariants');
 
-
+//FeedNews
 
 //Phenotypes    
 Route::get('phenotypes','PhenotypeControllerAPI@index');

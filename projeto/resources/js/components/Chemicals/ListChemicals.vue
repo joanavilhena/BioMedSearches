@@ -32,6 +32,7 @@
     
     <br>
     <!-- Main table element -->
+    <div class="table-responsive table-hover">
     <b-table 
       
       responsive
@@ -50,6 +51,7 @@
         </b-button>
       </template>
     </b-table>
+    </div>
 
     <b-row>
       <b-col md="6" class="my-1">

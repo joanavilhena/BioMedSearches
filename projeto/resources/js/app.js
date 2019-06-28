@@ -33,6 +33,7 @@ Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead);
 
 //Home
 Vue.component('navigation', require('./components/NavigationBar.vue').default);
+Vue.component('footer-c', require('./components/MainPage/Footer.vue').default);
 Vue.component('feed', require('./components/MainPage/FeedNews.vue').default);
 const mainPage = Vue.component('mainPage', require('./components/MainPage/MainIndex.vue').default);
 const searchbar = Vue.component('searchbar', require('./components/MainPage/SearchResults/SerachBar.vue').default);

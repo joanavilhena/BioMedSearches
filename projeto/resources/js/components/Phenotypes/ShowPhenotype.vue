@@ -10,7 +10,7 @@
         <showclinicalvariants></showclinicalvariants>
 
         <br>
-        <b-button  @click="back">Back</b-button>  
+        <b-button  @click="back">Back Home</b-button>  
     </div>      
 </template>
 <script>

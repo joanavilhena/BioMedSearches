@@ -12,7 +12,7 @@
         <b-nav-item  to="/chemicals">Chemicals</b-nav-item>
          <b-nav-item  to="/phenotypes">Phenotypes</b-nav-item>
          <b-nav-item  to="/news">News</b-nav-item>
-         <b-nav-item  to="/aboutus">AboutUs</b-nav-item>
+         <b-nav-item  to="/aboutus">About Us</b-nav-item>
       </b-navbar-nav>
 
      

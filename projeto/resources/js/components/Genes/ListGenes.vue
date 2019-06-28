@@ -29,10 +29,8 @@
     </b-row>
     <br>
     <!-- Main table element -->
+    <div class="table-responsive table-hover" >
     <b-table 
-      
-      responsive
-      
       :fields="fields"
       :items="items"
       :current-page="currentPage"
@@ -42,11 +40,14 @@
     >
        <template slot="Actions" slot-scope="row">
         <b-button  size="sm" @click="go(row.item.idp)" class="btn btn-xs btn-light">
-            Detaills  <i class="fas fa-eye"></i>
+              <i class="fas fa-eye"></i>
           
         </b-button>
       </template>
+
+      
     </b-table>
+    </div>
 
     <b-row>
       <b-col md="6" class="my-1">
@@ -79,15 +80,16 @@
             items: [],
             fields:
             [
-                { key: 'idp', label: 'ID' },
+               'Actions',
+                { key: 'idp', label: 'PharmGKB ID' },
                 { key: 'name', label: 'Name' },
-                { key: 'nCBIGeneID', label: 'NCBI Gene Id',  },
+                { key: 'nCBIGeneID', label: 'NCBI D',  },
                 { key: 'hGNCID', label: 'HGNC ID' },
                 { key: 'ensemblId', label: 'Ensembl ID' },
                 { key: 'symbol', label: 'Symbol' },
                 { key: 'alternateNames', label: 'Alternate Names' },
                 { key: 'alternateSymbols', label: 'Alternate Symbols' },
-                'Actions',
+                
             ],
             page:1,
             last:1,
@@ -174,6 +176,6 @@
     };
 </script>
 <style>
-.my-class { max-width: 100px; }
+
 </style>
 
