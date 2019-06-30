@@ -1,34 +1,19 @@
 <template>
-
-
-<div class="mb-3">
-
-
-
-  
+  <div class="mb-3">
     <vue-bootstrap-typeahead 
-      
       :data="addresses"
       v-model="addressSearch"
-    class="mb-3"
+      class="mb-3"
       size="lg"
       :serializer="s => s.name +' | ' + s.tableName"
       placeholder="Type a name ..."
       @hit="selectedAddress = $event"
-      
-    >
-      
-      
+      >  
     </vue-bootstrap-typeahead>  
-    
-  <div>
-    <b-button @click="irPara" block variant="primary">Search</b-button>
+    <div>
+      <b-button @click="irPara" block variant="primary">Search</b-button>
+    </div>
   </div>
-  
-
-     
- 
-</div>
 
 </template>
 
@@ -36,7 +21,7 @@
 import { timeout } from 'q';
 
 
-const API_URL = '/api/search' //substituir pelo url do servidor
+const API_URL = '/api/search'
 
 export default {
 
@@ -47,30 +32,17 @@ export default {
       selectedAddress: null
     }
   },
-
   methods: {
     async getAddresses(query) {
       const res = await fetch(API_URL.replace(':query', query),{ timeout: 1000})
-     // console.log(res);
       const suggestions = await res.json();
-     // console.log(suggestions);
       this.addresses = suggestions;
-     
-    
     },
-
     irPara()
     {
      this.$router.push('/' + this.selectedAddress.tableName + '/' + this.selectedAddress.idp);
-    //this.$router.push('/drug/'+drug.idp);
-     
-     //console.log(this.selectedAddress);
-    
-
     }
-    
   },
-
   watch: {
     addressSearch: _.debounce(function(addr) { this.getAddresses(addr) }, 500)
   }
