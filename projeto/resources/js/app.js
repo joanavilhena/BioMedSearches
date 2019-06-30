@@ -38,7 +38,7 @@ Vue.component('feed', require('./components/MainPage/FeedNews.vue').default);
 const mainPage = Vue.component('mainPage', require('./components/MainPage/MainIndex.vue').default);
 const searchbar = Vue.component('searchbar', require('./components/MainPage/SearchResults/SerachBar.vue').default);
 const aboutUs = Vue.component('aboutus', require('./components/AboutUs.vue').default);
-
+const contact = Vue.component('contact', require('./components/ContactUs.vue').default);
 
 const searchResult = Vue.component('searchResult', require('./components/MainPage/SearchResult.vue').default);
 
@@ -106,6 +106,7 @@ const routes = [
     {path:'/phenotypes', component:listPhenotypes},
     {path:'/clinicalAnnotation/:id', component:phenotypeClinicalVariantions},
     {path:'/news', component:feed},
+    {path:'/contact', component:contact},
 ];
 const router = new VueRouter({
     

@@ -45,7 +45,7 @@
       @filtered="onFiltered"
     >
        <template slot="Actions" slot-scope="row">
-        <b-button  size="sm" @click="go(row.item.idp)" class="btn btn-xs btn-light">
+        <b-button   @click="go(row.item.idp)" variant ="info">
             <i class="fas fa-eye"></i>
          
         </b-button>

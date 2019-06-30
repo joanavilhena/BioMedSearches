@@ -36,7 +36,7 @@
       @filtered="onFiltered">
 
       <template slot="Actions" slot-scope="row">
-        <b-button  size="sm" @click="go(row)" class="btn btn-xs btn-light">
+        <b-button size="sm" @click="go(row)" variant ="info">
           Clinical Variations  <i class="fas fa-eye"></i>
          
         </b-button>
