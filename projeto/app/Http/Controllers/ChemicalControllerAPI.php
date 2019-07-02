@@ -21,6 +21,7 @@ class ChemicalControllerAPI extends Controller
     public function index()
     {
         $result = DB::table('chemicals')
+        ->orderByRaw('name ASC')
         ->get();
         
 

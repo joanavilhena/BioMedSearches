@@ -9,25 +9,22 @@
     </div>
 
   <b-row>
-      <b-col md="6" class="my-1">
-        <b-form-group >
-          <b-input-group>
-            <b-form-input v-model="filter" placeholder="Type to Search"></b-form-input>
-            <b-input-group-append>
-              <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
-            </b-input-group-append>
-          </b-input-group>
-        </b-form-group>
-      </b-col>
+    <b-col md="6" class="my-1">
+      <b-form-group >
+        <b-input-group>
+          <b-form-input v-model="filter" placeholder="Type to Search"></b-form-input>
+          <b-input-group-append>
+            <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+          </b-input-group-append>
+        </b-input-group>
+      </b-form-group>
+    </b-col>
+  </b-row>
 
-    </b-row>
-
-    <br>
-
-
-<div class="table-responsive table-hover" >
-    <b-table responsive
-      
+  <br>
+  
+  <div class="table-responsive table-hover" >
+    <b-table responsive      
       :fields="fields"
       :items="items"
       :current-page="currentPage"
@@ -35,28 +32,28 @@
       :filter="filter"
       @filtered="onFiltered">
 
-      <template slot="Actions" slot-scope="row">
-        <b-button size="sm" @click="go(row)" variant ="info">
-          Clinical Variations  <i class="fas fa-eye"></i>
-         
-        </b-button>
-      </template>
-    </b-table>
-</div>
-<br>
+        <template slot="Actions" slot-scope="row">
+          <b-button size="sm" @click="go(row)" variant ="info">
+            Clinical Variations  <i class="fas fa-eye"></i>
+          </b-button>
+        </template>
+      </b-table>
+  </div>
 
+  <br>
 
-     <b-row>
-      <b-col md="6" class="my-1">
-        <b-pagination
-          v-model="currentPage"
-          :total-rows="totalRows"
-          :per-page="perPage"
-          class="my-0"
-        ></b-pagination>
-      </b-col>
-    </b-row>
-<br>
+  <b-row>
+    <b-col md="6" class="my-1">
+      <b-pagination
+        v-model="currentPage"
+        :total-rows="totalRows"
+        :per-page="perPage"
+        class="my-0">
+      </b-pagination>
+    </b-col>
+  </b-row>
+  
+  <br>
   <br>
   <br>
   <br>
@@ -108,21 +105,14 @@ export default {
               this.$root.$emit('bv::show::modal', this.infoModal.id, button)
       },
       getSearchResults(){
-           axios.get('api/phenotypessearch',{ params: { search: this.search } })
-                .then((response) => {
+          axios.get('api/phenotypessearch',{ params: { search: this.search } })
+            .then((response) => {
 
-               
-            console.log(response);
-                    
-                this.items= response.data.data;
-                this.last = response.data.last_page;
-                this.total = response.data.total;
+              this.items= response.data.data;
+              this.last = response.data.last_page;
+              this.total = response.data.total;
 
-                })
-                .catch(function (error) {
-                   
-                    console.log(error);
-                })
+            })
           
       },
       getPhenotypes()
@@ -142,7 +132,6 @@ export default {
       go(row)  
       {
           this.$router.push('/phenotype/'+row.item.idp);
-         //console.log(row.item.idp);
       }
    
   },

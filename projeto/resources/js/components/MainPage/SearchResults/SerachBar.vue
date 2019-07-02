@@ -11,7 +11,7 @@
       >  
     </vue-bootstrap-typeahead>  
     <div>
-      <b-button @click="irPara" block variant="primary">Search</b-button>
+      <b-button @click="irPara" block variant="primary">Go</b-button>
     </div>
   </div>
 

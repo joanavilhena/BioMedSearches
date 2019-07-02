@@ -58,9 +58,6 @@ module.exports = {
             {
                 axios.get('api/search?page='+this.page)
                 .then((response) => {
-
-               
-                console.log(response.data);
                     
                 this.results= response.data.data;
                 this.last = response.data.meta.last_page;

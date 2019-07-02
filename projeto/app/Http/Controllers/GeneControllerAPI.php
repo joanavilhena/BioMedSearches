@@ -18,6 +18,7 @@ class GeneControllerAPI extends Controller
     public function index()
     {
         $result = DB::table('genes')
+        ->orderByRaw('name ASC')
         ->get();
         
 

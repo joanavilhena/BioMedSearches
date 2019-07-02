@@ -11,6 +11,9 @@ use App\Http\Resources\Chemical as ChemicalResource;
 use App\Http\Resources\Drug as DrugResource;
 use App\Http\Resources\Gene as GeneResource;
 use App\Http\Resources\Variant as VariantResource;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\GmailExample;
 
 
 use Illuminate\Support\Facades\DB;
@@ -22,6 +25,16 @@ use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 
 class HomeControllerAPI extends Controller
 {
+
+  public function sendMail(Request $request)
+  {
+    $contact = $request;
+    
+
+    Mail::to($contact->email)->send(new GmailExample($contact));
+        
+        return response()->json(['status' => 201, 'contact'=>$contact]);
+  }
    
 
     public function searchResults(Request $request)
@@ -47,6 +60,7 @@ class HomeControllerAPI extends Controller
                    // ->unionAll($variants) 
                     ->unionAll($phenotypes) 
                     ->orderBy('name')
+                    ->orderByRaw('name ASC')
                     ->get(10);
                     //->paginate(10);
                 
@@ -84,13 +98,14 @@ class HomeControllerAPI extends Controller
       
       $client = new Client([
         // Base URI is used with relative requests
-        'base_uri' => 'https://newsapi.org/v2/everything?q=pharmacogenetics&apiKey=2792461d8d5145bd84197285c6b1d202',
+        
+        'base_uri' => 'https://newsapi.org/v2/everything?q=pharmacogenetics&from=2019-06-01&sortBy=publishedAt&apiKey=2792461d8d5145bd84197285c6b1d202',
         // You can set any number of default request options.
         'timeout' => 2.0,
       ]);
 
       $response = $client
-        ->get('https://newsapi.org/v2/everything?q='.$s.'&apiKey=2792461d8d5145bd84197285c6b1d202');
+        ->get('https://newsapi.org/v2/everything?q='.$s.'&from=2019-06-01&sortBy=publishedAt&apiKey=2792461d8d5145bd84197285c6b1d202');
 
     /*$response = $client->request(
         'GET',

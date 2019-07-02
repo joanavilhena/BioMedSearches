@@ -22,6 +22,7 @@ class PhenotypeControllerAPI extends Controller
     public function index()
     {
         $result = DB::table('phenotypes')
+        ->orderByRaw('name ASC')
         ->get();
         return response()->json($result);
     }
