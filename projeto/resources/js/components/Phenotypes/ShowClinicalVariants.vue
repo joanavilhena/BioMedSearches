@@ -61,13 +61,13 @@
       </template>
 
       <template slot="Actions" slot-scope="row">
-        <b-button  size="sm" @click="showClinnicalAnn(row.item)" class="btn btn-xs btn-light">
+       <b-button size="sm" @click="showClinnicalAnn(row.item)" variant ="info">
           Clinical Annotations  <i class="fas fa-eye"></i>
         </b-button>
 
         <br>
 
-         <b-button  size="sm" @click="showStudyParams(row.item)" class="btn btn-xs btn-light">
+          <b-button size="sm" @click="showStudyParams(row.item)" variant ="info">
           Variant Annotations <i class="fas fa-eye"></i>
         </b-button>
       </template>

@@ -8,6 +8,8 @@
     <br>
     </div>
 
+
+
 <div  v-if="!showChemical">
     
 
@@ -27,7 +29,14 @@
       </b-col>
 
     </b-row>
+
+
     <br>
+
+
+   <div v-if="loading" class="d-flex justify-content-center mb-3">
+    <b-spinner label="Loading..."></b-spinner>
+  </div>
     <!-- Main table element -->
     <div class="table-responsive table-hover" >
     <b-table 
@@ -105,6 +114,7 @@
             currentPage: 1,
             perPage: 5,
             filter: null,
+            loading : true,
         }
 
         },
@@ -120,7 +130,7 @@
 
                 this.items= response.data;
                 this.totalRows = response.data.length;
-
+                this.loading = false;
                 })
                 .catch(function (error) {
                     // handle error

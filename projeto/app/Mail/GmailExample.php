@@ -35,7 +35,7 @@ class GmailExample extends Mailable
 
  
         $this->from('biomedsearchipleiria@gmail.com', 'BioMed Search')
-            ->subject('Message Confirmation')
+            ->subject('Contact Confirmation')
             ->markdown('mails.example')
             ->with([
                 'name' => $this->contact->name,

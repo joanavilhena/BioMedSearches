@@ -28,6 +28,9 @@
 
     </b-row>
 
+   <div v-if="loading" class="d-flex justify-content-center mb-3">
+    <b-spinner label="Loading..."></b-spinner>
+  </div>
   
     
     <br>
@@ -112,6 +115,7 @@
             sortDesc: false,
             sortDirection: 'asc',
             filter: null,
+            loading:true,
         }
 
         },
@@ -130,6 +134,7 @@
                     
                 this.items= response.data;
                 this.totalRows = response.data.length;
+                this.loading=false;
                  
 
                 //console.log(this.drugs);

@@ -21,6 +21,9 @@
     </b-col>
   </b-row>
 
+   <div v-if="loading" class="d-flex justify-content-center mb-3">
+    <b-spinner label="Loading..."></b-spinner>
+  </div>
   <br>
   
   <div class="table-responsive table-hover" >
@@ -85,6 +88,7 @@ export default {
           { key: 'name', label: 'Name' },
           
           ],
+          loading:true,
 
 
         }
@@ -122,6 +126,7 @@ export default {
                     
                 this.items= response.data;
                 this.totalRows = response.data.length;
+                this.loading=false;
         
                 })
                 .catch(function (error) {

@@ -1,5 +1,9 @@
 <template>
   <div class="mb-3">
+    <div v-if="loading" class="clearfix">
+      <b-spinner class="float-right" label="Floated Right"></b-spinner>
+    </div>
+    <br>
     <vue-bootstrap-typeahead 
       :data="addresses"
       v-model="addressSearch"
@@ -10,9 +14,13 @@
       @hit="selectedAddress = $event"
       >  
     </vue-bootstrap-typeahead>  
+    
+
     <div>
       <b-button @click="irPara" block variant="primary">Go</b-button>
     </div>
+
+    
   </div>
 
 </template>
@@ -29,14 +37,17 @@ export default {
     return {
       addresses: [],
       addressSearch: '',
-      selectedAddress: null
+      selectedAddress: null,
+      loading: false,
     }
   },
   methods: {
     async getAddresses(query) {
+      this.loading= true;
       const res = await fetch(API_URL.replace(':query', query),{ timeout: 1000})
       const suggestions = await res.json();
       this.addresses = suggestions;
+      this.loading =false;
     },
     irPara()
     {
