@@ -88,6 +88,9 @@ const phenotypeClinicalVariantions = Vue.component('show-clinical-annotations', 
 //Feed
 const feed=Vue.component('feed-news', require('./components/NewsFeed.vue').default);
 
+//Terms
+const privacy=Vue.component('feed-news', require('./components/Privacy.vue').default);
+const service=Vue.component('feed-news', require('./components/Service.vue').default);
 
 const routes = [
     {path:'/', redirect:'/home'},
@@ -107,6 +110,8 @@ const routes = [
     {path:'/clinicalAnnotation/:id', component:phenotypeClinicalVariantions},
     {path:'/news', component:feed},
     {path:'/contact', component:contact},
+    {path:'/privacy', component:privacy},
+    {path:'/service', component:service},
 ];
 const router = new VueRouter({
     

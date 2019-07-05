@@ -25,7 +25,7 @@
           </tr>
           <tr>
             <td></td>
-           <td><router-link  to="/terms">
+           <td><router-link  to="/service">
               <a>Terms of Use</a>
             </router-link></td>
            <td></td>
