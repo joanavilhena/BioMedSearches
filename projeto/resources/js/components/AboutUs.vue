@@ -27,7 +27,10 @@
     <hr class="my-4">
 
     <p>
-     <a href="#" class="button">Contribute now!</a>
+      <router-link  to="/contact">
+        <a class="button"> Contribute Now!</a>
+      </router-link>
+    
     </p>
     
     

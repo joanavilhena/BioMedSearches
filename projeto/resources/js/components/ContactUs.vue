@@ -1,10 +1,11 @@
 <template>
 <div>
-   <div class="jumbotron">
-      <h1 align="center">Contact</h1>
-    </div>
+  
 
 	<div class = "container">
+		 <div class="jumbotron">
+      <h1 align="center">Contact</h1>
+    </div>
     <div class="signup-form">
 		
 		
@@ -17,19 +18,19 @@
 
 			<div class="form-group">
 				<div class="input-group">
-					<span class="input-group-addon"><i class="fa fa-user"></i></span>
+					<span class="input-group-addon"><i class="far fa-user"></i></span>
 					<input type="text" class="form-control" name="name" placeholder="Name" required="required" v-model="comment.name">
 				</div>
 			</div>
             	<div class="form-group">
 				<div class="input-group">
-					<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+					<span class="input-group-addon"><i class="far fa-envelope"></i></span>
 					<input type="email" class="form-control" name="email" placeholder="Email Address" required="required" v-model="comment.email">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="input-group">
-					<span class="input-group-addon"><i class="fa fa-user"></i></span>
+					<span class="input-group-addon"><i class="far fa-sticky-note"></i></span>
 					<textarea type="text" class="form-control" name="message" placeholder="Message content" required="required" v-model="comment.message"></textarea>
 				</div>
 			</div>

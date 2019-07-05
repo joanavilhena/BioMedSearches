@@ -13,16 +13,31 @@
         </tr>
         <tr>
           <td></td>
-          <td><a href="#" class="button">About BioMed Search</a></td>
+          <td>
+            <router-link  to="/aboutus">
+              <a>About Us</a>
+            </router-link>
+          </td>
+           <td><router-link  to="/contact">
+              <a>Contact</a>
+            </router-link></td>
+            <td></td>
           </tr>
           <tr>
             <td></td>
-           <td> Terms of Use </td>
-           <td>Contact Us</td>
+           <td><router-link  to="/terms">
+              <a>Terms of Use</a>
+            </router-link></td>
+           <td></td>
+          
+           <td></td>
           </tr>
           <tr>
             <td></td>
-        <td> Privacy Policy</td>
+        <td>
+          <router-link  to="/privacy">
+              <a>Privacy Policy</a>
+            </router-link></td>
         <td></td>
           </tr>
     </table>
@@ -38,6 +53,20 @@
 
 <script>
 export default {
+  
+  data: function () {
+    return{
+
+    }
+  },
+  methods:
+  {
+    goAbout()
+    {
+      router.push('aboutus');
+    }
+  }
+
 
 }
 </script>

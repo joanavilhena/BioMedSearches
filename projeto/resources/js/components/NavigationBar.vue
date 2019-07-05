@@ -13,6 +13,7 @@
          <b-nav-item  to="/phenotypes">Phenotypes</b-nav-item>
          <b-nav-item  to="/news">News</b-nav-item>
          <b-nav-item  to="/aboutus">About Us</b-nav-item>
+         <b-nav-item  to="/contact">Contact Us</b-nav-item>
       </b-navbar-nav>
 
      
