@@ -92,11 +92,11 @@ class PhenotypeControllerAPI extends Controller
         }
             
     
-        $gene = 'UGT1A1';
+      /*  $gene = 'UGT1A1';
         $disease ='HIV';
         $variant ='rs887829';
         $levelofevidence ='1A';
-        $type = 'Other';
+        $type = 'Other';*/
         $result = DB::table('clinical_ann_metadata')->whereRaw('lower(Gene) like lower(?)', ["%{$gene}%"])
                                                     ->whereRaw('lower(RelatedDiseases) like lower(?)', ["%{$disease}%"])
                                                     ->whereRaw('lower(Location) like lower(?)', ["%{$variant}%"])

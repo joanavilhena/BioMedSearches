@@ -67,9 +67,9 @@
 
         <br>
 
-          <b-button size="sm" @click="showStudyParams(row.item)" variant ="info">
+        <!--  <b-button size="sm" @click="showStudyParams(row.item)" variant ="info">
           Variant Annotations <i class="fas fa-eye"></i>
-        </b-button>
+        </b-button>-->
       </template>
       
     
@@ -278,20 +278,21 @@ import { constants } from 'crypto';
       {
         console.log(item);
         var jsonString = JSON.stringify(item);
-         axios.get('api/clinicalAnn',{ params: { gene: item.gene, chemicals: item.chemicals, le: item.level_of_evidence, phenotypes: this.phenotype,
-          type: item.type, variant: item.variant } })
-                .then((response) => {
-                    console.log(response.data);
-                    this.ca = response.data;
+   
 
+                
                     this.showClinicalVariations = false;
                     this.showClinicalAnnotations = true;
                     this.showVariantAnnotations = false;
-                    //this.$router.push('/clinicalAnnotation/'+response.ClinicalAnnotationID);
-                    
 
-                });
-
+       this.ca = [
+                         item.gene,
+                        item.chemicals,
+                        item.level_of_evidence,
+                        this.phenotype,
+                        item.type,
+                        item.variant 
+                    ];
               
     
 
@@ -304,19 +305,16 @@ import { constants } from 'crypto';
          let chemicals = item.chemicals.replace(',','%');
          console.log(chemicals);
         var jsonString = JSON.stringify(item.chemicals);
-         axios.get('api/phenoVariations',{ params: { gene: item.gene, chemicals: chemicals, variant: item.variant } })
-                .then((response) => {
-                    //console.log(response.data);
-                    this.ca = response.data;
-                    console.log(this.ca);
-                    this.showClinicalVariations = false;
+
+                this.showClinicalVariations = false;
                     this.showClinicalAnnotations = false;
                     this.showVariantAnnotations = true;
-                    //this.$router.push('/clinicalAnnotation/'+response.ClinicalAnnotationID);
-                    
-
-                });
-
+        this.ca = [
+         item.gene,
+          chemicals,
+         
+        item.variant
+        ]
    
  
 

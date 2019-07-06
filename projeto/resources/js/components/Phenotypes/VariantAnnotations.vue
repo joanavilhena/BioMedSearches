@@ -12,7 +12,7 @@
         <div>
  
 
-          <div v-for="(i,index) in ca" :key="index">
+          <div v-for="(i,index) in items" :key="index">
             <b-card :title="'Annotation ID: '+i.AnnotationID + ' StudyParammeters:'+i.StudyParameters" :sub-title="'Annotation Text: '+i.Notes">
                 <br>
                 {{split(i.Chemical)}}
@@ -55,10 +55,24 @@ export default {
        
         return {
             chemicals: [],
+            items:[],
         }
     },
     methods:
     {
+      getAnn()
+      {
+                 axios.get('api/phenoVariations',{ params: { gene: this.ca[0], chemicals: this.ca[2], variant: this.ca[3] } })
+                .then((response) => {
+                  
+                    this.items = response.data;
+                    
+                    
+                   
+                    
+
+                });
+      },
         split(string)
         {
             this.chemicals = string.split(",");
@@ -77,6 +91,11 @@ export default {
             this.$emit('backToggle');
 
         }
+    },
+    mounted()
+    {
+      console.log(this.ca);
+      this.getAnn();
     }
 
 }
