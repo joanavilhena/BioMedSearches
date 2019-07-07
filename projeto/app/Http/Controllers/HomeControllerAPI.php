@@ -70,15 +70,19 @@ class HomeControllerAPI extends Controller
 
     public function getNews()
     {
+     
+      $date = date("d-m-Y", strtotime("-1 months"));
+    
+
       $client = new Client([
         // Base URI is used with relative requests
-        'base_uri' => 'https://newsapi.org/v2/everything?q=pharmacogenetics&from=2019-06-05&sortBy=publishedAt&apiKey=2792461d8d5145bd84197285c6b1d202',
+        'base_uri' => 'https://newsapi.org/v2/everything?q=medicine&from='.$date.'&sortBy=publishedAt&apiKey=2792461d8d5145bd84197285c6b1d202',
         // You can set any number of default request options.
         'timeout' => 2.0,
       ]);
 
       $response = $client
-        ->get('https://newsapi.org/v2/everything?q=pharmacogenetics&from=2019-06-05&sortBy=publishedAt&apiKey=2792461d8d5145bd84197285c6b1d202');
+        ->get('https://newsapi.org/v2/everything?q=medicine&from='.$date.'&sortBy=publishedAt&apiKey=2792461d8d5145bd84197285c6b1d202');
 
     /*$response = $client->request(
         'GET',
@@ -94,18 +98,20 @@ class HomeControllerAPI extends Controller
     {
       $s=$request->search;
       $s = strtolower($s);
-      
+      $date = date("d-m-Y", strtotime("-1 months"));
+    
+
       
       $client = new Client([
         // Base URI is used with relative requests
         
-        'base_uri' => 'https://newsapi.org/v2/everything?q='.$s.'&from=2019-06-05&sortBy=publishedAt&apiKey=2792461d8d5145bd84197285c6b1d202',
+        'base_uri' => 'https://newsapi.org/v2/everything?q='.$s.'&from='.$date.'&sortBy=publishedAt&apiKey=2792461d8d5145bd84197285c6b1d202',
         // You can set any number of default request options.
         'timeout' => 2.0,
       ]);
 
       $response = $client
-        ->get('https://newsapi.org/v2/everything?q='.$s.'&from=2019-06-05&sortBy=publishedAt&apiKey=2792461d8d5145bd84197285c6b1d202');
+        ->get('https://newsapi.org/v2/everything?q='.$s.'&from='.$date.'&sortBy=publishedAt&apiKey=2792461d8d5145bd84197285c6b1d202');
 
     /*$response = $client->request(
         'GET',
